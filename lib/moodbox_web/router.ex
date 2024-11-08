@@ -18,8 +18,11 @@ defmodule MoodboxWeb.Router do
     pipe_through :browser
 
     live "/", HomeLive
-    live "/moods", MoodSelectorLive
-    live "/moods/:mood", MoodLive
+    live "/moods", MoodLive
+    live "/moods/:mood", IntensityLive
+    live "/moods/:mood/:intensity", TextureLive
+    live "/moods/:mood/:intensity/:texture", LocationLive
+    live "/moods/:mood/:intensity/:texture/:location", DescriptionLive
   end
 
   # Other scopes may use custom stacks.
