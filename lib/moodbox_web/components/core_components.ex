@@ -103,7 +103,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def centered_block(assigns) do
     ~H"""
-    <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-screen lg:pb-32">
+    <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-dvh md:min-h-screen lg:pb-32">
       <%= render_slot(@inner_block) %>
     </div>
     """
