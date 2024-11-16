@@ -3,22 +3,33 @@ defmodule MoodboxWeb.MoodLive do
 
   def render(assigns) do
     ~H"""
-    <div class="max-w-screen-xl mx-auto p-6">
-      <h1 class="text-5xl sm:text-6xl xl:text-7xl max-w-4xl xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
-        How are you feeling?
-      </h1>
-      <div class="mt-10 py-10 px-14 flex flex-col sm:flex-row sm:flex-wrap">
-        <div :for={mood <- @moods} class="sm:w-1/2 md:w-1/4 p-5">
-          <.link patch={~p"/moods/#{mood.resource}"}>
-            <div class="flex flex-col items-center gap-5">
-              <img src={mood.url} alt={mood.name} />
-              <button class="px-8 py-4 xl:py-6 xl:px-12 w-full xl:text-xl font-bold tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white">
-                <%= mood.name %>
-              </button>
-            </div>
-          </.link>
+    <div class="relative overflow-hidden h-screen w-full">
+      <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-screen lg:pb-32">
+        <h1 class="text-5xl w-full sm:text-6xl xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
+          How are you feeling?
+        </h1>
+        <div class="mt-10 py-10 sm:px-14 flex flex-row flex-wrap">
+          <div :for={mood <- @moods} class="w-1/2 lg:w-1/4 p-5 lg:p-10">
+            <.link
+              patch={~p"/moods/#{mood.resource}"}
+              class="block transition-transform hover:scale-105"
+            >
+              <div class="flex flex-col items-center gap-5 lg:gap-10">
+                <img src={mood.url} alt={mood.name} />
+                <button class="sm:px-4 py-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap">
+                  <%= mood.name %>
+                </button>
+              </div>
+            </.link>
+          </div>
         </div>
       </div>
+
+      <img
+        phx-mounted={JS.transition({"ease-out duration-300", "opacity-0", "opacity-100"})}
+        class="absolute inset-0 h-full w-full object-cover z-0"
+        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
+      />
     </div>
     """
   end
