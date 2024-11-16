@@ -3,8 +3,8 @@ defmodule MoodboxWeb.MoodLive do
 
   def render(assigns) do
     ~H"""
-    <div class="relative overflow-hidden h-screen w-full">
-      <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-screen lg:pb-32">
+    <.container>
+      <.centered_block>
         <h1 class="text-5xl w-full sm:text-6xl xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
           How are you feeling?
         </h1>
@@ -23,14 +23,14 @@ defmodule MoodboxWeb.MoodLive do
             </.link>
           </div>
         </div>
-      </div>
+      </.centered_block>
 
       <img
         phx-mounted={JS.transition({"ease-out duration-300", "opacity-0", "opacity-100"})}
         class="absolute inset-0 h-full w-full object-cover z-0"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
       />
-    </div>
+    </.container>
     """
   end
 

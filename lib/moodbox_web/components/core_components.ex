@@ -89,6 +89,26 @@ defmodule MoodboxWeb.CoreComponents do
     """
   end
 
+  slot :inner_block, required: true
+
+  def container(assigns) do
+    ~H"""
+    <div class="relative overflow-hidden h-screen w-full">
+      <%= render_slot(@inner_block) %>
+    </div>
+    """
+  end
+
+  slot :inner_block, required: true
+
+  def centered_block(assigns) do
+    ~H"""
+    <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-screen lg:pb-32">
+      <%= render_slot(@inner_block) %>
+    </div>
+    """
+  end
+
   @doc """
   Renders flash notices.
 
