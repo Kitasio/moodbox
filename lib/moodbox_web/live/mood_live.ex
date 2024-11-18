@@ -5,9 +5,9 @@ defmodule MoodboxWeb.MoodLive do
     ~H"""
     <.container>
       <.centered_block>
-        <h1 class="text-5xl w-full sm:text-6xl xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
+        <.heading>
           How are you feeling?
-        </h1>
+        </.heading>
         <div class="mt-10 py-10 sm:px-14 flex flex-row flex-wrap">
           <div :for={mood <- @moods} class="w-1/2 lg:w-1/4 p-5 lg:p-10">
             <.link
@@ -16,9 +16,9 @@ defmodule MoodboxWeb.MoodLive do
             >
               <div class="flex flex-col items-center gap-5 lg:gap-10">
                 <img src={mood.url} alt={mood.name} />
-                <button class="sm:px-4 py-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap">
+                <.btn>
                   <%= mood.name %>
-                </button>
+                </.btn>
               </div>
             </.link>
           </div>

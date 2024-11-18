@@ -89,26 +89,6 @@ defmodule MoodboxWeb.CoreComponents do
     """
   end
 
-  slot :inner_block, required: true
-
-  def container(assigns) do
-    ~H"""
-    <div class="relative overflow-hidden h-screen w-full">
-      <%= render_slot(@inner_block) %>
-    </div>
-    """
-  end
-
-  slot :inner_block, required: true
-
-  def centered_block(assigns) do
-    ~H"""
-    <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-dvh md:min-h-screen lg:pb-32">
-      <%= render_slot(@inner_block) %>
-    </div>
-    """
-  end
-
   @doc """
   Renders flash notices.
 
@@ -681,5 +661,50 @@ defmodule MoodboxWeb.CoreComponents do
   """
   def translate_errors(errors, field) when is_list(errors) do
     for {^field, {msg, opts}} <- errors, do: translate_error({msg, opts})
+  end
+
+  slot :inner_block, required: true
+
+  def heading(assigns) do
+    ~H"""
+    <h1 class="text-4xl sm:text-5xl w-full sm:text-6xl xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
+      <%= render_slot(@inner_block) %>
+    </h1>
+    """
+  end
+
+  slot :inner_block, required: true
+
+  def container(assigns) do
+    ~H"""
+    <div class="relative overflow-hidden h-screen w-full">
+      <%= render_slot(@inner_block) %>
+    </div>
+    """
+  end
+
+  slot :inner_block, required: true
+
+  def centered_block(assigns) do
+    ~H"""
+    <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-dvh md:min-h-screen lg:pb-32">
+      <%= render_slot(@inner_block) %>
+    </div>
+    """
+  end
+
+  slot :inner_block, required: true
+  attr :rest, :global, doc: "the arbitrary HTML attributes"
+  attr :class, :string, default: nil
+
+  def btn(assigns) do
+    ~H"""
+    <button
+      class={"sm:px-4 py-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap #{@class}"}
+      {@rest}
+    >
+      <%= render_slot(@inner_block) %>
+    </button>
+    """
   end
 end
