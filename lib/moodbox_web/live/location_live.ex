@@ -18,14 +18,19 @@ defmodule MoodboxWeb.LocationLive do
     ~H"""
     <.container>
       <.centered_block>
-        <p>Location page</p>
-        <div>Current mood: <%= @mood %></div>
-        <div>Intensity: <%= @intensity %></div>
-        <div>Texture: <%= @texture %></div>
+        <.subheading>
+          Where do you feel it in your body?
+        </.subheading>
 
-        <div :for={location <- @locations} class="sm:w-1/2 md:w-1/4 p-5">
-          <.link patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{location.resource}"}>
-            <%= location.name %>
+        <div class="mt-10 lg:mt-20">
+          <.link
+            :for={location <- @locations}
+            patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{location.resource}"}
+            class="mt-10 flex w-44 sm:w-96"
+          >
+            <.btn class="transition hover:scale-105">
+              <%= location.name %>
+            </.btn>
           </.link>
         </div>
       </.centered_block>
