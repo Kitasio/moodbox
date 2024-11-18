@@ -16,13 +16,19 @@ defmodule MoodboxWeb.TextureLive do
     ~H"""
     <.container>
       <.centered_block>
-        <p>Texture page</p>
-        <div>Current mood: <%= @mood %></div>
-        <div>Intensity: <%= @intensity %></div>
+        <.subheading>
+          If your feeling had a texture, what would it be?
+        </.subheading>
 
-        <div :for={texture <- @textures} class="sm:w-1/2 md:w-1/4 p-5">
-          <.link patch={~p"/moods/#{@mood}/#{@intensity}/#{texture.resource}"}>
-            <%= texture.name %>
+        <div class="mt-10 lg:mt-20">
+          <.link
+            :for={texture <- @textures}
+            patch={~p"/moods/#{@mood}/#{@intensity}/#{texture.resource}"}
+            class="mt-10 flex w-44 sm:w-96"
+          >
+            <.btn class="transition hover:scale-105">
+              <%= texture.name %>
+            </.btn>
           </.link>
         </div>
       </.centered_block>

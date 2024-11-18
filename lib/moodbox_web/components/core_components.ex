@@ -667,9 +667,19 @@ defmodule MoodboxWeb.CoreComponents do
 
   def heading(assigns) do
     ~H"""
-    <h1 class="text-4xl sm:text-5xl w-full sm:text-6xl xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
+    <h1 class="text-4xl sm:text-5xl w-full xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
       <%= render_slot(@inner_block) %>
     </h1>
+    """
+  end
+
+  slot :inner_block, required: true
+
+  def subheading(assigns) do
+    ~H"""
+    <h2 class="text-2xl sm:text-3xl w-full xl:text-5xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-bold">
+      <%= render_slot(@inner_block) %>
+    </h2>
     """
   end
 

@@ -5,9 +5,9 @@ defmodule MoodboxWeb.MoodLive do
     ~H"""
     <.container>
       <.centered_block>
-        <.heading>
+        <.subheading>
           How are you feeling?
-        </.heading>
+        </.subheading>
         <div class="mt-10 py-10 sm:px-14 flex flex-row flex-wrap">
           <div :for={mood <- @moods} class="w-1/2 lg:w-1/4 p-5 lg:p-10">
             <.link
