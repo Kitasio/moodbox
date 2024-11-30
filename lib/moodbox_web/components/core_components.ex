@@ -196,7 +196,7 @@ defmodule MoodboxWeb.CoreComponents do
   def simple_form(assigns) do
     ~H"""
     <.form :let={f} for={@for} as={@as} {@rest}>
-      <div class="mt-10 space-y-8 bg-white">
+      <div class="mt-10 space-y-8 bg-transparent">
         <%= render_slot(@inner_block, f) %>
         <div :for={action <- @actions} class="mt-2 flex items-center justify-between gap-6">
           <%= render_slot(action, f) %>
@@ -680,6 +680,17 @@ defmodule MoodboxWeb.CoreComponents do
     <h2 class="text-2xl sm:text-3xl w-full xl:text-5xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-bold">
       <%= render_slot(@inner_block) %>
     </h2>
+    """
+  end
+
+  slot :inner_block, required: true
+  attr :class, :string, default: nil
+
+  def p(assigns) do
+    ~H"""
+    <p class={"sm:text-lg xl:text-xl max-w-4xl text-gray-600 text-center xl:tracking-wide leading-tight sm:leading-snug font-medium #{@class}"}>
+      <%= render_slot(@inner_block) %>
+    </p>
     """
   end
 

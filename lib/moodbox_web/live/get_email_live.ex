@@ -62,16 +62,48 @@ defmodule MoodboxWeb.GetEmailLive do
 
   def render(assigns) do
     ~H"""
-    <.simple_form class="container mx-auto" for={@form} phx-change="validate" phx-submit="save">
-      <.error :if={@check_errors}>
-        Oops, something went wrong! Please check the errors below.
-      </.error>
-      <.input field={@form[:name]} label="Name" />
-      <.input field={@form[:email]} label="Email" />
-      <:actions>
-        <.button>Save</.button>
-      </:actions>
-    </.simple_form>
+    <.container>
+      <.centered_block>
+        <.subheading>
+          You've Taken a Step Towards Understanding Your Emotions
+        </.subheading>
+        <.p class="mt-4">
+          Type in your name and email to open your Mood in a Box™
+        </.p>
+        <.simple_form
+          class="container mx-auto max-w-3xl"
+          for={@form}
+          phx-change="validate"
+          phx-submit="save"
+        >
+          <.error :if={@check_errors}>
+            Oops, something went wrong! Please check the errors below.
+          </.error>
+          <.input field={@form[:name]} label="Name" />
+          <.input field={@form[:email]} label="Email" />
+          <:actions>
+            <.btn class="transition hover:scale-105">
+              SEE YOUR PERSONALIZED RESULT
+            </.btn>
+          </:actions>
+        </.simple_form>
+      </.centered_block>
+
+      <img
+        class="absolute inset-0 h-full w-full object-cover z-0"
+        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
+      />
+
+      <img
+        class="absolute z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
+        src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
+      />
+
+      <img
+        class="absolute z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
+        src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
+      />
+    </.container>
     """
   end
 end
