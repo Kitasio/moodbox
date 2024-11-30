@@ -30,11 +30,14 @@ defmodule MoodboxWeb.DescriptionLive do
           <.link
             :for={outcome <- @outcomes}
             patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"}
-            class="mt-10 flex w-44 sm:w-96"
+            class="mt-10 flex flex-col w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105">
               <%= outcome.name %>
             </.btn>
+            <span class="mt-2 text-center text-sm text-gray-600">
+              <%= outcome.description %>
+            </span>
           </.link>
         </div>
       </.centered_block>
