@@ -22,22 +22,20 @@ defmodule MoodboxWeb.DescriptionLive do
     ~H"""
     <.container>
       <.centered_block>
-        <p>Description page</p>
-        <div>Current mood: <%= @mood %></div>
-        <div>Intensity: <%= @intensity %></div>
-        <div>Texture: <%= @texture %></div>
-        <div>Location: <%= @location %></div>
+        <.subheading>
+          Which word best describes this feeling? Remember your choice.
+        </.subheading>
 
-        <div>
-          <%= for outcome <- @outcomes do %>
-            <div class="sm:w-1/2 md:w-1/4 p-5">
-              <.link patch={
-                ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"
-              }>
-                <%= outcome.name %>
-              </.link>
-            </div>
-          <% end %>
+        <div class="mt-10 lg:mt-20">
+          <.link
+            :for={outcome <- @outcomes}
+            patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"}
+            class="mt-10 flex w-44 sm:w-96"
+          >
+            <.btn class="transition hover:scale-105">
+              <%= outcome.name %>
+            </.btn>
+          </.link>
         </div>
       </.centered_block>
 
@@ -101,22 +99,24 @@ defmodule MoodboxWeb.DescriptionLive do
       },
       %{
         name: "Annoyed",
-        description: "Feeling very annoyed.",
+        description: "Feeling slight anger or displeasure, typically over something trivial.",
         resource: "annoyed"
       },
       %{
         name: "Agitated",
-        description: "Feeling agitated or irritated.",
+        description: "Feeling nervous or unsettled, potentially leading to anger.",
         resource: "agitated"
       },
       %{
         name: "Frustrated",
-        description: "Feeling frustrated.",
+        description:
+          "Feeling upset or annoyed due to an inability to change or achieve something.",
         resource: "frustrated"
       },
       %{
         name: "Impatient",
-        description: "Feeling impatient.",
+        description:
+          "Tendency to be quickly irritated or provoked, especially when waiting for something or someone.",
         resource: "impatient"
       }
     ]
@@ -126,27 +126,28 @@ defmodule MoodboxWeb.DescriptionLive do
     [
       %{
         name: "Offended",
-        description: "Feeling very offended.",
+        description:
+          "Feeling or expressing hurt, anger, or resentment due to a perceived insult or injustice.",
         resource: "offended"
       },
       %{
         name: "Resentful",
-        description: "",
+        description: "Feeling bitter indignation at having been treated unfairly.",
         resource: "resentful"
       },
       %{
         name: "Hostile",
-        description: "",
+        description: "Feeling unfriendly or antagonistic.",
         resource: "hostile"
       },
       %{
         name: "Angry",
-        description: "",
+        description: "Feeling strong annoyance, displeasure, or hostility.",
         resource: "angry"
       },
       %{
         name: "Exasperated",
-        description: "",
+        description: "Feeling intensely irritated or frustrated.",
         resource: "exasperated"
       }
     ]
@@ -156,27 +157,27 @@ defmodule MoodboxWeb.DescriptionLive do
     [
       %{
         name: "Outraged",
-        description: "Feeling extremely outraged.",
+        description: "Feeling extremely angry, shocked, or indignant.",
         resource: "outraged"
       },
       %{
         name: "Vexed",
-        description: "Feeling intensely vexed.",
+        description: "Feeling extremely annoyed and frustrated.",
         resource: "vexed"
       },
       %{
         name: "Furious",
-        description: "Feeling absolutely furious.",
+        description: "Feeling intense, unruly anger.",
         resource: "furious"
       },
       %{
         name: "Wrathful",
-        description: "Feeling wrathful.",
+        description: "Having a desire for revenge.",
         resource: "wrathful"
       },
       %{
         name: "Bitterly Resentful",
-        description: "Feeling bitterly resentful.",
+        description: "Feeling cold indignation approaching hatred.",
         resource: "bitterly-resentful"
       }
     ]
@@ -186,27 +187,28 @@ defmodule MoodboxWeb.DescriptionLive do
     [
       %{
         name: "Uneasy",
-        description: "Feeling uneasy.",
+        description: "Feeling slightly uncomfortable or anxious.",
         resource: "uneasy"
       },
       %{
         name: "Nervous",
-        description: "Feeling nervous.",
+        description:
+          "Feeling apprehensive or worried about something. Easily agitated or alarmed.",
         resource: "nervous"
       },
       %{
         name: "Apprehensive",
-        description: "Feeling apprehensive.",
+        description: "Feeling anxious or fearful that something bad will happen.",
         resource: "apprehensive"
       },
       %{
         name: "Worried",
-        description: "Feeling worried.",
+        description: "Feeling anxious or troubled about actual or potential problems.",
         resource: "worried"
       },
       %{
         name: "Concerned",
-        description: "Feeling concerned.",
+        description: "Feeling troubled or worried.",
         resource: "concerned"
       }
     ]
@@ -216,27 +218,29 @@ defmodule MoodboxWeb.DescriptionLive do
     [
       %{
         name: "Anxious",
-        description: "Feeling anxious.",
+        description:
+          "Feeling worry, nervousness, or unease about something with an uncertain outcome.",
         resource: "anxious"
       },
       %{
         name: "Tense",
-        description: "Feeling tense.",
+        description: "Feeling mental or emotional strain; anxious.",
         resource: "tense"
       },
       %{
         name: "Afraid",
-        description: "Feeling afraid.",
+        description: "Feeling fear; frightened.",
         resource: "afraid"
       },
       %{
         name: "Frightened",
-        description: "Feeling frightened.",
+        description: "Feeling fear or panic.",
         resource: "frightened"
       },
       %{
         name: "Overwhelmed",
-        description: "Feeling overwhelmed.",
+        description:
+          "Overcome by a feeling or situation; often unable to move forward due to an excess of stress.",
         resource: "overwhelmed"
       }
     ]
@@ -245,29 +249,30 @@ defmodule MoodboxWeb.DescriptionLive do
   defp fear_high do
     [
       %{
-        name: "Terrified",
-        description: "Feeling terrified.",
-        resource: "terrified"
-      },
-      %{
-        name: "Panicked",
-        description: "Feeling panicked.",
-        resource: "panicked"
-      },
-      %{
-        name: "Petrified",
-        description: "Feeling petrified.",
-        resource: "petrified"
-      },
-      %{
         name: "Horrified",
-        description: "Feeling horrified.",
+        description: "Feeling shocked and scared.",
         resource: "horrified"
       },
       %{
-        name: "Paralyzed",
-        description: "Feeling paralyzed with fear.",
-        resource: "paralyzed"
+        name: "Panicked",
+        description: "Feeling a sudden, overwhelming fear that results in irrational behavior.",
+        resource: "panicked"
+      },
+      %{
+        name: "Terrified",
+        description: "Feeling extreme fear.",
+        resource: "terrified"
+      },
+      %{
+        name: "Petrified",
+        description:
+          "Feeling so frightened that one is unable to move; paralyzed, due to fear or shock.",
+        resource: "petrified"
+      },
+      %{
+        name: "Dreading",
+        description: "Anticipating with great apprehension or fear.",
+        resource: "dreading"
       }
     ]
   end
@@ -276,27 +281,28 @@ defmodule MoodboxWeb.DescriptionLive do
     [
       %{
         name: "Disappointed",
-        description: "Feeling disappointed.",
+        description:
+          "Sad or displeased because someone or something has failed to fulfill one's hopes or expectations.",
         resource: "disappointed"
       },
       %{
         name: "Dejected",
-        description: "Feeling dejected.",
+        description: "Feeling low in spirits or morale.",
         resource: "dejected"
       },
       %{
         name: "Downcast",
-        description: "Feeling downcast.",
+        description: "Feeling dejected or despondent.",
         resource: "downcast"
       },
       %{
         name: "Wistful",
-        description: "Feeling wistful.",
+        description: "Having a feeling of vague or regretful longing.",
         resource: "wistful"
       },
       %{
         name: "Disheartened",
-        description: "Feeling disheartened.",
+        description: "Feeling a loss of hope or confidence.",
         resource: "disheartened"
       }
     ]
@@ -306,27 +312,28 @@ defmodule MoodboxWeb.DescriptionLive do
     [
       %{
         name: "Sad",
-        description: "Feeling sad.",
+        description: "Feeling sorrow or unhappiness.",
         resource: "sad"
       },
       %{
         name: "Unhappy",
-        description: "Feeling unhappy.",
+        description: "Not happy; feeling or showing sorrow or discontent.",
         resource: "unhappy"
       },
       %{
         name: "Forlorn",
-        description: "Feeling forlorn.",
+        description: "Feeling abandoned or lonely.",
         resource: "forlorn"
       },
       %{
         name: "Melancholy",
-        description: "Feeling melancholy.",
+        description: "A deep, pensive, persistent sadness.",
         resource: "melancholy"
       },
       %{
         name: "Resigned",
-        description: "Feeling resigned.",
+        description:
+          "Accepting something unpleasant that one cannot change; showing acceptance of a situation.",
         resource: "resigned"
       }
     ]
@@ -335,29 +342,29 @@ defmodule MoodboxWeb.DescriptionLive do
   defp sad_high do
     [
       %{
-        name: "Depressed",
-        description: "Feeling deeply depressed.",
-        resource: "depressed"
+        name: "Heartbroken",
+        description: "Overcome by sorrow or grief; devastated.",
+        resource: "heartbroken"
       },
       %{
-        name: "Despairing",
-        description: "Feeling despairing.",
-        resource: "despairing"
+        name: "Grief-stricken",
+        description: "Feeling intense sorrow, especially due to a loss; mourning.",
+        resource: "grief-stricken"
       },
       %{
-        name: "Hopeless",
-        description: "Feeling hopeless.",
-        resource: "hopeless"
+        name: "Sorrowful",
+        description: "Feeling deep sadness or regret.",
+        resource: "sorrowful"
       },
       %{
-        name: "Miserable",
-        description: "Feeling miserable.",
-        resource: "miserable"
+        name: "Mournful",
+        description: "Feeling grief or sorrow, often due to a loss.",
+        resource: "mournful"
       },
       %{
-        name: "Devastated",
-        description: "Feeling devastated.",
-        resource: "devastated"
+        name: "Despondent",
+        description: "Feeling a loss of hope or courage.",
+        resource: "despondent"
       }
     ]
   end
