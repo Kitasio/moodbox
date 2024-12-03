@@ -28,6 +28,9 @@ defmodule MoodboxWeb.Router do
     live "/moods/:mood/:intensity/:texture/:location", DescriptionLive
     live "/moods/:mood/:intensity/:texture/:location/:description", GetEmailLive
     live "/moods/:mood/:intensity/:texture/:location/:description/outcome", OutcomeLive
+
+    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical",
+         ClassicalPlaylistLive
   end
 
   # Other scopes may use custom stacks.

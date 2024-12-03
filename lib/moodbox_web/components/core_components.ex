@@ -664,10 +664,14 @@ defmodule MoodboxWeb.CoreComponents do
   end
 
   slot :inner_block, required: true
+  attr :rest, :global, doc: "the arbitrary HTML attributes"
 
   def heading(assigns) do
     ~H"""
-    <h1 class="text-4xl sm:text-5xl w-full xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold">
+    <h1
+      class="text-4xl sm:text-5xl w-full xl:text-7xl max-w-4xl text-center xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-extrabold"
+      {@rest}
+    >
       <%= render_slot(@inner_block) %>
     </h1>
     """
@@ -688,7 +692,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def p(assigns) do
     ~H"""
-    <p class={"sm:text-lg xl:text-xl max-w-4xl text-gray-600 text-center xl:tracking-wide leading-tight sm:leading-snug font-medium #{@class}"}>
+    <p class={"sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide leading-tight sm:leading-snug font-medium #{@class}"}>
       <%= render_slot(@inner_block) %>
     </p>
     """
@@ -705,10 +709,11 @@ defmodule MoodboxWeb.CoreComponents do
   end
 
   slot :inner_block, required: true
+  attr :class, :string, default: nil
 
   def centered_block(assigns) do
     ~H"""
-    <div class="max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-dvh md:min-h-screen lg:pb-32">
+    <div class={"max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-dvh md:min-h-screen lg:pb-32 #{@class}"}>
       <%= render_slot(@inner_block) %>
     </div>
     """
@@ -721,7 +726,7 @@ defmodule MoodboxWeb.CoreComponents do
   def btn(assigns) do
     ~H"""
     <button
-      class={"sm:px-4 py-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap #{@class}"}
+      class={"px-4 py-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap #{@class}"}
       {@rest}
     >
       <%= render_slot(@inner_block) %>
