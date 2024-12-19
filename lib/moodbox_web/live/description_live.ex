@@ -35,7 +35,7 @@ defmodule MoodboxWeb.DescriptionLive do
             <.btn class="transition hover:scale-105">
               <%= outcome.name %>
             </.btn>
-            <span class="mt-2 text-center text-sm text-gray-600">
+            <span class="hidden md:block mt-2 text-center text-sm text-gray-600">
               <%= outcome.description %>
             </span>
           </.link>
