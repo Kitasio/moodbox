@@ -14,7 +14,7 @@ defmodule MoodboxWeb.TextureLive do
 
   def render(assigns) do
     ~H"""
-    <.container>
+    <.container class="overflow-hidden">
       <.centered_block>
         <.subheading>
           If your feeling had a texture, what would it be?
@@ -33,10 +33,7 @@ defmodule MoodboxWeb.TextureLive do
         </div>
       </.centered_block>
 
-      <img
-        class="absolute inset-0 h-full w-full object-cover z-0"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
-      />
+      <.base_bg />
 
       <img
         phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-3/4", "translate-y-2/4"})}

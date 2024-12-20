@@ -42,10 +42,7 @@ defmodule MoodboxWeb.DescriptionLive do
         </div>
       </.centered_block>
 
-      <img
-        class="absolute inset-0 h-full w-full object-cover z-0"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
-      />
+      <.base_bg />
 
       <img
         phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-1/4", "translate-y-0"})}

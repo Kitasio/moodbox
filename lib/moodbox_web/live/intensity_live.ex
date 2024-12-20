@@ -10,7 +10,7 @@ defmodule MoodboxWeb.IntensityLive do
 
   def render(assigns) do
     ~H"""
-    <.container>
+    <.container class="overflow-hidden">
       <.centered_block>
         <.subheading>
           How intense is your feeling?
@@ -24,10 +24,7 @@ defmodule MoodboxWeb.IntensityLive do
         </div>
       </.centered_block>
 
-      <img
-        class="absolute inset-0 h-full w-full object-cover z-0"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
-      />
+      <.base_bg />
 
       <img
         phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-full", "translate-y-3/4"})}

@@ -31,6 +31,9 @@ defmodule MoodboxWeb.Router do
 
     live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical",
          ClassicalPlaylistLive
+
+    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision",
+         RevisionLive
   end
 
   # Other scopes may use custom stacks.

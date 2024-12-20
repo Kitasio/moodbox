@@ -89,10 +89,7 @@ defmodule MoodboxWeb.GetEmailLive do
         </.simple_form>
       </.centered_block>
 
-      <img
-        class="absolute inset-0 h-full w-full object-cover z-0"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
-      />
+      <.base_bg />
 
       <img
         class="absolute z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"

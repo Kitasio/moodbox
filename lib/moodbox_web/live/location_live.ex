@@ -16,7 +16,7 @@ defmodule MoodboxWeb.LocationLive do
 
   def render(assigns) do
     ~H"""
-    <.container>
+    <.container class="overflow-hidden">
       <.centered_block>
         <.subheading>
           Where do you feel it in your body?
@@ -35,10 +35,7 @@ defmodule MoodboxWeb.LocationLive do
         </div>
       </.centered_block>
 
-      <img
-        class="absolute inset-0 h-full w-full object-cover z-0"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
-      />
+      <.base_bg />
 
       <img
         phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-2/4", "translate-y-1/4"})}

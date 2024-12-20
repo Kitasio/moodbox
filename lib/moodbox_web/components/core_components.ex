@@ -699,10 +699,11 @@ defmodule MoodboxWeb.CoreComponents do
   end
 
   slot :inner_block, required: true
+  attr :class, :string, default: nil
 
   def container(assigns) do
     ~H"""
-    <div class="relative overflow-hidden h-screen w-full">
+    <div class={"relative h-screen w-full #{@class}"}>
       <%= render_slot(@inner_block) %>
     </div>
     """
@@ -726,11 +727,22 @@ defmodule MoodboxWeb.CoreComponents do
   def btn(assigns) do
     ~H"""
     <button
-      class={"px-4 py-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap #{@class}"}
+      class={"p-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap #{@class}"}
       {@rest}
     >
       <%= render_slot(@inner_block) %>
     </button>
+    """
+  end
+
+  attr :class, :string, default: nil
+
+  def base_bg(assigns) do
+    ~H"""
+    <img
+      class={"fixed inset-0 h-full w-full object-cover z-0 #{@class}"}
+      src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
+    />
     """
   end
 end

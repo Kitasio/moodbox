@@ -45,7 +45,7 @@ defmodule MoodboxWeb.OutcomeLive do
         </.link>
       </.centered_block>
 
-      <img class="absolute inset-0 h-full w-full object-cover z-0" src={@outcome.bg_img} />
+      <img class="fixed inset-0 h-full w-full object-cover z-0" src={@outcome.bg_img} />
     </.container>
     """
   end
