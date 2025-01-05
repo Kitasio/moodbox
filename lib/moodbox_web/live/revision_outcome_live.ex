@@ -83,7 +83,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </h1>
 
             <p class="text-gray-600 text-lg md:text-xl mb-6">
-              We noticed your peacefulness score wasn't quite a 10. That's okay – sometimes finding the perfect mood boost takes a little experimentation!
+              We noticed your peacefulness score wasn't quite a ten. That's okay – release happens in layers!
             </p>
 
             <p class="text-gray-600 text-lg md:text-xl mb-12">
@@ -93,10 +93,10 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             <div class="grid md:grid-cols-3 gap-8 mb-12">
               <div>
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                  Binaural beats work cumulatively.
+                  Give it another go.
                 </h3>
                 <p class="text-gray-600">
-                  Sometimes, listening for a longer duration or multiple times can amplify their calming effects.
+                  Tapping is most effective when done in two-three rounds and sometimes, listening to the binaural beats for a longer duration can amplify their calming effects.
                 </p>
               </div>
 
@@ -120,8 +120,12 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </div>
 
             <div class="text-xl font-bold text-[#6b2a6d] mb-8">
-              Let's Find Your Perfect Peace:
+              Let's find your perfect peace.
             </div>
+
+            <p class="text-gray-600 text-lg mb-8">
+              If you've repeated the tapping and binaurals and are not feeling more peaceful, would you like to connect with a guide to find the root cause?
+            </p>
 
             <div class="flex gap-4 justify-center">
               <.button
