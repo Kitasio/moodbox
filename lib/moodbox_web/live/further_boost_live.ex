@@ -34,11 +34,11 @@ defmodule MoodboxWeb.FurtherBoostLive do
           <div class="aspect-video w-full">
             <div class="w-full h-full">
               <p class="font-semibold text-[#6b2a6d] text-center uppercase">
-                <%= @videos[@video_index].label %>
+                <%= Enum.at(@videos, @video_index).label %>
               </p>
               <iframe
                 class="w-full h-full"
-                src={"https://www.youtube.com/embed/#{@videos[@video_index].id}"}
+                src={"https://www.youtube.com/embed/#{Enum.at(@videos, @video_index).id}"}
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
