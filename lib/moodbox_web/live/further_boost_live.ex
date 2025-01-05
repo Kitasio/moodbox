@@ -66,28 +66,28 @@ defmodule MoodboxWeb.FurtherBoostLive do
 
   defp videos(mood) do
     case mood do
-      "angry" ->
-        [
-          %{id: "placeholder1", label: "Start here"},
-          %{id: "placeholder2", label: "2"},
-          %{id: "placeholder3", label: "3"},
-          %{id: "placeholder4", label: "4"}
-        ]
-
       "sad" ->
         [
-          %{id: "placeholder5", label: "Start here"},
-          %{id: "placeholder6", label: "2"},
-          %{id: "placeholder7", label: "3"},
-          %{id: "placeholder8", label: "4"}
+          %{id: "hdQDvDEM7_I", label: "Start here"},
+          %{id: "eprWxoRCQak", label: "2"},
+          %{id: "Ht3iE_wHvpU", label: "3"},
+          %{id: "eo-C1wDjbsQ", label: "4"}
         ]
 
       "afraid" ->
         [
-          %{id: "placeholder9", label: "Start here"},
-          %{id: "placeholder10", label: "2"},
-          %{id: "placeholder11", label: "3"},
-          %{id: "placeholder12", label: "4"}
+          %{id: "OD72B3xqgec", label: "Start here"},
+          %{id: "Cu4Ec9iwa0M", label: "2"},
+          %{id: "AZZEvXwvvDE", label: "3"},
+          %{id: "sK5QrPlQ5Yo", label: "4"}
+        ]
+
+      "angry" ->
+        [
+          %{id: "4n-XvH6mcak", label: "Start here"},
+          %{id: "doOAKyDdOt8", label: "2"},
+          %{id: "wk3at1ONk3E", label: "3"},
+          %{id: "CWinIJm2XQM", label: "4"}
         ]
     end
   end
