@@ -57,7 +57,9 @@ defmodule MoodboxWeb.RootLive do
             class="text-lg"
             phx-click="connect_therapist"
           >
-            CONNECT WITH A CERTIFIED HYPNOTHERAPIST
+            <a target="_blank" href="https://miamifloridahypnosis.com/">
+              CONNECT NOW
+            </a>
           </.button>
         </div>
       </.centered_block>
