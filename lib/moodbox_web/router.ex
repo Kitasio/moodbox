@@ -37,6 +37,8 @@ defmodule MoodboxWeb.Router do
 
     live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision/:score",
          RevisionOutcomeLive
+
+    live "/root", RootLive
   end
 
   # Other scopes may use custom stacks.
