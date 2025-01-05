@@ -71,7 +71,8 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </div>
 
             <.button
-              class="bg-[#6b2a6d] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#5a2359] transition-colors"
+              variant="filled"
+              class="text-lg"
               phx-click="unlock_deeper"
             >
               UNLOCK DEEPER LEVELS OF RELAXATION
@@ -124,14 +125,16 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
 
             <div class="flex gap-4 justify-center">
               <.button
-                class="bg-[#6b2a6d] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#5a2359] transition-colors"
+                variant="filled"
+                class="text-lg"
                 phx-click="try_again"
               >
                 TRY AGAIN
               </.button>
 
               <.button
-                class="border-2 border-[#6b2a6d] text-[#6b2a6d] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#6b2a6d] hover:text-white transition-colors"
+                variant="outlined"
+                class="text-lg"
                 phx-click="find_root"
               >
                 FIND THE ROOT
