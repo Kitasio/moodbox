@@ -70,11 +70,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               </div>
             </div>
 
-            <.button
-              variant="filled"
-              class="text-lg"
-              phx-click="unlock_deeper"
-            >
+            <.button variant="filled" class="text-lg" phx-click="unlock_deeper">
               UNLOCK DEEPER LEVELS OF RELAXATION
             </.button>
           <% else %>
@@ -86,7 +82,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               We noticed your peacefulness score wasn't quite a ten. That's okay – release happens in layers!
             </p>
 
-            <p class="text-gray-600 text-lg md:text-xl mb-12">
+            <p class="text-gray-600 text-xs md:text-base mb-12">
               The binaural beats you experienced are powerful tools for relaxation, and their effects can sometimes be subtle. If you're open to it, we recommend giving them another try!
             </p>
 
@@ -119,7 +115,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               </div>
             </div>
 
-            <div class="text-xl font-bold text-[#6b2a6d] mb-8">
+            <div class="text-xl font-bold text-[#6b2a6d]">
               Let's find your perfect peace.
             </div>
 
@@ -128,19 +124,15 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </p>
 
             <div class="flex gap-4 justify-center">
-              <.button
-                variant="filled"
-                class="text-lg"
-                phx-click="try_again"
-              >
-                TRY AGAIN
+              <.button variant="filled" class="text-lg" phx-click="try_again">
+                <.link patch={
+                  ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome/classical"
+                }>
+                  TRY AGAIN
+                </.link>
               </.button>
 
-              <.button
-                variant="outlined"
-                class="text-lg"
-                phx-click="find_root"
-              >
+              <.button variant="outlined" class="text-lg" phx-click="find_root">
                 FIND THE ROOT
               </.button>
             </div>
@@ -152,16 +144,17 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
     </.container>
     """
   end
+
   defp get_title(score) when is_binary(score) do
     score
     |> String.to_integer()
     |> get_title()
   end
-  
+
   defp get_title(score) when score >= 8 do
     "Congratulations! You've Unlocked Peak Serenity!"
   end
-  
+
   defp get_title(_score) do
     "Keep Going! Your Journey to Serenity Continues"
   end
@@ -171,23 +164,16 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
     |> String.to_integer()
     |> get_description()
   end
-  
+
   defp get_description(score) when score >= 8 do
     "Wow! A #{score} on the peacefulness scale – that's fantastic! We are thrilled to have helped you reach a state of pure calmness."
   end
-  
+
   defp get_description(score) do
     "You've reached a #{score} on the peacefulness scale. While you're making progress, there's still room to achieve even deeper states of relaxation."
-  end
-  def handle_event("try_again", _params, socket) do
-    {:noreply, push_navigate(socket, to: ~p"/revision")}
   end
 
   def handle_event("find_root", _params, socket) do
     {:noreply, push_navigate(socket, to: ~p"/root")}
-  end
-
-  def handle_event("unlock_deeper", _params, socket) do
-    {:noreply, push_navigate(socket, to: ~p"/unlock")}
   end
 end

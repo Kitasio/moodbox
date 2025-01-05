@@ -68,9 +68,4 @@ defmodule MoodboxWeb.RootLive do
     </.container>
     """
   end
-
-  def handle_event("connect_therapist", _params, socket) do
-    # TODO: Implement connection logic
-    {:noreply, socket}
-  end
 end
