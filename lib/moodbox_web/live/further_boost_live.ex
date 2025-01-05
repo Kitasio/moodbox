@@ -23,14 +23,14 @@ defmodule MoodboxWeb.FurtherBoostLive do
     ~H"""
     <.container>
       <.centered_block>
-        <div class="flex flex-col gap-10 xl:gap-16">
+        <div class="flex flex-col gap-10">
           <.subheading>
             Let's boost your mood further.
           </.subheading>
           <.p>
             Expand the videos to full screen and allow the sounds and visuals to fully immerse you.
           </.p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-20 w-full">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 w-full">
             <div :for={video <- @videos} class="aspect-video w-full">
               <div class="w-full h-full">
                 <p class="font-semibold text-[#6b2a6d] text-center uppercase">
@@ -50,7 +50,9 @@ defmodule MoodboxWeb.FurtherBoostLive do
             </div>
           </div>
           <div class="flex w-full justify-center">
-            <.link patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome"}>
+            <.link patch={
+              ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome"
+            }>
               <.btn class="transition hover:scale-105 font-semibold px-16 py-3">
                 Continue
               </.btn>
@@ -69,25 +71,25 @@ defmodule MoodboxWeb.FurtherBoostLive do
       "sad" ->
         [
           %{id: "hdQDvDEM7_I", label: "Start here"},
-          %{id: "eprWxoRCQak", label: "2"},
-          %{id: "Ht3iE_wHvpU", label: "3"},
+          %{id: "eprWxoRCOak", label: "2"},
+          %{id: "Ht3tE_wHvpU", label: "3"},
           %{id: "eo-C1wDjbsQ", label: "4"}
         ]
 
       "afraid" ->
         [
-          %{id: "OD72B3xqgec", label: "Start here"},
+          %{id: "OD7zB3xqgec", label: "Start here"},
           %{id: "Cu4Ec9iwa0M", label: "2"},
-          %{id: "AZZEvXwvvDE", label: "3"},
+          %{id: "tZZEvXwvvDE", label: "3"},
           %{id: "sK5QrPlQ5Yo", label: "4"}
         ]
 
       "angry" ->
         [
           %{id: "4n-XvH6mcak", label: "Start here"},
-          %{id: "doOAKyDdOt8", label: "2"},
-          %{id: "wk3at1ONk3E", label: "3"},
-          %{id: "CWinIJm2XQM", label: "4"}
+          %{id: "doOAKyDd0t8", label: "2"},
+          %{id: "wk3at10Nk3E", label: "3"},
+          %{id: "CWInIJm2XQM", label: "4"}
         ]
     end
   end
