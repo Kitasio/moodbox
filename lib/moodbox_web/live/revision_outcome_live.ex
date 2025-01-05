@@ -25,56 +25,65 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
       <.centered_block>
         <div class="max-w-3xl mx-auto text-center px-4">
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6b2a6d] mb-4">
-            <%= get_title(@score) %>
+            Want to dive deeper into calm?
           </h1>
 
-          <p class="text-gray-600 text-lg md:text-xl mb-12">
-            <%= get_description(@score) %>
+          <p class="text-gray-600 text-lg md:text-xl mb-6">
+            We noticed your peacefulness score wasn't quite a 10. That's okay – sometimes finding the perfect mood boost takes a little experimentation!
           </p>
 
-          <h2 class="text-2xl md:text-3xl font-bold text-[#6b2a6d] mb-8">
-            WHAT'S NEXT?
-          </h2>
-
-          <p class="text-xl text-gray-700 mb-10">
-            Unlock even deeper levels of relaxation and well-being through:
+          <p class="text-gray-600 text-lg md:text-xl mb-12">
+            The binaural beats you experienced are powerful tools for relaxation, and their effects can sometimes be subtle. If you're open to it, we recommend giving them another try!
           </p>
 
           <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div>
               <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                Guided Hypnosis Sessions
+                Binaural beats work cumulatively.
               </h3>
               <p class="text-gray-600">
-                Reprogram your subconscious mind for lasting calm with personalized hypnotic journeys.
+                Sometimes, listening for a longer duration or multiple times can amplify their calming effects.
               </p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div>
               <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                Powerful Anchoring Techniques
+                Focus on the sensations.
               </h3>
               <p class="text-gray-600">
-                Learn to trigger feelings of peace instantly with simple practices you can incorporate anywhere.
+                Pay close attention to any shifts in your mood or physical state as the video plays.
               </p>
             </div>
 
-            <div class="bg-white p-6 rounded-lg shadow-md">
+            <div>
               <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                Exclusive Binaural Beat Library
+                Close your eyes and relax.
               </h3>
               <p class="text-gray-600">
-                Access a curated collection of advanced binaural beats designed for deeper relaxation and focus.
+                Minimize distractions and allow yourself to fully immerse yourself in the experience.
               </p>
             </div>
           </div>
 
-          <.button
-            class="bg-[#6b2a6d] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#5a2359] transition-colors"
-            phx-click="unlock_deeper_levels"
-          >
-            UNLOCK DEEPER LEVELS OF RELAXATION
-          </.button>
+          <div class="text-xl font-bold text-[#6b2a6d] mb-8">
+            Let's Find Your Perfect Peace:
+          </div>
+
+          <div class="flex gap-4 justify-center">
+            <.button
+              class="bg-[#6b2a6d] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#5a2359] transition-colors"
+              phx-click="try_again"
+            >
+              TRY AGAIN
+            </.button>
+
+            <.button
+              class="border-2 border-[#6b2a6d] text-[#6b2a6d] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#6b2a6d] hover:text-white transition-colors"
+              phx-click="find_root"
+            >
+              FIND THE ROOT
+            </.button>
+          </div>
         </div>
       </.centered_block>
 
@@ -108,5 +117,12 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
   
   defp get_description(score) do
     "You've reached a #{score} on the peacefulness scale. While you're making progress, there's still room to achieve even deeper states of relaxation."
+  end
+  def handle_event("try_again", _params, socket) do
+    {:noreply, push_navigate(socket, to: ~p"/revision")}
+  end
+
+  def handle_event("find_root", _params, socket) do
+    {:noreply, push_navigate(socket, to: ~p"/root")}
   end
 end
