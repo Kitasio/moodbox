@@ -42,7 +42,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 mb-12">
-              <div>
+              <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
                   Guided Hypnosis Sessions
                 </h3>
@@ -51,7 +51,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
                 </p>
               </div>
 
-              <div>
+              <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
                   Powerful Anchoring Techniques
                 </h3>
@@ -60,7 +60,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
                 </p>
               </div>
 
-              <div>
+              <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
                   Exclusive Binaural Beat Library
                 </h3>
@@ -87,7 +87,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 mb-12">
-              <div>
+              <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
                   Give it another go.
                 </h3>
@@ -96,7 +96,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
                 </p>
               </div>
 
-              <div>
+              <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
                   Focus on the sensations.
                 </h3>
@@ -105,7 +105,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
                 </p>
               </div>
 
-              <div>
+              <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
                   Close your eyes and relax.
                 </h3>

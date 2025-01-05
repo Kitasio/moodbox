@@ -24,7 +24,7 @@ defmodule MoodboxWeb.RootLive do
           </h2>
 
           <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div>
+            <div class="text-left">
               <h3 class="text-2xl font-bold text-[#6b2a6d] mb-4">
                 Dig Deeper,<br />Unearth More
               </h3>
@@ -33,7 +33,7 @@ defmodule MoodboxWeb.RootLive do
               </p>
             </div>
 
-            <div>
+            <div class="text-left">
               <h3 class="text-2xl font-bold text-[#6b2a6d] mb-4">
                 Build Resilience,<br />Not Just Relaxation
               </h3>
@@ -42,7 +42,7 @@ defmodule MoodboxWeb.RootLive do
               </p>
             </div>
 
-            <div>
+            <div class="text-left">
               <h3 class="text-2xl font-bold text-[#6b2a6d] mb-4">
                 Cultivate Lasting<br />Peace
               </h3>
