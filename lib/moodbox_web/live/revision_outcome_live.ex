@@ -26,19 +26,19 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
         <div class="max-w-3xl mx-auto text-center px-4">
           <%= if String.to_integer(@score) >= 8 do %>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6b2a6d] mb-4">
-              <%= get_title(@score) %>
+              Congrats on Creating Peace through Release!
             </h1>
 
             <p class="text-gray-600 text-lg md:text-xl mb-8">
-              <%= get_description(@score) %>
+              Taking control of your inner peace is fantastic and we're thrilled for you.
             </p>
 
             <h2 class="text-2xl font-bold text-[#6b2a6d] mb-6">
-              WHAT'S NEXT?
+              What's Next?
             </h2>
 
             <p class="text-xl text-gray-800 mb-8">
-              Unlock even deeper levels of relaxation and well-being through:
+              It's time to design your desired mood.
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 mb-12">
@@ -152,7 +152,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
   end
 
   defp get_title(score) when score >= 8 do
-    "Congratulations! You've Unlocked Peak Serenity!"
+    "Unlock Bliss Power & Joy"
   end
 
   defp get_title(_score) do
@@ -166,7 +166,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
   end
 
   defp get_description(score) when score >= 8 do
-    "Wow! A #{score} on the peacefulness scale – that's fantastic! We are thrilled to have helped you reach a state of pure calmness."
+    "Taking control of your inner peace is fantastic and we're thrilled for you."
   end
 
   defp get_description(score) do
