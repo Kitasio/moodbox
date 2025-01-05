@@ -216,6 +216,7 @@ defmodule MoodboxWeb.CoreComponents do
   """
   attr :type, :string, default: nil
   attr :class, :string, default: nil
+  attr :variant, :string, default: "filled", values: ["filled", "outlined"]
   attr :rest, :global, include: ~w(disabled form name value)
 
   slot :inner_block, required: true
@@ -225,8 +226,10 @@ defmodule MoodboxWeb.CoreComponents do
     <button
       type={@type}
       class={[
-        "phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3",
-        "text-sm font-semibold leading-6 text-white active:text-white/80",
+        "phx-submit-loading:opacity-75 rounded-full py-3 px-6",
+        "text-sm font-semibold uppercase tracking-wider",
+        @variant == "filled" && "bg-[#6b2a6d] hover:bg-[#5a2459] text-white",
+        @variant == "outlined" && "border-2 border-[#6b2a6d] text-[#6b2a6d] hover:bg-[#6b2a6d] hover:text-white",
         @class
       ]}
       {@rest}
