@@ -25,11 +25,11 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
       <.centered_block>
         <div class="max-w-3xl mx-auto text-center px-4">
           <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6b2a6d] mb-4">
-            Congratulations! You've Unlocked Peak Serenity!
+            <%= get_title(@score) %>
           </h1>
 
           <p class="text-gray-600 text-lg md:text-xl mb-12">
-            Wow! A perfect 10 on the peacefulness scale – that's fantastic! We are thrilled to have helped you reach a state of pure calmness.
+            <%= get_description(@score) %>
           </p>
 
           <h2 class="text-2xl md:text-3xl font-bold text-[#6b2a6d] mb-8">
@@ -81,5 +81,32 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
       <.base_bg />
     </.container>
     """
+  end
+  defp get_title(score) when is_binary(score) do
+    score
+    |> String.to_integer()
+    |> get_title()
+  end
+  
+  defp get_title(score) when score >= 8 do
+    "Congratulations! You've Unlocked Peak Serenity!"
+  end
+  
+  defp get_title(_score) do
+    "Keep Going! Your Journey to Serenity Continues"
+  end
+
+  defp get_description(score) when is_binary(score) do
+    score
+    |> String.to_integer()
+    |> get_description()
+  end
+  
+  defp get_description(score) when score >= 8 do
+    "Wow! A #{score} on the peacefulness scale – that's fantastic! We are thrilled to have helped you reach a state of pure calmness."
+  end
+  
+  defp get_description(score) do
+    "You've reached a #{score} on the peacefulness scale. While you're making progress, there's still room to achieve even deeper states of relaxation."
   end
 end
