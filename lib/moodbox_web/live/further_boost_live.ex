@@ -33,9 +33,6 @@ defmodule MoodboxWeb.FurtherBoostLive do
           </.p>
           <div class="aspect-video w-full">
             <div class="w-full h-full">
-              <p class="font-semibold text-[#6b2a6d] text-center uppercase">
-                <%= Enum.at(@videos, @video_index).label %>
-              </p>
               <iframe
                 class="w-full h-full"
                 src={"https://www.youtube.com/embed/#{Enum.at(@videos, @video_index).id}"}
@@ -79,26 +76,26 @@ defmodule MoodboxWeb.FurtherBoostLive do
     case mood do
       "sad" ->
         [
-          %{id: "Ht3tE_wHvpU", label: "3"},
-          %{id: "eo-C1wDjbsQ", label: "4"},
-          %{id: "eprWxoRCOak", label: "2"},
-          %{id: "hdQDvDEM7_I", label: "Start here"}
+          %{id: "Ht3tE_wHvpU"},
+          %{id: "eo-C1wDjbsQ"},
+          %{id: "eprWxoRCOak"},
+          %{id: "hdQDvDEM7_I"}
         ]
 
       "afraid" ->
         [
-          %{id: "tZZEvXwvvDE", label: "3"},
-          %{id: "sK5QrPlQ5Yo", label: "4"},
-          %{id: "Cu4Ec9iwa0M", label: "2"},
-          %{id: "OD7zB3xqgec", label: "Start here"}
+          %{id: "tZZEvXwvvDE"},
+          %{id: "sK5QrPlQ5Yo"},
+          %{id: "Cu4Ec9iwa0M"},
+          %{id: "OD7zB3xqgec"}
         ]
 
       "angry" ->
         [
-          %{id: "wk3at10Nk3E", label: "3"},
-          %{id: "CWInIJm2XQM", label: "4"},
-          %{id: "doOAKyDd0t8", label: "2"},
-          %{id: "4n-XvH6mcak", label: "Start here"}
+          %{id: "wk3at10Nk3E"},
+          %{id: "CWInIJm2XQM"},
+          %{id: "doOAKyDd0t8"},
+          %{id: "4n-XvH6mcak"}
         ]
     end
   end
