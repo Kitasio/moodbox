@@ -38,7 +38,7 @@ defmodule MoodboxWeb.Router do
     live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision/:score",
          RevisionOutcomeLive
 
-    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/further-boost",
+    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision/:score/further-boost",
          FurtherBoostLive
 
     live "/root", RootLive
