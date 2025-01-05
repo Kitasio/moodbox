@@ -71,7 +71,11 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </div>
 
             <.button variant="filled" class="text-lg" phx-click="unlock_deeper">
-              UNLOCK DEEPER LEVELS OF RELAXATION
+              <.link patch={
+                ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome/classical/revision/#{@score}/further-boost"
+              }>
+                UNLOCK DEEPER LEVELS OF RELAXATION
+              </.link>
             </.button>
           <% else %>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6b2a6d] mb-4">
