@@ -5,8 +5,7 @@ defmodule MoodboxWeb.NumbLive do
     {:ok,
      socket
      |> assign(videos: videos())
-     |> assign(video_index: 0)
-     |> assign(show_modal: false)}
+     |> assign(video_index: 0)}
   end
 
   def render(assigns) do
@@ -15,10 +14,10 @@ defmodule MoodboxWeb.NumbLive do
       <.centered_block>
         <div class="flex flex-col gap-10">
           <.subheading>
-            Let's help you identify and feel your emotions
+            Let’s identify your emotions.
           </.subheading>
           <.p>
-            Expand the videos to full screen and allow the sounds and visuals to fully immerse you.
+            Watch the following videos to identify which one feels most like how you feel…
           </.p>
           <div class="aspect-video w-full">
             <div class="w-full h-full">
@@ -35,7 +34,11 @@ defmodule MoodboxWeb.NumbLive do
             </div>
           </div>
           <div class="flex w-full justify-center gap-4">
-            <.button phx-click="show_modal" class="transition hover:scale-105 font-semibold px-8 py-3">
+            <.button
+              phx-click={show_modal("about-modal")}
+              class="transition hover:scale-105 font-semibold px-8 py-3"
+              variant="outlined"
+            >
               More Info
             </.button>
             <%= if @video_index < length(@videos) - 1 do %>
@@ -56,14 +59,14 @@ defmodule MoodboxWeb.NumbLive do
         </div>
       </.centered_block>
 
-      <.modal :if={@show_modal} on_cancel={JS.patch(~p"/moods/numb")}>
+      <.modal id="about-modal" on_cancel={hide_modal("about-modal")}>
         <.header>About These Videos</.header>
-        <.p class="mt-4">
+        <p class="mt-4">
           These tracks were designed with sounds and frequencies to help you identify the feeling of anger, fear or sadness. Once provoked, heavy emotions like frustration, anxiety, overwhelm, disappointment, or grief can be released.
-        </.p>
-        <.p class="mt-4">
+        </p>
+        <p class="mt-4">
           Imagery and disharmonious sounds ranging from fires, rain, tea kettles, revving engines, traffic, bass, wind, subdued piano notes, sighs, thunder, sirens, fast heartbeats, ticking clocks, and frequencies below 20hz come together to deconstruct and honor dark emotions. Once we identify and feel an emotion, we can release it.
-        </.p>
+        </p>
       </.modal>
 
       <.base_bg />
@@ -75,16 +78,11 @@ defmodule MoodboxWeb.NumbLive do
     {:noreply, update(socket, :video_index, &(&1 + 1))}
   end
 
-  def handle_event("show_modal", _, socket) do
-    {:noreply, assign(socket, show_modal: true)}
-  end
-
   defp videos do
     [
-      %{id: "tZZEvXwvvDE"},
-      %{id: "sK5QrPlQ5Yo"},
-      %{id: "Cu4Ec9iwa0M"},
-      %{id: "OD7zB3xqgec"}
+      %{id: "7sNZJ5N0F54"},
+      %{id: "p8kltPdVLr4"},
+      %{id: "9_VnTKNNb60"}
     ]
   end
 end
