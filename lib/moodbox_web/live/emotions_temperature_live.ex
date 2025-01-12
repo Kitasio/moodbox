@@ -11,13 +11,6 @@ defmodule MoodboxWeb.EmotionsTemperatureLive do
       <.centered_block>
         <div class="max-w-4xl mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
-            <div class="w-16 h-16 bg-[#8CD4C5] rounded-full flex items-center justify-center">
-              <div
-                class="w-10 h-10 bg-contain bg-center bg-no-repeat"
-                style="background-image: url('/images/snowflake.svg')"
-              >
-              </div>
-            </div>
             <h1 class="text-4xl md:text-5xl font-bold text-[#6b2a6d]">
               Our emotions also have a temperature.
             </h1>
