@@ -11,7 +11,7 @@ defmodule MoodboxWeb.MoodLive do
         <div class="mt-10 py-10 sm:px-14 flex flex-row flex-wrap">
           <div :for={mood <- @moods} class="w-1/2 lg:w-1/4 p-5 lg:p-10">
             <.link
-              patch={~p"/moods/#{mood.resource}"}
+              patch={if mood.resource == "not-sure", do: ~p"/moods/not-sure", else: ~p"/moods/#{mood.resource}"}
               class="block transition-transform hover:scale-105"
             >
               <div class="flex flex-col items-center gap-5 lg:gap-10">

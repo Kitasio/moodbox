@@ -22,6 +22,7 @@ defmodule MoodboxWeb.Router do
 
     live "/", HomeLive
     live "/moods", MoodLive
+    live "/moods/not-sure", FeelingCheckLive
     live "/moods/:mood", IntensityLive
     live "/moods/:mood/:intensity", TextureLive
     live "/moods/:mood/:intensity/:texture", LocationLive
