@@ -66,7 +66,7 @@ defmodule MoodboxWeb.EmotionsEducationLive do
           </div>
 
           <div class="flex justify-center">
-            <.link patch={~p"/moods"}>
+            <.link patch={~p"/moods/emotions-temperature"}>
               <.button variant="filled" class="text-lg">
                 CONTINUE
               </.button>
