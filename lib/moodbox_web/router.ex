@@ -25,6 +25,7 @@ defmodule MoodboxWeb.Router do
     live "/moods/not-sure", FeelingCheckLive
     live "/moods/numb", NumbLive
     live "/moods/overwhelmed", OverwhelmedLive
+    live "/moods/emotions-education", EmotionsEducationLive
     live "/moods/:mood", IntensityLive
     live "/moods/:mood/:intensity", TextureLive
     live "/moods/:mood/:intensity/:texture", LocationLive

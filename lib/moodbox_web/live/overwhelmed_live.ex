@@ -32,7 +32,7 @@ defmodule MoodboxWeb.OverwhelmedLive do
             </div>
           </div>
           <div class="flex w-full justify-center gap-4">
-            <.link patch={~p"/"}>
+            <.link patch={~p"/moods/emotions-education"}>
               <.btn class="transition hover:scale-105 font-semibold px-8 py-3">
                 Continue
               </.btn>

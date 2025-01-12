@@ -49,7 +49,7 @@ defmodule MoodboxWeb.NumbLive do
                 Next
               </.button>
             <% else %>
-              <.link patch={~p"/"}>
+              <.link patch={~p"/moods/emotions-education"}>
                 <.btn class="transition hover:scale-105 font-semibold px-8 py-3">
                   Continue
                 </.btn>
