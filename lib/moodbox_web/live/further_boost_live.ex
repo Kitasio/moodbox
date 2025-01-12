@@ -47,13 +47,14 @@ defmodule MoodboxWeb.FurtherBoostLive do
           </div>
           <div class="flex w-full justify-center">
             <%= if @video_index < length(@videos) - 1 do %>
-              <.button phx-click="next_video" class="transition hover:scale-105 font-semibold px-16 py-3">
+              <.button
+                phx-click="next_video"
+                class="transition hover:scale-105 font-semibold px-16 py-3"
+              >
                 Next
               </.button>
             <% else %>
-              <.link patch={
-                ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome"
-              }>
+              <.link patch={~p"/"}>
                 <.btn class="transition hover:scale-105 font-semibold px-16 py-3">
                   Continue
                 </.btn>
