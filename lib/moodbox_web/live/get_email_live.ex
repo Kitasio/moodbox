@@ -43,6 +43,11 @@ defmodule MoodboxWeb.GetEmailLive do
     {:noreply, assign_form(socket, Map.put(changeset, :action, :validate))}
   end
 
+  def handle_event("skip", _, socket) do
+    %URI{path: path} = URI.parse(socket.assigns.uri)
+    {:noreply, push_navigate(socket, to: "#{path}/outcome")}
+  end
+
   def handle_event("save", %{"user" => user_params}, socket) do
     case Accounts.add_user(user_params) do
       {:ok, _user} ->
@@ -62,7 +67,13 @@ defmodule MoodboxWeb.GetEmailLive do
 
   def render(assigns) do
     ~H"""
-    <.container>
+    <.container class="relative">
+      <button
+        phx-click="skip"
+        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-sm"
+      >
+        Skip for now
+      </button>
       <.centered_block>
         <.subheading>
           You've Taken a Step Towards Understanding Your Emotions
