@@ -13,7 +13,7 @@ defmodule MoodboxWeb.OverwhelmedLive do
           <h1 class="text-4xl sm:text-5xl font-bold text-[#6b2a6d] text-center">
             Take a Breath: Calm Your Mind and Body
           </h1>
-          
+
           <p class="text-xl text-center text-gray-600">
             Feeling overwhelmed can leave you short of breath and out of control.
             But sometimes, the simplest solution is the most effective. Play the
