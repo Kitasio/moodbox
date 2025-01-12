@@ -70,7 +70,7 @@ defmodule MoodboxWeb.GetEmailLive do
     <.container class="relative">
       <button
         phx-click="skip"
-        class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-sm"
+        class="z-20 absolute top-2 md:top-4 right-4 text-gray-400 hover:text-gray-600 text-sm"
       >
         Skip for now
       </button>
