@@ -12,13 +12,17 @@ defmodule MoodboxWeb.EmotionsEducationLive do
         <div class="max-w-4xl mx-auto px-4">
           <div class="flex items-center gap-4 mb-8">
             <div class="w-16 h-16 bg-[#8CD4C5] rounded-full flex items-center justify-center">
-              <div class="w-10 h-10 bg-contain bg-center bg-no-repeat" style="background-image: url('/images/chat.svg')"></div>
+              <div
+                class="w-10 h-10 bg-contain bg-center bg-no-repeat"
+                style="background-image: url('/images/chat.svg')"
+              >
+              </div>
             </div>
             <h1 class="text-4xl md:text-5xl font-bold text-[#6b2a6d]">
               Our emotions carry messages.
             </h1>
           </div>
-          
+
           <p class="text-xl text-gray-600 mb-12">
             What are yours telling you?
           </p>
@@ -52,7 +56,7 @@ defmodule MoodboxWeb.EmotionsEducationLive do
               <h3 class="text-2xl font-bold text-[#6b2a6d] mb-4">Sadness</h3>
               <p class="font-semibold mb-2">Message:</p>
               <p class="text-gray-600 mb-4">
-                Sadness indicates a sense of loss, disappointment. Sadness is like an energy leak that can be triggered by unmet needs or expectations.
+                Sadness indicates a sense of loss or disappointment. Sadness is like an energy leak that can be triggered by unmet needs or expectations.
               </p>
               <p class="font-semibold mb-2">Purpose:</p>
               <p class="text-gray-600">
