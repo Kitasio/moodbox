@@ -28,7 +28,7 @@ defmodule MoodboxWeb.DescriptionLive do
 
         <div class="md:hidden mt-2 text-center">
           <button phx-click={show_modal("descriptions-modal")} class="italic">
-            More Info
+            More Info ⓠ
           </button>
         </div>
 
