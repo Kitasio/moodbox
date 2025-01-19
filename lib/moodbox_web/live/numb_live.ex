@@ -9,14 +9,14 @@ defmodule MoodboxWeb.NumbLive do
     ~H"""
     <.container>
       <.centered_block>
-        <div class="flex flex-col gap-10">
+        <div class="flex flex-col justify-center items-center gap-10">
           <.subheading>
             Let’s identify your emotions.
           </.subheading>
           <.p>
             Watch the following videos to identify which one feels most like how you feel…
           </.p>
-          <div class="flex flex-col md:flex-row gap-10 xl:gap-20 w-full">
+          <div class="flex flex-col md:flex-row gap-8 w-full">
             <div :for={video <- @videos} class="aspect-video w-full">
               <div class="w-full h-full">
                 <iframe
@@ -41,9 +41,9 @@ defmodule MoodboxWeb.NumbLive do
               More Info
             </.button>
             <.link patch={~p"/moods/emotions-education"}>
-              <.btn class="transition hover:scale-105 font-semibold px-8 py-3">
+              <.button class="transition hover:scale-105 font-semibold px-8 py-3">
                 Continue
-              </.btn>
+              </.button>
             </.link>
           </div>
         </div>
@@ -63,7 +63,6 @@ defmodule MoodboxWeb.NumbLive do
     </.container>
     """
   end
-
 
   defp videos do
     [

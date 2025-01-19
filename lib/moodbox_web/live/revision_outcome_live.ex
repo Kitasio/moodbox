@@ -124,7 +124,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </p>
 
             <div class="flex gap-4 justify-center">
-              <.button variant="filled" class="text-lg" phx-click="try_again">
+              <.button variant="filled" class="text-lg">
                 <.link patch={
                   ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome/classical"
                 }>
