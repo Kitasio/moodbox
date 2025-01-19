@@ -28,35 +28,35 @@ defmodule MoodboxWeb.DescriptionLive do
 
         <div class="mt-10 lg:mt-20">
           <div :for={outcome <- @outcomes} class="mt-10 flex flex-col w-44 sm:w-96">
-            <div class="flex gap-2">
-              <.link patch={
-                ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"
-              }>
-                <.btn class="transition hover:scale-105">
-                  <%= outcome.name %>
-                </.btn>
-              </.link>
-              <button
-                phx-click={show_modal("#{outcome.resource}-modal")}
-                class="md:hidden transition hover:scale-105 font-semibold"
-              >
-                ?
-              </button>
-            </div>
+            <.link patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"}>
+              <.btn class="transition hover:scale-105">
+                <%= outcome.name %>
+              </.btn>
+            </.link>
             <span class="hidden md:block mt-2 text-center text-sm text-gray-600">
               <%= outcome.description %>
             </span>
-            <.modal
-              id={"#{outcome.resource}-modal"}
-              on_cancel={hide_modal("#{outcome.resource}-modal")}
-            >
-              <.header><%= outcome.name %></.header>
-              <p class="mt-4">
-                <%= outcome.description %>
-              </p>
-            </.modal>
           </div>
         </div>
+
+        <div class="md:hidden mt-8 text-center">
+          <button
+            phx-click={show_modal("descriptions-modal")}
+            class="text-brand hover:text-brand/90 font-semibold"
+          >
+            More Info
+          </button>
+        </div>
+
+        <.modal id="descriptions-modal" on_cancel={hide_modal("descriptions-modal")}>
+          <.header>Descriptions</.header>
+          <div class="mt-4 space-y-4">
+            <div :for={outcome <- @outcomes} class="space-y-1">
+              <h3 class="font-semibold"><%= outcome.name %></h3>
+              <p class="text-gray-600"><%= outcome.description %></p>
+            </div>
+          </div>
+        </.modal>
       </.centered_block>
 
       <.base_bg />
