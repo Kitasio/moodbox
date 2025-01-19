@@ -228,8 +228,10 @@ defmodule MoodboxWeb.CoreComponents do
       class={[
         "phx-submit-loading:opacity-75 rounded-full py-3 px-6",
         "text-sm font-semibold uppercase tracking-wider",
-        @variant == "filled" && "bg-[#6b2a6d] hover:bg-[#5a2459] text-white",
-        @variant == "outlined" && "border-2 border-[#6b2a6d] text-[#6b2a6d] hover:bg-[#6b2a6d] hover:text-white",
+        @variant == "filled" &&
+          "bg-[#6b2a6d] hover:bg-[#5a2459] text-white border-2 border-[#6b2a6d]",
+        @variant == "outlined" &&
+          "border-2 border-[#6b2a6d] text-[#6b2a6d] hover:bg-[#6b2a6d] hover:text-white",
         @class
       ]}
       {@rest}
