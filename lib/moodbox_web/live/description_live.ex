@@ -26,9 +26,27 @@ defmodule MoodboxWeb.DescriptionLive do
           Which word best describes this feeling? Remember your choice.
         </.subheading>
 
-        <div class="mt-10 lg:mt-20">
+        <div class="md:hidden mt-2 text-center">
+          <button phx-click={show_modal("descriptions-modal")} class="italic">
+            More Info
+          </button>
+        </div>
+
+        <.modal id="descriptions-modal" on_cancel={hide_modal("descriptions-modal")}>
+          <.header>Descriptions</.header>
+          <div class="mt-2 space-y-4">
+            <div :for={outcome <- @outcomes} class="space-y-1">
+              <h3 class="font-semibold"><%= outcome.name %></h3>
+              <p class="text-gray-600"><%= outcome.description %></p>
+            </div>
+          </div>
+        </.modal>
+
+        <div class="mt-8 lg:mt-16">
           <div :for={outcome <- @outcomes} class="mt-10 flex flex-col w-44 sm:w-96">
-            <.link patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"}>
+            <.link patch={
+              ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"
+            }>
               <.btn class="transition hover:scale-105">
                 <%= outcome.name %>
               </.btn>
@@ -38,25 +56,6 @@ defmodule MoodboxWeb.DescriptionLive do
             </span>
           </div>
         </div>
-
-        <div class="md:hidden mt-8 text-center">
-          <button
-            phx-click={show_modal("descriptions-modal")}
-            class="text-brand hover:text-brand/90 font-semibold"
-          >
-            More Info
-          </button>
-        </div>
-
-        <.modal id="descriptions-modal" on_cancel={hide_modal("descriptions-modal")}>
-          <.header>Descriptions</.header>
-          <div class="mt-4 space-y-4">
-            <div :for={outcome <- @outcomes} class="space-y-1">
-              <h3 class="font-semibold"><%= outcome.name %></h3>
-              <p class="text-gray-600"><%= outcome.description %></p>
-            </div>
-          </div>
-        </.modal>
       </.centered_block>
 
       <.base_bg />
