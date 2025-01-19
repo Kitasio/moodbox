@@ -86,10 +86,6 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               We noticed your peacefulness score wasn't quite a ten. That's okay – release happens in layers!
             </p>
 
-            <p class="text-gray-600 text-xs md:text-base mb-12">
-              The binaural beats you experienced are powerful tools for relaxation, and their effects can sometimes be subtle. If you're open to it, we recommend giving them another try!
-            </p>
-
             <div class="grid md:grid-cols-3 gap-8 mb-12">
               <div class="text-left">
                 <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
@@ -147,34 +143,6 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
       <.base_bg />
     </.container>
     """
-  end
-
-  defp get_title(score) when is_binary(score) do
-    score
-    |> String.to_integer()
-    |> get_title()
-  end
-
-  defp get_title(score) when score >= 8 do
-    "Unlock Bliss Power & Joy"
-  end
-
-  defp get_title(_score) do
-    "Keep Going! Your Journey to Serenity Continues"
-  end
-
-  defp get_description(score) when is_binary(score) do
-    score
-    |> String.to_integer()
-    |> get_description()
-  end
-
-  defp get_description(score) when score >= 8 do
-    "Taking control of your inner peace is fantastic and we're thrilled for you."
-  end
-
-  defp get_description(score) do
-    "You've reached a #{score} on the peacefulness scale. While you're making progress, there's still room to achieve even deeper states of relaxation."
   end
 
   def handle_event("find_root", _params, socket) do
