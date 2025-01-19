@@ -27,18 +27,33 @@ defmodule MoodboxWeb.DescriptionLive do
         </.subheading>
 
         <div class="mt-10 lg:mt-20">
-          <.link
-            :for={outcome <- @outcomes}
-            patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"}
-            class="mt-10 flex flex-col w-44 sm:w-96"
-          >
-            <.btn class="transition hover:scale-105">
-              <%= outcome.name %>
-            </.btn>
+          <div :for={outcome <- @outcomes} class="mt-10 flex flex-col w-44 sm:w-96">
+            <div class="flex gap-2">
+              <.link
+                patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"}
+              >
+                <.btn class="transition hover:scale-105">
+                  <%= outcome.name %>
+                </.btn>
+              </.link>
+              <.button
+                phx-click={show_modal("#{outcome.resource}-modal")}
+                class="md:hidden transition hover:scale-105 font-semibold"
+                variant="outlined"
+              >
+                ?
+              </.button>
+            </div>
             <span class="hidden md:block mt-2 text-center text-sm text-gray-600">
               <%= outcome.description %>
             </span>
-          </.link>
+            <.modal id={"#{outcome.resource}-modal"} on_cancel={hide_modal("#{outcome.resource}-modal")}>
+              <.header><%= outcome.name %></.header>
+              <p class="mt-4">
+                <%= outcome.description %>
+              </p>
+            </.modal>
+          </div>
         </div>
       </.centered_block>
 
