@@ -1,19 +1,12 @@
 defmodule MoodboxWeb.TemperatureLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-    color = params["color"]
+  def mount(_params, _session, socket) do
+    {:ok, socket |> assign(temperatures: temperatures())}
+  end
 
-    {:ok,
-     socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(color: color)
-     |> assign(temperatures: temperatures())}
+  def handle_params(_params, uri, socket) do
+    {:noreply, assign(socket, :current_path, uri)}
   end
 
   def render(assigns) do
@@ -27,7 +20,7 @@ defmodule MoodboxWeb.TemperatureLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={temp <- @temperatures}
-            patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@color}/#{temp.resource}"}
+            patch={String.replace(@current_path, ~r"/[^/]+$", "/#{temp.resource}")}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105">

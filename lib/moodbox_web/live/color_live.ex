@@ -1,19 +1,15 @@
 defmodule MoodboxWeb.ColorLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
+  def mount(_params, _session, socket) do
+    {:ok, socket |> assign(colors: colors("angry"))}
+  end
 
-    colors = colors(mood)
-
-    {:ok,
-     socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(colors: colors)}
+  def handle_params(%{"mood" => mood}, uri, socket) do
+    {:noreply, 
+     socket 
+     |> assign(:current_path, uri)
+     |> assign(:colors, colors(mood))}
   end
 
   def render(assigns) do
@@ -27,7 +23,7 @@ defmodule MoodboxWeb.ColorLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={color <- @colors}
-            patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{color.resource}"}
+            patch={String.replace(@current_path, ~r"/[^/]+$", "/#{color.resource}")}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105" style={"background-color: #{color.hex}"}>

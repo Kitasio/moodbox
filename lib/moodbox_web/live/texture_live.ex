@@ -1,15 +1,12 @@
 defmodule MoodboxWeb.TextureLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"] || "angry"
-    intensity = params["intensity"]
+  def mount(_params, _session, socket) do
+    {:ok, socket |> assign(textures: textures())}
+  end
 
-    {:ok,
-     socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(textures: textures())}
+  def handle_params(_params, uri, socket) do
+    {:noreply, assign(socket, :current_path, uri)}
   end
 
   def render(assigns) do
@@ -23,7 +20,7 @@ defmodule MoodboxWeb.TextureLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={texture <- @textures}
-            patch={~p"/moods/#{@mood}/#{@intensity}/#{texture.resource}"}
+            patch={String.replace(@current_path, ~r"/[^/]+$", "/#{texture.resource}")}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105">
