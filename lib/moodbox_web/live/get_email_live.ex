@@ -3,29 +3,17 @@ defmodule MoodboxWeb.GetEmailLive do
   alias Moodbox.Accounts
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-    location = params["location"]
-    description = params["description"]
-
+  def mount(_params, _session, socket) do
     changeset = Accounts.change_user_nopass_registration(%User{})
 
     {:ok,
      socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(location: location)
-     |> assign(description: description)
      |> assign(check_errors: false)
      |> assign_form(changeset)}
   end
 
   def handle_params(_params, uri, socket) do
-    socket = assign(socket, uri: uri)
-    {:noreply, socket}
+    {:noreply, assign(socket, :current_path, uri)}
   end
 
   defp assign_form(socket, %Ecto.Changeset{} = changeset) do

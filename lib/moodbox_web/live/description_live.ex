@@ -1,21 +1,17 @@
 defmodule MoodboxWeb.DescriptionLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-    location = params["location"]
+  def mount(_params, _session, socket) do
+    {:ok, socket}
+  end
 
+  def handle_params(%{"mood" => mood, "intensity" => intensity}, uri, socket) do
     outcomes = choose_outcome(mood, intensity |> String.to_integer())
-
-    {:ok,
-     socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(location: location)
-     |> assign(outcomes: outcomes)}
+    
+    {:noreply, 
+     socket 
+     |> assign(:current_path, uri)
+     |> assign(:outcomes, outcomes)}
   end
 
   def render(assigns) do
@@ -60,9 +56,7 @@ defmodule MoodboxWeb.DescriptionLive do
 
         <div class="mt-8 lg:mt-16">
           <div :for={outcome <- @outcomes} class="mt-8 md:mt-10 flex flex-col w-44 sm:w-96">
-            <.link patch={
-              ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{outcome.resource}"
-            }>
+            <.link patch={@current_path <> "/#{outcome.resource}"}>
               <.btn class="transition hover:scale-105">
                 <%= outcome.name %>
               </.btn>
