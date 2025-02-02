@@ -6,8 +6,8 @@ defmodule MoodboxWeb.ColorLive do
   end
 
   def handle_params(%{"mood" => mood}, uri, socket) do
-    {:noreply, 
-     socket 
+    {:noreply,
+     socket
      |> assign(:current_path, uri)
      |> assign(:colors, colors(mood))}
   end
@@ -36,13 +36,17 @@ defmodule MoodboxWeb.ColorLive do
       <.base_bg />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[35%]"})}
+        phx-mounted={
+          JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[35%]"})
+        }
         class="absolute translate-y-[60%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
       />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[35%]"})}
+        phx-mounted={
+          JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[35%]"})
+        }
         class="absolute translate-y-[60%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
       />
