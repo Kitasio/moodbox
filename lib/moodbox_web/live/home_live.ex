@@ -19,14 +19,8 @@ defmodule MoodboxWeb.HomeLive do
         >
           You Have the Power to&nbsp;Transform Your Mood
         </h1>
-        <h2
-          phx-mounted={JS.transition({"ease-out duration-300", "opacity-0", "opacity-100"})}
-          class="text-md sm:text-lg mt-2 sm:mt-4 xl:mt-6 md:text-2xl xl:text-3xl font-medium text-gray-800"
-        >
-          Discover Your Path to a Brighter Mood
-        </h2>
         <!-- Spacer to ensure margin is applied -->
-        <div class="mt-16 sm:mt-20"></div>
+        <div class="mt-8 sm:mt-10"></div>
         <.link patch={~p"/moods"}>
           <button
             class="transition hover:scale-105 px-8 py-4 xl:py-6 xl:px-12 xl:text-xl font-bold tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white"
