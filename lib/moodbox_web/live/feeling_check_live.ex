@@ -3,8 +3,8 @@ defmodule MoodboxWeb.FeelingCheckLive do
 
   def render(assigns) do
     ~H"""
-    <.container>
-      <.centered_block>
+    <.container class="min-h-screen flex items-center">
+      <.centered_block class="w-full">
         <div class="flex flex-col items-center gap-8 md:gap-12">
           <.subheading>
             Are you feeling too much or is it hard to feel?
