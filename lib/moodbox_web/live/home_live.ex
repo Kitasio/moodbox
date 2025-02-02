@@ -29,7 +29,39 @@ defmodule MoodboxWeb.HomeLive do
             EXPLORE MOOD IN A BOX
           </button>
         </.link>
+        <div class="mt-4 text-sm text-gray-600">
+          by clicking you agree to the <button class="italic underline" phx-click={show_modal("terms-modal")}>terms and conditions</button>
+        </div>
       </div>
+
+      <.modal id="terms-modal" on_cancel={hide_modal("terms-modal")}>
+        <h2 class="text-xl font-bold mb-4">Welcome to Mood in a Box!</h2>
+        
+        <p class="mb-4">
+          This interactive educational experience is designed to help you explore your mood with sensory healing based experiences that help you feel better.
+        </p>
+
+        <p class="mb-4 font-bold">
+          PLEASE NOTE: Mood in a Box is not a replacement for therapy or medical advice. If you are struggling with your mental health, please seek help from a qualified professional.
+        </p>
+
+        <p class="mb-4">
+          The results of this quiz are based on your answers and should not be taken as a diagnosis.
+        </p>
+
+        <p class="mb-4">
+          If you are feeling overwhelmed, suicidal, or are having thoughts of harming yourself or others, please seek immediate help. You can call a crisis hotline or reach out to a mental health professional.
+        </p>
+
+        <p class="mb-4">
+          By using Mood in a Box, you agree to these terms and conditions.
+        </p>
+
+        <p>
+          Thank you for using Mood in a Box! We hope it helps you on your journey to better mental well-being.
+        </p>
+      </.modal>
+
       <img
         phx-mounted={JS.transition({"ease-out duration-300", "opacity-0", "opacity-100"})}
         class="absolute inset-0 h-full w-full object-cover z-0 top-32 sm:top-14 md:top-20"
