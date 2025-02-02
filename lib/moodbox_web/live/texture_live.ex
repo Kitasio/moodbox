@@ -20,7 +20,7 @@ defmodule MoodboxWeb.TextureLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={texture <- @textures}
-            patch={String.replace(@current_path, ~r"/[^/]+$", "/#{texture.resource}")}
+            patch={@current_path <> "/#{texture.resource}"}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105">
