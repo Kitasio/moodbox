@@ -3,13 +3,13 @@ defmodule MoodboxWeb.FeelingCheckLive do
 
   def render(assigns) do
     ~H"""
-    <.container class="min-h-screen flex items-center">
-      <.centered_block class="w-full">
-        <div class="flex flex-col items-center gap-8 md:gap-12">
-          <.subheading>
-            Are you feeling too much or is it hard to feel?
-          </.subheading>
-          
+    <.container class="min-h-screen">
+      <.centered_block class="w-full h-full flex flex-col">
+        <.subheading class="mt-8 md:mt-12">
+          Are you feeling too much or is it hard to feel?
+        </.subheading>
+        
+        <div class="flex-1 flex items-center justify-center">
           <div class="flex flex-col gap-8 w-full max-w-sm px-4">
             <div class="text-center space-y-3">
               <.link patch={~p"/moods/overwhelmed"} class="w-full">
