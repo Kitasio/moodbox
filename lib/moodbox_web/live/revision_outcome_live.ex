@@ -6,8 +6,8 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
   end
 
   def handle_params(%{"score" => score}, uri, socket) do
-    {:noreply, 
-     socket 
+    {:noreply,
+     socket
      |> assign(:current_path, uri)
      |> assign(:score, score)}
   end
@@ -63,7 +63,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               </div>
             </div>
 
-            <.button variant="filled" class="text-lg" phx-click="unlock_deeper">
+            <.button variant="filled" class="text-lg">
               <.link patch={@current_path <> "/further-boost"}>
                 UNLOCK DEEPER LEVELS OF RELAXATION
               </.link>
