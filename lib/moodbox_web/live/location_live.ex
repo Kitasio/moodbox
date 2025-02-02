@@ -1,22 +1,11 @@
 defmodule MoodboxWeb.LocationLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-
-    {:ok,
-     socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(locations: locations())}
+  def mount(_params, _session, socket) do
+    {:ok, socket |> assign(locations: locations())}
   end
 
   def handle_params(_params, uri, socket) do
-    IO.puts("Current path: #{uri}")
-
     {:noreply, assign(socket, :current_path, uri)}
   end
 
@@ -31,7 +20,7 @@ defmodule MoodboxWeb.LocationLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={location <- @locations}
-            patch={~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{location.resource}"}
+            patch={@current_path <> "/#{location.resource}"}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105">
