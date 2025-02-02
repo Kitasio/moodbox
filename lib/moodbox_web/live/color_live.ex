@@ -56,28 +56,28 @@ defmodule MoodboxWeb.ColorLive do
 
   defp colors("angry") do
     [
-      %{name: "Deep Red", resource: "deep-red", hex: "#8B0000"},
-      %{name: "Crimson", resource: "crimson", hex: "#DC143C"},
-      %{name: "Scarlet", resource: "scarlet", hex: "#FF2400"},
-      %{name: "Blood Red", resource: "blood-red", hex: "#880808"}
+      %{name: "Deep Red", resource: "deep-red", hex: "#b91c1c"},
+      %{name: "Crimson", resource: "crimson", hex: "#991b1b"},
+      %{name: "Scarlet", resource: "scarlet", hex: "#7f1d1d"},
+      %{name: "Blood Red", resource: "blood-red", hex: "#450a0a"}
     ]
   end
 
   defp colors("afraid") do
     [
-      %{name: "Pale Yellow", resource: "pale-yellow", hex: "#FFF68F"},
-      %{name: "Light Gold", resource: "light-gold", hex: "#FFD700"},
-      %{name: "Amber", resource: "amber", hex: "#FFBF00"},
-      %{name: "Mustard", resource: "mustard", hex: "#FFD700"}
+      %{name: "Pale Yellow", resource: "pale-yellow", hex: "#b45309"},
+      %{name: "Light Gold", resource: "light-gold", hex: "#92400e"},
+      %{name: "Amber", resource: "amber", hex: "#78350f"},
+      %{name: "Mustard", resource: "mustard", hex: "#451a03"}
     ]
   end
 
   defp colors("sad") do
     [
-      %{name: "Navy Blue", resource: "navy-blue", hex: "#000080"},
-      %{name: "Steel Blue", resource: "steel-blue", hex: "#4682B4"},
-      %{name: "Deep Blue", resource: "deep-blue", hex: "#00008B"},
-      %{name: "Midnight Blue", resource: "midnight-blue", hex: "#191970"}
+      %{name: "Navy Blue", resource: "navy-blue", hex: "#0369a1"},
+      %{name: "Steel Blue", resource: "steel-blue", hex: "#075985"},
+      %{name: "Deep Blue", resource: "deep-blue", hex: "#0c4a6e"},
+      %{name: "Midnight Blue", resource: "midnight-blue", hex: "#082f49"}
     ]
   end
 end
