@@ -34,7 +34,7 @@ defmodule MoodboxWeb.GetEmailLive do
   def handle_event("save", %{"user" => user_params}, socket) do
     case Accounts.add_user(user_params) do
       {:ok, _user} ->
-        %URI{path: path} = URI.parse(socket.assigns.uri)
+        %URI{path: path} = URI.parse(socket.assigns.current_path)
 
         socket =
           push_navigate(socket,
