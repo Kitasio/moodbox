@@ -708,7 +708,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def container(assigns) do
     ~H"""
-    <div class={"relative h-screen w-full #{@class}"}>
+    <div class={"relative h-dvh w-full #{@class}"}>
       <%= render_slot(@inner_block) %>
     </div>
     """
@@ -719,7 +719,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def centered_block(assigns) do
     ~H"""
-    <div class={"max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center min-h-dvh md:min-h-screen lg:pb-32 #{@class}"}>
+    <div class={"max-w-screen-xl mx-auto p-6 z-20 relative flex flex-col items-center justify-center md:min-h-screen lg:pb-32 #{@class}"}>
       <%= render_slot(@inner_block) %>
     </div>
     """
