@@ -14,6 +14,12 @@ defmodule MoodboxWeb.LocationLive do
      |> assign(locations: locations())}
   end
 
+  def handle_params(_params, uri, socket) do
+    IO.puts("Current path: #{uri}")
+
+    {:noreply, assign(socket, :current_path, uri)}
+  end
+
   def render(assigns) do
     ~H"""
     <.container class="overflow-hidden">
@@ -38,13 +44,17 @@ defmodule MoodboxWeb.LocationLive do
       <.base_bg />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[20%]", "translate-y-[10%]"})}
+        phx-mounted={
+          JS.transition({"ease-out duration-1000", "translate-y-[20%]", "translate-y-[10%]"})
+        }
         class="absolute translate-y-[20%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
       />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[20%]", "translate-y-[10%]"})}
+        phx-mounted={
+          JS.transition({"ease-out duration-1000", "translate-y-[20%]", "translate-y-[10%]"})
+        }
         class="absolute translate-y-[20%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
       />
