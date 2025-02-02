@@ -5,16 +5,26 @@ defmodule MoodboxWeb.FeelingCheckLive do
     ~H"""
     <.container>
       <.centered_block>
-        <.subheading>
-          Are you feeling too much or is it hard to feel?
-        </.subheading>
-        <div class="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-          <.link patch={~p"/moods/overwhelmed"}>
-            <.btn>I'M FEELING TOO MUCH</.btn>
-          </.link>
-          <.link patch={~p"/moods/numb"}>
-            <.btn>I'M FEELING NUMB</.btn>
-          </.link>
+        <div class="flex flex-col items-center gap-8 md:gap-12">
+          <.subheading>
+            Are you feeling too much or is it hard to feel?
+          </.subheading>
+          
+          <div class="flex flex-col gap-8 w-full max-w-sm px-4">
+            <div class="text-center space-y-3">
+              <.link patch={~p"/moods/overwhelmed"} class="w-full">
+                <.btn class="w-full py-6 text-lg">I'M FEELING TOO MUCH</.btn>
+              </.link>
+              <p class="text-sm text-gray-600">Choose this if you feel overwhelmed or intense emotions</p>
+            </div>
+
+            <div class="text-center space-y-3">
+              <.link patch={~p"/moods/numb"} class="w-full">
+                <.btn class="w-full py-6 text-lg">I'M FEELING NUMB</.btn>
+              </.link>
+              <p class="text-sm text-gray-600">Choose this if you feel disconnected or can't feel much</p>
+            </div>
+          </div>
         </div>
       </.centered_block>
       <.base_bg />
