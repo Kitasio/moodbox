@@ -23,7 +23,7 @@ defmodule MoodboxWeb.ColorLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={color <- @colors}
-            patch={String.replace(@current_path, ~r"/[^/]+$", "/#{color.resource}")}
+            patch={@current_path <> "/#{color.resource}"}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105" style={"background-color: #{color.hex}"}>

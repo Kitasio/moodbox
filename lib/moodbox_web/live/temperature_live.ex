@@ -20,7 +20,7 @@ defmodule MoodboxWeb.TemperatureLive do
         <div class="mt-10 lg:mt-20">
           <.link
             :for={temp <- @temperatures}
-            patch={String.replace(@current_path, ~r"/[^/]+$", "/#{temp.resource}")}
+            patch={@current_path <> "/#{temp.resource}"}
             class="mt-10 flex w-44 sm:w-96"
           >
             <.btn class="transition hover:scale-105">
