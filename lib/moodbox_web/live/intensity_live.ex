@@ -27,14 +27,14 @@ defmodule MoodboxWeb.IntensityLive do
       <.base_bg />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-full", "translate-y-3/4"})}
-        class="absolute translate-y-full z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
+        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[100%]", "translate-y-[80%]"})}
+        class="absolute translate-y-[100%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
       />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-full", "translate-y-3/4"})}
-        class="absolute translate-y-full z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
+        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[100%]", "translate-y-[80%]"})}
+        class="absolute translate-y-[100%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
       />
     </.container>

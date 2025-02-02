@@ -77,14 +77,14 @@ defmodule MoodboxWeb.DescriptionLive do
       <.base_bg />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-1/4", "translate-y-0"})}
-        class="absolute translate-y-1/4 z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
+        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[20%]", "translate-y-[0%]"})}
+        class="absolute translate-y-[20%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
       />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-1/4", "translate-y-0"})}
-        class="absolute translate-y-1/4 z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
+        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[20%]", "translate-y-[0%]"})}
+        class="absolute translate-y-[20%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
       />
     </.container>

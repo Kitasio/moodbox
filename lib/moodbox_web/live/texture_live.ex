@@ -36,14 +36,14 @@ defmodule MoodboxWeb.TextureLive do
       <.base_bg />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-3/4", "translate-y-2/4"})}
-        class="absolute translate-y-3/4 z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
+        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[40%]"})}
+        class="absolute translate-y-[60%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
       />
 
       <img
-        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-3/4", "translate-y-2/4"})}
-        class="absolute translate-y-3/4 z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
+        phx-mounted={JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[40%]"})}
+        class="absolute translate-y-[60%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
       />
     </.container>
