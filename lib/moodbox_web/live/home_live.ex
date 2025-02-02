@@ -29,14 +29,17 @@ defmodule MoodboxWeb.HomeLive do
             EXPLORE MOOD IN A BOX
           </button>
         </.link>
-        <div class="mt-4 text-sm text-gray-600">
-          by clicking you agree to the <button class="italic underline" phx-click={show_modal("terms-modal")}>terms and conditions</button>
+        <div class="mt-4 ml-2 text-xs sm:text-sm text-gray-700">
+          By clicking you agree to the
+          <button class="italic underline" phx-click={show_modal("terms-modal")}>
+            terms and conditions
+          </button>
         </div>
       </div>
 
       <.modal id="terms-modal" on_cancel={hide_modal("terms-modal")}>
         <h2 class="text-xl font-bold mb-4">Welcome to Mood in a Box!</h2>
-        
+
         <p class="mb-4">
           This interactive educational experience is designed to help you explore your mood with sensory healing based experiences that help you feel better.
         </p>
