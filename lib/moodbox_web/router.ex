@@ -32,20 +32,20 @@ defmodule MoodboxWeb.Router do
     live "/moods/:mood/:intensity/:texture", ColorLive
     live "/moods/:mood/:intensity/:texture/:color", TemperatureLive
     live "/moods/:mood/:intensity/:texture/:color/:temperature", LocationLive
-    live "/moods/:mood/:intensity/:texture/:location", DescriptionLive
-    live "/moods/:mood/:intensity/:texture/:location/:description", GetEmailLive
-    live "/moods/:mood/:intensity/:texture/:location/:description/outcome", OutcomeLive
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location", DescriptionLive
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description", GetEmailLive
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome", OutcomeLive
 
-    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical",
          ClassicalPlaylistLive
 
-    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision",
          RevisionLive
 
-    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision/:score",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score",
          RevisionOutcomeLive
 
-    live "/moods/:mood/:intensity/:texture/:location/:description/outcome/classical/revision/:score/further-boost",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/further-boost",
          FurtherBoostLive
 
     live "/root", RootLive
