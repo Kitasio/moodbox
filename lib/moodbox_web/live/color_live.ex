@@ -37,17 +37,17 @@ defmodule MoodboxWeb.ColorLive do
 
       <img
         phx-mounted={
-          JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[35%]"})
+          JS.transition({"ease-out duration-1000", "translate-y-[65%]", "translate-y-[50%]"})
         }
-        class="absolute translate-y-[60%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
+        class="absolute translate-y-[65%] z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
       />
 
       <img
         phx-mounted={
-          JS.transition({"ease-out duration-1000", "translate-y-[60%]", "translate-y-[35%]"})
+          JS.transition({"ease-out duration-1000", "translate-y-[65%]", "translate-y-[50%]"})
         }
-        class="absolute translate-y-[60%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
+        class="absolute translate-y-[65%] z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
         src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
       />
     </.container>
