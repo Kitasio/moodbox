@@ -1,22 +1,15 @@
 defmodule MoodboxWeb.RevisionOutcomeLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-    location = params["location"]
-    description = params["description"]
-    score = params["score"]
+  def mount(_params, _session, socket) do
+    {:ok, socket}
+  end
 
-    {:ok,
-     socket
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(location: location)
-     |> assign(description: description)
-     |> assign(score: score)}
+  def handle_params(%{"score" => score}, uri, socket) do
+    {:noreply, 
+     socket 
+     |> assign(:current_path, uri)
+     |> assign(:score, score)}
   end
 
   def render(assigns) do
@@ -71,9 +64,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </div>
 
             <.button variant="filled" class="text-lg" phx-click="unlock_deeper">
-              <.link patch={
-                ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome/classical/revision/#{@score}/further-boost"
-              }>
+              <.link patch={@current_path <> "/further-boost"}>
                 UNLOCK DEEPER LEVELS OF RELAXATION
               </.link>
             </.button>
@@ -125,9 +116,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
 
             <div class="flex gap-4 justify-center">
               <.button variant="filled" class="text-lg">
-                <.link patch={
-                  ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome/classical"
-                }>
+                <.link patch={String.replace(@current_path, ~r"/revision/.*$", "")}>
                   TRY AGAIN
                 </.link>
               </.button>

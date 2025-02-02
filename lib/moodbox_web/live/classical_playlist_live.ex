@@ -1,22 +1,15 @@
 defmodule MoodboxWeb.ClassicalPlaylistLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-    location = params["location"]
-    description = params["description"]
-    videos = videos(mood)
+  def mount(_params, _session, socket) do
+    {:ok, socket |> assign(videos: videos("angry"))}
+  end
 
-    {:ok,
-     socket
-     |> assign(videos: videos)
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(location: location)
-     |> assign(description: description)}
+  def handle_params(%{"mood" => mood}, uri, socket) do
+    {:noreply, 
+     socket 
+     |> assign(:current_path, uri)
+     |> assign(:videos, videos(mood))}
   end
 
   def render(assigns) do
@@ -53,9 +46,7 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
             </div>
           </div>
           <div class="flex w-full justify-center">
-            <.link patch={
-              ~p"/moods/#{@mood}/#{@intensity}/#{@texture}/#{@location}/#{@description}/outcome/classical/revision"
-            }>
+            <.link patch={@current_path <> "/revision"}>
               <.btn class="transition hover:scale-105 font-semibold px-16 py-3">
                 Continue
               </.btn>

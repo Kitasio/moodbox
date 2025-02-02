@@ -1,23 +1,15 @@
 defmodule MoodboxWeb.FurtherBoostLive do
   use MoodboxWeb, :live_view
 
-  def mount(params, _session, socket) do
-    mood = params["mood"]
-    intensity = params["intensity"]
-    texture = params["texture"]
-    location = params["location"]
-    description = params["description"]
-    videos = videos(mood)
+  def mount(_params, _session, socket) do
+    {:ok, socket |> assign(videos: videos("angry")) |> assign(video_index: 0)}
+  end
 
-    {:ok,
-     socket
-     |> assign(videos: videos)
-     |> assign(mood: mood)
-     |> assign(intensity: intensity)
-     |> assign(texture: texture)
-     |> assign(location: location)
-     |> assign(description: description)
-     |> assign(video_index: 0)}
+  def handle_params(%{"mood" => mood}, uri, socket) do
+    {:noreply, 
+     socket 
+     |> assign(:current_path, uri)
+     |> assign(:videos, videos(mood))}
   end
 
   def render(assigns) do
