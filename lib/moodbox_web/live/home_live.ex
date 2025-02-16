@@ -4,7 +4,11 @@ defmodule MoodboxWeb.HomeLive do
   alias Phoenix.LiveView.JS
 
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok, assign(socket, terms_accepted: false)}
+  end
+
+  def handle_event("toggle-terms", _, socket) do
+    {:noreply, update(socket, :terms_accepted, &(!&1))}
   end
 
   def render(assigns) do
@@ -23,14 +27,19 @@ defmodule MoodboxWeb.HomeLive do
         <div class="mt-8 sm:mt-10"></div>
         <.link patch={~p"/moods"}>
           <button
-            class="transition hover:scale-105 px-8 py-4 xl:py-6 xl:px-12 xl:text-xl font-bold tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white"
+            class="transition hover:scale-105 px-8 py-4 xl:py-6 xl:px-12 xl:text-xl font-bold tracking-wider rounded-full bg-[#6b2a6d] text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={!@terms_accepted}
             phx-mounted={JS.transition({"ease-out duration-700", "opacity-0", "opacity-100"})}
           >
             EXPLORE MOOD IN A BOX
           </button>
         </.link>
         <div class="mt-4 ml-2 text-xs sm:text-sm text-gray-700 flex items-center gap-2">
-          <input type="checkbox" id="terms-checkbox" class="w-4 h-4 rounded border-gray-300 text-[#6b2a6d] focus:ring-[#6b2a6d]">
+          <input 
+            type="checkbox" 
+            id="terms-checkbox" 
+            phx-click="toggle-terms"
+            class="w-4 h-4 rounded border-gray-300 text-[#6b2a6d] focus:ring-[#6b2a6d]">
           <label for="terms-checkbox">
             I agree to the
             <button class="italic underline" phx-click={show_modal("terms-modal")}>
