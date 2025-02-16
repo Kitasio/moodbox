@@ -29,11 +29,14 @@ defmodule MoodboxWeb.HomeLive do
             EXPLORE MOOD IN A BOX
           </button>
         </.link>
-        <div class="mt-4 ml-2 text-xs sm:text-sm text-gray-700">
-          By clicking you agree to the
-          <button class="italic underline" phx-click={show_modal("terms-modal")}>
-            terms and conditions
-          </button>
+        <div class="mt-4 ml-2 text-xs sm:text-sm text-gray-700 flex items-center gap-2">
+          <input type="checkbox" id="terms-checkbox" class="w-4 h-4 rounded border-gray-300 text-[#6b2a6d] focus:ring-[#6b2a6d]">
+          <label for="terms-checkbox">
+            I agree to the
+            <button class="italic underline" phx-click={show_modal("terms-modal")}>
+              Terms and Conditions
+            </button>
+          </label>
         </div>
       </div>
 
