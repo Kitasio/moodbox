@@ -2,7 +2,11 @@ defmodule MoodboxWeb.CrisisSupportLive do
   use MoodboxWeb, :live_view
 
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok, socket |> assign(:mood, nil)}
+  end
+
+  def handle_params(%{"mood" => mood}, _uri, socket) do
+    {:noreply, assign(socket, :mood, mood)}
   end
 
   def render(assigns) do
@@ -40,7 +44,7 @@ defmodule MoodboxWeb.CrisisSupportLive do
 
           <div class="mt-2">
             <.link
-              navigate={~p"/"}
+              navigate={~p"/moods/#{@mood}"}
               class="inline-block px-12 py-4 bg-[#6b2a6d] text-white text-lg font-semibold rounded-lg hover:bg-[#8b3a8d] transition"
             >
               I'm OK. I'm ready to continue.

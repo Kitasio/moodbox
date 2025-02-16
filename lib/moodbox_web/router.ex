@@ -28,7 +28,7 @@ defmodule MoodboxWeb.Router do
     live "/moods/emotions-education", EmotionsEducationLive
     live "/moods/emotions-temperature", EmotionsTemperatureLive
     live "/moods/:mood", IntensityLive
-    live "/crisis-support", CrisisSupportLive
+    live "/crisis-support/:mood", CrisisSupportLive
     live "/moods/:mood/:intensity", TextureLive
     live "/moods/:mood/:intensity/:texture", ColorLive
     live "/moods/:mood/:intensity/:texture/:color", TemperatureLive
