@@ -6,7 +6,7 @@ defmodule MoodboxWeb.FeelingCheckLive do
     <.container class="min-h-screen">
       <.centered_block class="w-full h-full flex flex-col justify-center">
         <div class="flex flex-col gap-16">
-          <.subheading class="text-center">
+          <.subheading>
             Are you feeling too much or is it hard to feel?
           </.subheading>
 
