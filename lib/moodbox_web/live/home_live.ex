@@ -39,6 +39,7 @@ defmodule MoodboxWeb.HomeLive do
             type="checkbox" 
             id="terms-checkbox" 
             phx-click="toggle-terms"
+            checked={@terms_accepted}
             class="w-4 h-4 rounded border-gray-300 text-[#6b2a6d] focus:ring-[#6b2a6d]">
           <label for="terms-checkbox">
             I agree to the
