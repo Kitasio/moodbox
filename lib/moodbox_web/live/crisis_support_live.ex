@@ -20,9 +20,9 @@ defmodule MoodboxWeb.CrisisSupportLive do
           </h1>
 
           <p class="text-xl font-medium text-gray-600 mb-12">
-            If you're feeling overwhelmed or having thoughts of harming yourself,
-            please know that you're not alone and there is immediate and
-            confidential support available.
+            Choosing 10 let's us know you're feeling big emotions. If you are experiencing 
+            an emergency or having thoughts of self-harm, please seek live support. 
+            Please know you are not alone and there are helpers who want to support you.
           </p>
 
           <div class="text-xl md:text-2xl font-semibold mb-8">
@@ -33,14 +33,17 @@ defmodule MoodboxWeb.CrisisSupportLive do
           <a
             href="https://findahelpline.com/"
             target="_blank"
-            class="inline-block px-12 py-4 bg-[#6b2a6d] text-white text-lg font-semibold rounded-lg hover:bg-[#8b3a8d] transition mb-8"
+            class="inline-block text-[#6b2a6d] text-lg font-semibold hover:text-[#8b3a8d] transition mb-8 underline"
           >
             FIND HELP IN OTHER COUNTRIES
           </a>
 
           <div class="mt-2">
-            <.link navigate={~p"/"} class="text-lg text-gray-600 hover:text-gray-800">
-              I'm good. I'm ready to proceed.
+            <.link
+              navigate={~p"/"}
+              class="inline-block px-12 py-4 bg-[#6b2a6d] text-white text-lg font-semibold rounded-lg hover:bg-[#8b3a8d] transition"
+            >
+              I'm OK. I'm ready to continue.
             </.link>
           </div>
         </div>
