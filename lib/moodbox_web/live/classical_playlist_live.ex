@@ -26,6 +26,11 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
               Let's begin with a proven effective way to release unwanted emotion.
             </span>
           </.p>
+          <%= if @video_index == 1 do %>
+            <p class="text-center mb-4 text-gray-700">
+              Now for a classical approach. Place your hands on your heart or belly and enjoy.
+            </p>
+          <% end %>
           <div class="aspect-video w-full">
             <div class="w-full h-full">
               <iframe
@@ -40,7 +45,7 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
               </iframe>
             </div>
           </div>
-          <div class="flex w-full justify-center">
+          <div class="flex flex-col items-center gap-6">
             <%= if @video_index < length(@videos) - 1 do %>
               <.button
                 phx-click="next_video"
@@ -55,6 +60,14 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
                 </.btn>
               </.link>
             <% end %>
+            
+            <p class="text-sm text-gray-600 max-w-3xl text-center">
+              <%= if @video_index == 0 do %>
+                Releasing negative emotions through guided EFT (Emotional Freedom Technique) helps clear energetic blocks, reduce stress, and restore emotional balance. By tapping on key acupressure points while focusing on specific thoughts or feelings, EFT signals the brain to calm the nervous system and rewire emotional responses. This powerful practice allows you to let go of anger, fear, or sadness, creating space for inner peace, clarity, and a renewed sense of empowerment.
+              <% else %>
+                Enhancing classical music with binaural beats creates a powerful synergy that deepens focus, relaxation, and emotional balance. Binaural beats gently guide the brain into optimal states—whether for creativity, deep rest, or heightened concentration—while classical compositions provide a harmonious backdrop that soothes the nervous system. This combination blends science and artistry to elevate mood, sharpen cognition, and promote an effortless flow state.
+              <% end %>
+            </p>
           </div>
         </div>
       </.centered_block>
