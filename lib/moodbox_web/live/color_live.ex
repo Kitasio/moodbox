@@ -20,11 +20,10 @@ defmodule MoodboxWeb.ColorLive do
           If your feeling had a color, what would it be?
         </.subheading>
 
-        <div class="mt-10 lg:mt-20">
+        <div class="mt-10 lg:mt-20 flex flex-wrap gap-4 justify-center">
           <.link
             :for={color <- @colors}
             patch={@current_path <> "/#{color.resource}"}
-            class="mt-10 flex w-44 sm:w-96"
           >
             <.btn 
               class="transition hover:scale-105 w-16 h-16 rounded-full" 
