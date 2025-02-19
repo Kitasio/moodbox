@@ -6,8 +6,8 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
   end
 
   def handle_params(%{"mood" => mood}, uri, socket) do
-    {:noreply, 
-     socket 
+    {:noreply,
+     socket
      |> assign(:current_path, uri)
      |> assign(:videos, videos(mood))}
   end
@@ -24,7 +24,6 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
             <span class="font-semibold">
               Let's begin with a proven effective way to release unwanted emotion.
             </span>
-            Find a quiet space, grab your headphones and follow the instructions.
           </.p>
           <div class="flex flex-col md:flex-row gap-10 xl:gap-20 w-full">
             <div :for={video <- @videos} class="aspect-video w-full">
