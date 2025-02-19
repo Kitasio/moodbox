@@ -17,19 +17,22 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
     ~H"""
     <.container>
       <.centered_block>
-        <div class="flex flex-col gap-10 xl:gap-16">
+        <div class="flex flex-col gap-10">
           <.subheading>
             Ready for a mood shift?
           </.subheading>
-          <.p>
-            <span class="font-semibold">
-              Let's begin with a proven effective way to release unwanted emotion.
-            </span>
-          </.p>
-          <%= if @video_index == 1 do %>
-            <p class="text-center mb-4 text-gray-700">
-              Now for a classical approach. Place your hands on your heart or belly and enjoy.
-            </p>
+          <%= if @video_index == 0 do %>
+            <.p>
+              <span class="font-semibold">
+                Find a quiet space and grab some headphones. Expand to full screen and follow along.
+              </span>
+            </.p>
+          <% else %>
+            <.p>
+              <span class="font-semibold">
+                Now for a classical approach. Place your hands on your heart or belly and enjoy.
+              </span>
+            </.p>
           <% end %>
           <div class="aspect-video w-full">
             <div class="w-full h-full">
@@ -51,7 +54,7 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
                 phx-click="next_video"
                 class="transition hover:scale-105 font-semibold px-16 py-3"
               >
-                Next
+                Continue
               </.button>
             <% else %>
               <.link patch={@current_path <> "/revision"}>
@@ -60,7 +63,7 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
                 </.btn>
               </.link>
             <% end %>
-            
+
             <p class="text-sm text-gray-600 max-w-3xl text-center">
               <%= if @video_index == 0 do %>
                 Releasing negative emotions through guided EFT (Emotional Freedom Technique) helps clear energetic blocks, reduce stress, and restore emotional balance. By tapping on key acupressure points while focusing on specific thoughts or feelings, EFT signals the brain to calm the nervous system and rewire emotional responses. This powerful practice allows you to let go of anger, fear, or sadness, creating space for inner peace, clarity, and a renewed sense of empowerment.
