@@ -26,9 +26,11 @@ defmodule MoodboxWeb.ColorLive do
             patch={@current_path <> "/#{color.resource}"}
             class="mt-10 flex w-44 sm:w-96"
           >
-            <.btn class="transition hover:scale-105" style={"background-color: #{color.hex}"}>
-              <%= color.name %>
-            </.btn>
+            <.btn 
+              class="transition hover:scale-105 w-16 h-16 rounded-full" 
+              style={"background-color: #{color.hex}"}
+              aria-label={color.name}
+            />
           </.link>
         </div>
       </.centered_block>
@@ -56,28 +58,34 @@ defmodule MoodboxWeb.ColorLive do
 
   defp colors("angry") do
     [
+      %{name: "Bright Red", resource: "bright-red", hex: "#ef4444"},
       %{name: "Deep Red", resource: "deep-red", hex: "#b91c1c"},
-      %{name: "Crimson", resource: "crimson", hex: "#991b1b"},
-      %{name: "Scarlet", resource: "scarlet", hex: "#7f1d1d"},
+      %{name: "Dark Red", resource: "dark-red", hex: "#7f1d1d"},
+      %{name: "Light Red", resource: "light-red", hex: "#fca5a5"},
+      %{name: "Pale Red", resource: "pale-red", hex: "#fee2e2"},
       %{name: "Blood Red", resource: "blood-red", hex: "#450a0a"}
     ]
   end
 
   defp colors("afraid") do
     [
-      %{name: "Pale Yellow", resource: "pale-yellow", hex: "#b45309"},
-      %{name: "Light Gold", resource: "light-gold", hex: "#92400e"},
-      %{name: "Amber", resource: "amber", hex: "#78350f"},
-      %{name: "Mustard", resource: "mustard", hex: "#451a03"}
+      %{name: "Bright Yellow", resource: "bright-yellow", hex: "#fbbf24"},
+      %{name: "Deep Yellow", resource: "deep-yellow", hex: "#b45309"},
+      %{name: "Dark Yellow", resource: "dark-yellow", hex: "#78350f"},
+      %{name: "Light Yellow", resource: "light-yellow", hex: "#fde68a"},
+      %{name: "Pale Yellow", resource: "pale-yellow", hex: "#fef3c7"},
+      %{name: "Amber", resource: "amber", hex: "#451a03"}
     ]
   end
 
   defp colors("sad") do
     [
-      %{name: "Navy Blue", resource: "navy-blue", hex: "#0369a1"},
-      %{name: "Steel Blue", resource: "steel-blue", hex: "#075985"},
-      %{name: "Deep Blue", resource: "deep-blue", hex: "#0c4a6e"},
-      %{name: "Midnight Blue", resource: "midnight-blue", hex: "#082f49"}
+      %{name: "Bright Blue", resource: "bright-blue", hex: "#3b82f6"},
+      %{name: "Deep Blue", resource: "deep-blue", hex: "#1d4ed8"},
+      %{name: "Dark Blue", resource: "dark-blue", hex: "#1e3a8a"},
+      %{name: "Light Blue", resource: "light-blue", hex: "#93c5fd"},
+      %{name: "Pale Blue", resource: "pale-blue", hex: "#dbeafe"},
+      %{name: "Navy Blue", resource: "navy-blue", hex: "#082f49"}
     ]
   end
 end
