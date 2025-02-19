@@ -725,7 +725,7 @@ defmodule MoodboxWeb.CoreComponents do
     """
   end
 
-  slot :inner_block, required: true
+  slot :inner_block, required: false
   attr :rest, :global, doc: "the arbitrary HTML attributes"
   attr :class, :string, default: nil
 
@@ -735,7 +735,9 @@ defmodule MoodboxWeb.CoreComponents do
       class={"p-4 text-xs sm:text-sm font-semibold w-full xl:text-lg uppercase tracking-wider cursor-pointer rounded-full bg-[#6b2a6d] text-white whitespace-nowrap #{@class}"}
       {@rest}
     >
-      <%= render_slot(@inner_block) %>
+      <%= if @inner_block do %>
+        <%= render_slot(@inner_block) %>
+      <% end %>
     </button>
     """
   end
