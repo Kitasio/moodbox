@@ -23,7 +23,7 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
           </.subheading>
           <%= if @video_index == 0 do %>
             <.p>
-              <span class="font-semibold">
+              <span class="font-semibold text-pretty">
                 Find a quiet space and grab some headphones. Expand to full screen and follow along.
               </span>
             </.p>

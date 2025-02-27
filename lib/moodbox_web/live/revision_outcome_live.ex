@@ -34,38 +34,24 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               It's time to design your desired mood.
             </p>
 
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-              <div class="text-left">
-                <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                  Guided Hypnosis Sessions
-                </h3>
-                <p class="text-gray-600">
-                  Reprogram your subconscious mind for lasting calm with personalized hypnotic journeys.
-                </p>
-              </div>
+            <div class="rounded-xl border border-gray-300 p-6 mb-8 max-w-2xl mx-auto">
+              <p class="text-center uppercase font-bold mb-2">
+                RITUALS ILLUMINE OUR TRANSITIONS AND ARE THE PRACTICES THAT CREATE THE FIELD OF POSSIBILITY.
+              </p>
+              <p class="text-center font-bold">
+                JEAN HOUSTON
+              </p>
+            </div>
 
-              <div class="text-left">
-                <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                  Powerful Anchoring Techniques
-                </h3>
-                <p class="text-gray-600">
-                  Learn to trigger feelings of peace instantly with simple practices you can incorporate anywhere.
-                </p>
-              </div>
-
-              <div class="text-left">
-                <h3 class="text-xl font-bold text-[#6b2a6d] mb-4">
-                  Exclusive Binaural Beat Library
-                </h3>
-                <p class="text-gray-600">
-                  Access a curated collection of advanced binaural beats designed for deeper relaxation and focus.
-                </p>
-              </div>
+            <div class="text-center mb-6">
+              <button phx-click={show_modal("learn-more-modal")} class="text-[#6b2a6d] hover:underline">
+                Learn More
+              </button>
             </div>
 
             <.button variant="filled" class="text-lg">
               <.link patch={@current_path <> "/further-boost"}>
-                UNLOCK DEEPER LEVELS OF RELAXATION
+                 I”d like to cultivate:  POWER BLISS JOY
               </.link>
             </.button>
           <% else %>
@@ -106,6 +92,21 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               </div>
             </div>
 
+            <div class="rounded-xl border border-gray-300 p-6 mb-8 max-w-2xl mx-auto">
+              <p class="text-center uppercase font-bold mb-2">
+                RITUALS ILLUMINE OUR TRANSITIONS AND ARE THE PRACTICES THAT CREATE THE FIELD OF POSSIBILITY.
+              </p>
+              <p class="text-center font-bold">
+                JEAN HOUSTON
+              </p>
+            </div>
+
+            <div class="text-center mb-6">
+              <button phx-click={show_modal("learn-more-modal")} class="text-[#6b2a6d] hover:underline">
+                Learn More
+              </button>
+            </div>
+
             <div class="text-xl font-bold text-[#6b2a6d]">
               Let's find your perfect peace.
             </div>
@@ -128,6 +129,14 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
           <% end %>
         </div>
       </.centered_block>
+
+      <.modal id="learn-more-modal" on_cancel={hide_modal("learn-more-modal")}>
+        <div class="text-lg font-medium leading-relaxed">
+          <p class="mb-3">
+            Placeholder text for the Learn More modal. This will be replaced with the actual content later.
+          </p>
+        </div>
+      </.modal>
 
       <.base_bg />
     </.container>
