@@ -63,7 +63,7 @@ Instead of reacting to the past, you become anchored to your dreams, desires, an
           </div>
 
           <div class="flex w-full justify-center">
-            <.link patch={~p"/"}>
+            <.link patch={@current_path <> "/create-ritual"}>
               <.btn class="transition hover:scale-105 font-semibold px-16 py-3">
                 Create your own ritual
               </.btn>

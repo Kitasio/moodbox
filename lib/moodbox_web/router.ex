@@ -49,6 +49,9 @@ defmodule MoodboxWeb.Router do
     live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/further-boost",
          FurtherBoostLive
 
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/further-boost/create-ritual",
+         CreateRitualLive
+
     live "/root", RootLive
   end
 
