@@ -22,28 +22,28 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               Congrats on Creating Peace through Release!
             </h1>
 
-            <p class="text-gray-600 text-lg md:text-xl mb-8">
+            <.p class="mb-10">
               Taking control of your inner peace is fantastic and we're thrilled for you.
-            </p>
+            </.p>
 
-            <h2 class="text-2xl font-bold text-[#6b2a6d] mb-6">
+            <h2 class="text-2xl font-bold text-[#6b2a6d] mb-2">
               What's Next?
             </h2>
 
-            <p class="text-xl text-gray-800 mb-8">
-              It's time to design your desired mood.
-            </p>
+            <.p class="mb-10">
+              It’s time to design your desired mood with a customized ritual.
+            </.p>
 
-            <div class="rounded-xl border border-gray-300 p-6 mb-8 max-w-2xl mx-auto">
-              <p class="text-center uppercase font-bold mb-2">
+            <div class="rounded-xl text-gray-900 border border-gray-300 py-8 px-6 mb-2 max-w-2xl mx-auto">
+              <.p class="text-center uppercase italic font-bold mb-6">
                 RITUALS ILLUMINE OUR TRANSITIONS AND ARE THE PRACTICES THAT CREATE THE FIELD OF POSSIBILITY.
-              </p>
-              <p class="text-center font-bold">
+              </.p>
+              <.p class="text-center font-bold">
                 JEAN HOUSTON
-              </p>
+              </.p>
             </div>
 
-            <div class="text-center mb-6">
+            <div class="text-center mb-8">
               <button phx-click={show_modal("learn-more-modal")} class="text-[#6b2a6d] hover:underline">
                 Learn More
               </button>
