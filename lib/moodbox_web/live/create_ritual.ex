@@ -57,7 +57,7 @@ defmodule MoodboxWeb.CreateRitualLive do
       <div class="w-40 h-40 border border-gray-400 rounded-lg bg-white bg-opacity-20 group-hover:scale-105 transition-transform duration-200">
         <%!-- Placeholder for image --%>
       </div>
-      <div class="bg-purple-700 text-white px-4 py-2 rounded-full text-sm font-semibold group-hover:bg-purple-800 transition-colors duration-200">
+      <div class="bg-[#6b2a6d] text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-200">
         <%= @title %>
       </div>
       <.p class="text-sm"><%= @description %></.p>
