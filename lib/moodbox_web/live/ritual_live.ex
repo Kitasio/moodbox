@@ -23,6 +23,7 @@ defmodule MoodboxWeb.RitualLive do
        <.power_poses_page back_path={@back_path} mood={@mood} :if={@ritual == "power-poses"} />
        <.crystal_frequencies_page back_path={@back_path} mood={@mood} :if={@ritual == "crystal-frequencies"} />
        <.elemental_immersion_page back_path={@back_path} mood={@mood} :if={@ritual == "elemental-immersion"} />
+       <.alchemy_of_scent_page back_path={@back_path} mood={@mood} :if={@ritual == "alchemy-of-scent"} />
       </.centered_block>
       <.base_bg />
     </.container>
@@ -36,9 +37,9 @@ defmodule MoodboxWeb.RitualLive do
     ~H"""
     <div class="flex flex-col items-center gap-6 text-center">
       <.subheading>Power Poses & Flow</.subheading>
-      <.h3>
+      <.h4>
         POWER POSES & FLOW: SHIFT YOUR MOOD WITH MOVEMENT
-      </.h3>
+      </.h4>
 
       <.p class="max-w-2xl text-left whitespace-pre-line">
         Your Body Shapes Your Mind — And Your Mood. Just Like A Slouched Posture Can
@@ -131,9 +132,9 @@ defmodule MoodboxWeb.RitualLive do
       ~H"""
       <div class="flex flex-col items-center gap-6 text-center">
         <.subheading>Crystal Frequencies</.subheading>
-        <.h3>
+        <.h4>
           Crystal Frequencies: Aligning Your Energy for Bliss, Power & Joy
-        </.h3>
+        </.h4>
 
         <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Crystals are powerful tools that help balance our frequency, acting as energetic anchors for our emotions and intentions. By pairing them with water, affirmations, and mindful placement, we can amplify their effects and cultivate a deeper connection with our desired emotional state.
 
@@ -281,6 +282,90 @@ defmodule MoodboxWeb.RitualLive do
           <li><span class="font-semibold">Scent:</span> <%= @scent %></li>
           <li><span class="font-semibold">Extra Boost:</span> <%= @extra_boost %></li>
         </ul>
+      </div>
+      """
+    end
+
+    attr :title, :string, required: true
+    attr :essential_oils, :string, required: true
+    attr :why_it_works, :string, required: true
+    attr :how_to_use, :list, required: true # List of strings for bullet points
+
+    defp mood_specific_scents(assigns) do
+      ~H"""
+      <div class="mt-8 max-w-2xl w-full text-left">
+        <.h3><%= @title %></.h3>
+        <ul class="mt-4 list-disc space-y-2 pl-5">
+          <li><span class="font-semibold">Essential Oils:</span> <%= @essential_oils %></li>
+          <li><span class="font-semibold">Why it works:</span> <%= @why_it_works %></li>
+          <li>
+            <span class="font-semibold">How to Use:</span>
+            <ul class="list-disc space-y-1 pl-5 mt-1">
+              <li :for={use_case <- @how_to_use}><%= use_case %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      """
+    end
+
+    attr :mood, :string, required: true
+    attr :back_path, :string, required: true
+
+    defp alchemy_of_scent_page(assigns) do
+      ~H"""
+      <div class="flex flex-col items-center gap-6 text-center">
+        <.subheading>Alchemy of Scent</.subheading>
+        <.h4>
+          Aromatherapy for Mood & Mind
+        </.h4>
+
+        <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Aromatherapy Isn’t Just About Pleasant Scents — It’s A Direct Path To The Brain’s Emotional Center.
+
+          Because Essential Oil Molecules Cross The Blood-Brain Barrier, Their Effects On Mood, Memory, And Stress Levels Are Both Immediate And Profound. A Single Inhale Can Activate Relaxation, Spark Energy, Or Restore Balance In Seconds.
+
+          Whether Through Diffusion, Topical Application, Or Inhalation, Scent Is One Of The Fastest Ways To Shift Your State. Here’s How To Incorporate It Into Your Daily Rituals For Power, Bliss, And Joy.
+        </.p>
+
+        <%= case @mood do %>
+          <% "angry" -> %>
+            <.mood_specific_scents
+              title="BLISS: Deep Relaxation & Emotional Harmony"
+              essential_oils="Lavender, Rose, Bergamot, Melissa, Jasmine, Ylang Ylang"
+              why_it_works="These floral and citrus oils support the heart and liver meridians, known for processing emotions and promoting inner peace."
+              how_to_use={[
+                "Evening Wind-Down: Diffuse lavender and chamomile while reading or meditating.",
+                "Heart-Opening Self-Massage: Mix rose otto with a carrier oil and massage over your heart center.",
+                "Pillow Mist: Spritz a blend of bergamot and ylang ylang on your pillow for restful sleep."
+              ]}
+            />
+          <% "afraid" -> %>
+            <.mood_specific_scents
+              title="POWER: Strength, Confidence & Grounding"
+              essential_oils="Ginger grass, Cedarwood, Bergamot, Vetiver, Marjoram"
+              why_it_works="These oils support the solar plexus chakra, linked to confidence, digestion, and motivation. They also encourage focus and resilience."
+              how_to_use={[
+                "Morning Power Boost: Diffuse ginger grass & cedarwood while setting an intention for the day.",
+                "Topical Power: Add a drop of bergamot or vetiver to your wrists before a big meeting.",
+                "Shower Steam Activation: Place a few drops of ginger or marjoram oil on the shower floor and let the steam amplify their invigorating effect."
+              ]}
+            />
+          <% "sad" -> %>
+            <.mood_specific_scents
+              title="JOY: Uplift, Energize & Inspire"
+              essential_oils="Neroli, Bergamot, Jasmine, Orange, Lime, Frankincense, Sandalwood"
+              why_it_works="These bright, citrusy and resinous scents stimulate the heart and pancreas meridians, linked to creativity and optimism."
+              how_to_use={[
+                "Midday Mood Boost: Diffuse orange and neroli oils for a natural energy lift.",
+                "Wearable Joy: Dab jasmine and lime onto pulse points before heading out.",
+                "Sunrise Ritual: Inhale frankincense and bergamot while journaling or stretching."
+              ]}
+            />
+        <% end %>
+
+        <.link patch={@back_path} class="my-10">
+          <.button variant="outlined">Back to rituals</.button>
+        </.link>
       </div>
       """
     end
