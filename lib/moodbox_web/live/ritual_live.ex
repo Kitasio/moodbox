@@ -24,6 +24,7 @@ defmodule MoodboxWeb.RitualLive do
        <.crystal_frequencies_page back_path={@back_path} mood={@mood} :if={@ritual == "crystal-frequencies"} />
        <.elemental_immersion_page back_path={@back_path} mood={@mood} :if={@ritual == "elemental-immersion"} />
        <.alchemy_of_scent_page back_path={@back_path} mood={@mood} :if={@ritual == "alchemy-of-scent"} />
+       <.tea_ceremony_page back_path={@back_path} mood={@mood} :if={@ritual == "tea-ceremony"} />
       </.centered_block>
       <.base_bg />
     </.container>
@@ -362,6 +363,67 @@ defmodule MoodboxWeb.RitualLive do
               ]}
             />
         <% end %>
+
+        <.link patch={@back_path} class="my-10">
+          <.button variant="outlined">Back to rituals</.button>
+        </.link>
+      </div>
+      """
+    end
+
+    attr :mood, :string, required: true
+    attr :back_path, :string, required: true
+
+    defp tea_ceremony_page(assigns) do
+      ~H"""
+      <div class="flex flex-col items-center gap-6 text-center">
+        <.subheading>Tea Ceremony</.subheading>
+        <.h4>
+          Steeped in Serenity
+        </.h4>
+
+        <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Tea has been revered for centuries as a sacred, grounding ritual—a way to pause, reset, and nourish both body and mind. Whether you prefer herbal, green, or black tea, preparing it with intention can be a meditative experience that enhances the benefits of your chosen mood.</.p>
+
+        <.h3 class="mt-8">How to Brew the Perfect Cup of Tea</.h3>
+        <ol class="max-w-2xl w-full list-decimal space-y-2 text-left pl-5 mt-4">
+          <li>
+            <span class="font-semibold">Use Fresh Water</span> – Avoid reboiling water, as it loses oxygen and dulls the flavor.
+          </li>
+          <li>
+            <span class="font-semibold">Heat to the Right Temperature:</span>
+            <ul class="list-disc space-y-1 pl-5 mt-1">
+              <li><span class="font-semibold">Herbal Tea:</span> Boiling (212°F / 100°C) – fully extracts flavors and benefits.</li>
+              <li><span class="font-semibold">Green Tea:</span> 175–185°F (80–85°C) – prevents bitterness and preserves antioxidants.</li>
+              <li><span class="font-semibold">Black Tea:</span> 200–212°F (93–100°C) – allows the full-bodied taste to develop.</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-semibold">Steep for the Perfect Time:</span>
+            <ul class="list-disc space-y-1 pl-5 mt-1">
+              <li><span class="font-semibold">Herbal:</span> 5–7 minutes</li>
+              <li><span class="font-semibold">Green:</span> 2–3 minutes</li>
+              <li><span class="font-semibold">Black:</span> 3–5 minutes</li>
+            </ul>
+          </li>
+          <li>
+            <span class="font-semibold">Sip Slowly & Savor</span> – Let each sip be a moment of presence, an opportunity to anchor into your chosen Power, Bliss, or Joy.
+          </li>
+        </ol>
+
+        <.p class="max-w-2xl md:px-10 text-left mt-8 italic">
+          “Take a sip of tea, savoring its warmth as you hold onto your sense of power, bliss, or joy.”
+        </.p>
+
+        <div class="max-w-2xl w-full text-left mt-4">
+          <%= case @mood do %>
+            <% "angry" -> %>
+              <.p><span class="font-semibold">Bliss:</span> Rose or Chamomile Tea – Soothing, floral, and heart-opening.</.p>
+            <% "afraid" -> %>
+              <.p><span class="font-semibold">Power:</span> Ginger or Mint Tea – Energizing, digestive, and invigorating.</.p>
+            <% "sad" -> %>
+              <.p><span class="font-semibold">Joy:</span> Jasmine or Jasmine Green Tea – Refreshing, floral, and gently uplifting.</.p>
+          <% end %>
+        </div>
 
         <.link patch={@back_path} class="my-10">
           <.button variant="outlined">Back to rituals</.button>
