@@ -56,7 +56,7 @@ defmodule MoodboxWeb.CreateRitualLive do
   defp ritual_card(assigns) do
     ~H"""
     <.link patch={@current_path <> @link_href} class="flex flex-col items-center gap-4 group">
-      <img src={@img_url} class="w-40 h-40 rounded-3xl bg-white bg-opacity-20 group-hover:scale-105 transition-transform duration-200" />
+      <img src={@img_url} class="w-40 h-40 shadow-md rounded-3xl bg-white bg-opacity-20 group-hover:scale-105 transition-transform duration-200" />
       <div class="bg-[#6b2a6d] text-white px-4 py-2 rounded-full text-sm font-semibold transition-colors duration-200">
         <%= @title %>
       </div>
