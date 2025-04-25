@@ -6,9 +6,12 @@ defmodule MoodboxWeb.RitualLive do
   end
 
   def handle_params(%{"mood" => mood, "ritual" => ritual}, uri, socket) do
+    back_path = uri |> String.split("/") |> Enum.drop(-1) |> Enum.join("/")
+
     {:noreply,
      socket
      |> assign(:current_path, uri)
+     |> assign(:back_path, back_path)
      |> assign(:mood, mood)
      |> assign(:ritual, ritual)}
   end
@@ -17,7 +20,7 @@ defmodule MoodboxWeb.RitualLive do
     ~H"""
     <.container>
       <.centered_block>
-       <.power_poses_page mood={@mood} :if={@ritual == "power-poses"} />
+       <.power_poses_page back_path={@back_path} mood={@mood} :if={@ritual == "power-poses"} />
       </.centered_block>
       <.base_bg />
     </.container>
@@ -25,6 +28,7 @@ defmodule MoodboxWeb.RitualLive do
   end
 
   attr :mood, :string, required: true
+  attr :back_path, :string, required: true
 
   defp power_poses_page(assigns) do
     ~H"""
@@ -72,6 +76,10 @@ defmodule MoodboxWeb.RitualLive do
             alternative_pose="Wild Thing (Camatkarasana) – A Playful, Dynamic Backbend That Feels Like A Celebration. One Hand And Foot Remain Grounded While The Other Arm And Leg Extend, Creating A Sensation Of Freedom And Joy."
           />
       <% end %>
+
+      <.link patch={@back_path} class="my-10">
+        <.button variant="outlined">Back to rituals</.button>
+      </.link>
     </div>
     """
   end

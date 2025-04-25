@@ -227,7 +227,8 @@ defmodule MoodboxWeb.CoreComponents do
       type={@type}
       class={[
         "phx-submit-loading:opacity-75 rounded-full py-3 px-6",
-        "text-sm font-semibold uppercase tracking-wider",
+        "text-sm font-semibold uppercase tracking-wider cursor-pointer",
+        "transition duration-300",
         @variant == "filled" &&
           "bg-[#6b2a6d] hover:bg-[#5a2459] text-white border-2 border-[#6b2a6d]",
         @variant == "outlined" &&
@@ -708,7 +709,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def p(assigns) do
     ~H"""
-    <p class={"sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide leading-tight sm:leading-snug font-medium #{@class}"}>
+    <p class={"text-pretty sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide leading-tight sm:leading-snug font-medium #{@class}"}>
       <%= render_slot(@inner_block) %>
     </p>
     """
