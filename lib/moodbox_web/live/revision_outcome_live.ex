@@ -36,9 +36,9 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
 
             <div class="rounded-xl text-gray-900 border border-gray-300 py-8 px-6 mb-2 max-w-2xl mx-auto">
               <.p class="text-center uppercase italic font-bold mb-6">
-                RITUALS ILLUMINE OUR TRANSITIONS AND ARE THE PRACTICES THAT CREATE THE FIELD OF POSSIBILITY.
+                "RITUALS ILLUMINE OUR TRANSITIONS AND ARE THE PRACTICES THAT CREATE THE FIELD OF POSSIBILITY."
               </.p>
-              <.p class="text-center font-bold">
+              <.p class="text-center">
                 JEAN HOUSTON
               </.p>
             </div>
