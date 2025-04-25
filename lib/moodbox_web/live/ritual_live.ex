@@ -276,6 +276,12 @@ defmodule MoodboxWeb.RitualLive do
       ~H"""
       <div class="mt-8 max-w-2xl w-full">
         <.h3><%= @title %></.h3>
+        <div class="my-6 flex flex-wrap justify-center gap-4">
+          <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">Img 1</div>
+          <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">Img 2</div>
+          <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">Img 3</div>
+          <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 bg-gray-300 rounded-lg flex items-center justify-center text-gray-500">Img 4</div>
+        </div>
         <ul class="mt-4 list-disc space-y-2 text-left pl-5">
           <li><span class="font-semibold">Salt:</span> <%= @salt %></li>
           <li><span class="font-semibold">Temperature:</span> <%= @temperature %></li>
