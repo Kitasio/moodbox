@@ -22,6 +22,7 @@ defmodule MoodboxWeb.RitualLive do
       <.centered_block>
        <.power_poses_page back_path={@back_path} mood={@mood} :if={@ritual == "power-poses"} />
        <.crystal_frequencies_page back_path={@back_path} mood={@mood} :if={@ritual == "crystal-frequencies"} />
+       <.elemental_immersion_page back_path={@back_path} mood={@mood} :if={@ritual == "elemental-immersion"} />
       </.centered_block>
       <.base_bg />
     </.container>
@@ -192,6 +193,94 @@ defmodule MoodboxWeb.RitualLive do
         <.link patch={@back_path} class="my-10">
           <.button variant="outlined">Back to rituals</.button>
         </.link>
+      </div>
+      """
+    end
+
+    attr :mood, :string, required: true
+    attr :back_path, :string, required: true
+
+    defp elemental_immersion_page(assigns) do
+      ~H"""
+      <div class="flex flex-col items-center gap-6 text-center">
+        <.subheading>Elemental Immersion</.subheading>
+        <.h4>
+          ELEMENTAL IMMERSION: TRANSFORM YOUR MOOD WITH WATER, FIRE & RITUAL
+        </.h4>
+
+        <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Water has the power to cleanse more than just the body—it resets the mind and energy field.
+          Ancient cultures have long used bathing, hot springs, and cold plunges to shift states of mind, detoxify the body, and awaken the spirit.
+          But water isn’t the only element that can enhance your mood.
+
+          Fire, in the form of candlelight, adds another layer to your ritual.
+          Lighting a candle signals a transition — a moment to pause, set an intention, and step into a new energy.
+          The soft flicker soothes the nervous system, while color and scent can deepen your desired state.
+
+          <span class="font-bold">By combining water, fire, and intention, you create a multi-sensory mood shift that stays with you long after you step out.</span>
+
+          Choose your immersion experience:
+        </.p>
+
+        <%= case @mood do %>
+          <% "angry" -> %>
+            <.mood_specific_immersion
+              title="BLISS: Melt into Deep Relaxation"
+              salt="Himalayan Salt – Known for its detoxifying and grounding properties, helping to release stress and tension."
+              temperature="Warm & Comforting – Keep the water cozy, not scalding, to soothe the nervous system and invite relaxation."
+              candle="Soft pink or warm white for peace and self-love."
+              scent="Lavender or chamomile essential oils for deep calm."
+              extra_boost="Slow, deep breathing in Child’s Pose after your soak to extend the relaxation long after you step out."
+            />
+          <% "afraid" -> %>
+            <.mood_specific_immersion
+              title="POWER: Ignite Strength & Resilience"
+              salt="Epsom Salt – Rich in magnesium, this salt soothes muscles, relieves tension, and restores strength."
+              temperature="Contrast Therapy – Start with hot water to relax, then end with a cold rinse to boost circulation, resilience, and mental clarity."
+              candle="Red or deep orange for courage and determination."
+              scent="Eucalyptus or black pepper to awaken the senses and enhance focus."
+              extra_boost="After soaking, stand tall in Warrior Pose and set an intention for unshakable confidence."
+            />
+          <% "sad" -> %>
+            <.mood_specific_immersion
+              title="JOY: Elevate & Energize"
+              salt="Dead Sea Salt – Packed with minerals that refresh and rejuvenate, leaving you feeling light and radiant."
+              temperature="Warm to Cool Refresh – Start with warm water to open up, then finish with a cool splash for a burst of energy."
+              candle="Bright yellow or gold to enhance happiness and playfulness."
+              scent="Citrus or peppermint essential oils for an uplifting boost."
+              extra_boost="End your bath by dancing or stretching in Wild Thing Pose, letting your body express pure joy."
+            />
+        <% end %>
+
+        <.p class="max-w-2xl md:px-10 text-left mt-8">
+          Your elemental immersion is a sacred reset. Whether you soak, sweat, or plunge,
+          lighting a candle marks the beginning of a transformational experience.
+        </.p>
+
+        <.link patch={@back_path} class="my-10">
+          <.button variant="outlined">Back to rituals</.button>
+        </.link>
+      </div>
+      """
+    end
+
+    attr :title, :string, required: true
+    attr :salt, :string, required: true
+    attr :temperature, :string, required: true
+    attr :candle, :string, required: true
+    attr :scent, :string, required: true
+    attr :extra_boost, :string, required: true
+
+    defp mood_specific_immersion(assigns) do
+      ~H"""
+      <div class="mt-8 max-w-2xl w-full">
+        <.h3><%= @title %></.h3>
+        <ul class="mt-4 list-disc space-y-2 text-left pl-5">
+          <li><span class="font-semibold">Salt:</span> <%= @salt %></li>
+          <li><span class="font-semibold">Temperature:</span> <%= @temperature %></li>
+          <li><span class="font-semibold">Candle:</span> <%= @candle %></li>
+          <li><span class="font-semibold">Scent:</span> <%= @scent %></li>
+          <li><span class="font-semibold">Extra Boost:</span> <%= @extra_boost %></li>
+        </ul>
       </div>
       """
     end

@@ -707,6 +707,17 @@ defmodule MoodboxWeb.CoreComponents do
   slot :inner_block, required: true
   attr :class, :string, default: nil
 
+  def h4(assigns) do
+    ~H"""
+    <h4 class={"md:text-xl w-full xl:text-2xl xl:tracking-wide leading-tight sm:leading-snug text-[#6b2a6d] font-semibold #{@class}"}>
+      <%= render_slot(@inner_block) %>
+    </h4>
+    """
+  end
+
+  slot :inner_block, required: true
+  attr :class, :string, default: nil
+
   def p(assigns) do
     ~H"""
     <p class={"text-pretty sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide #{@class}"}>
