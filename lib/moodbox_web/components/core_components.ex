@@ -709,7 +709,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def p(assigns) do
     ~H"""
-    <p class={"text-pretty sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide leading-tight sm:leading-snug font-medium #{@class}"}>
+    <p class={"text-pretty sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide #{@class}"}>
       <%= render_slot(@inner_block) %>
     </p>
     """
