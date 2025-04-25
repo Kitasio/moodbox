@@ -95,13 +95,23 @@ defmodule MoodboxWeb.RitualLive do
 
   defp mood_specific_poses(assigns) do
     ~H"""
-    <div class="mt-8 max-w-2xl w-full">
-      <.h3><%= @title %></.h3>
-      <ul class="mt-8 list-disc space-y-4 text-left">
-        <li><span class="font-semibold">Power Pose:</span> <%= @power_pose %></li>
-        <li><span class="font-semibold">Yoga Pose:</span> <%= @yoga_pose %></li>
-        <li><span class="font-semibold">Alternative Yoga Pose:</span> <%= @alternative_pose %></li>
-      </ul>
+    <div class="mt-8 max-w-2xl w-full text-left">
+      <.h3 class="text-center"><%= @title %></.h3>
+      <.p class="mt-8">
+        <span class="font-semibold">Power Pose:</span> <%= @power_pose %>
+      </.p>
+      <div class="my-4 mx-auto w-3/4 h-64 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
+        Image Placeholder 1
+      </div>
+      <.p class="mt-4">
+        <span class="font-semibold">Yoga Pose:</span> <%= @yoga_pose %>
+      </.p>
+      <.p class="mt-4">
+        <span class="font-semibold">Alternative Yoga Pose:</span> <%= @alternative_pose %>
+      </.p>
+      <div class="my-4 w-full h-64 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
+        Image Placeholder 2
+      </div>
     </div>
     """
   end
@@ -114,10 +124,13 @@ defmodule MoodboxWeb.RitualLive do
 
   defp mood_specific_crystals(assigns) do
     ~H"""
-    <div class="mt-8 max-w-2xl w-full">
-      <.h3><%= @title %></.h3>
-      <.p class="mt-4 text-left"><%= @description %></.p>
-      <ul class="mt-4 list-disc space-y-2 text-left pl-5">
+    <div class="mt-8 max-w-2xl w-full text-left">
+      <.h3 class="text-center"><%= @title %></.h3>
+      <.p class="mt-4"><%= @description %></.p>
+      <div class="my-4 mx-auto w-3/4 sm:w-1/2 h-64 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
+        Image Placeholder
+      </div>
+      <ul class="mt-4 list-disc space-y-2 pl-5">
         <li><span class="font-semibold">Crystal Water Ritual:</span> <%= @water_ritual %></li>
         <li><span class="font-semibold">Moonlight/Sunlight Charging:</span> <%= @charging_ritual %></li>
         <li><span class="font-semibold">Blissful/Empowerment/Happiness Anchor:</span> <%= @anchor_ritual %></li>
@@ -302,6 +315,9 @@ defmodule MoodboxWeb.RitualLive do
       ~H"""
       <div class="mt-8 max-w-2xl w-full text-left">
         <.h3><%= @title %></.h3>
+        <div class="my-4 mx-auto w-full h-32 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
+          Image Placeholder
+        </div>
         <ul class="mt-4 list-disc space-y-2 pl-5">
           <li><span class="font-semibold">Essential Oils:</span> <%= @essential_oils %></li>
           <li><span class="font-semibold">Why it works:</span> <%= @why_it_works %></li>
@@ -429,6 +445,10 @@ defmodule MoodboxWeb.RitualLive do
             <% "sad" -> %>
               <.p><span class="font-semibold">Joy:</span> Jasmine or Jasmine Green Tea – Refreshing, floral, and gently uplifting.</.p>
           <% end %>
+        </div>
+
+        <div class="my-4 mx-auto w-3/4 sm:w-7/12 h-64 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
+          Image Placeholder
         </div>
 
         <.link patch={@back_path} class="my-10">
