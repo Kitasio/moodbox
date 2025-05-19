@@ -37,47 +37,47 @@ defmodule MoodboxWeb.RitualLive do
   defp power_poses_page(assigns) do
     ~H"""
     <div class="flex flex-col items-center gap-6 text-center">
-      <.subheading>Power Poses & Flow</.subheading>
+      <.subheading>Power poses & flow</.subheading>
       <.h4>
-        POWER POSES & FLOW: SHIFT YOUR MOOD WITH MOVEMENT
+        Power poses & flow: Shift your mood with movement
       </.h4>
 
       <.p class="max-w-2xl text-left whitespace-pre-line">
-        Your Body Shapes Your Mind — And Your Mood. Just Like A Slouched Posture Can
-        Make You Feel Low-Energy, An Open, Expansive Stance Can Instantly Boost
-        Confidence, Clarity, And Joy.
+        Your body shapes your mind — and your mood. Just like a slouched posture can
+        make you feel low-energy, an open, expansive stance can instantly boost
+        confidence, clarity, and joy.
 
-        Science Backs This Up! Research By Amy Cuddy Shows That Power Poses (Like
-        Standing Tall With Hands On Hips) Can Increase Testosterone (Confidence Hormone)
-        And Decrease Cortisol (Stress Hormone) In Just Two Minutes. Meanwhile, Yoga
-        Postures Help Balance The Nervous System, Making It Easier To Shift Into
-        A State Of Power, Bliss, Or Joy.
+        Science backs this up! Research by Amy Cuddy shows that power poses (like
+        standing tall with hands on hips) can increase testosterone (confidence hormone)
+        and decrease cortisol (stress hormone) in just two minutes. Meanwhile, yoga
+        postures help balance the nervous system, making it easier to shift into
+        a state of power, bliss, or joy.
         
-        By Using Intentional Movement, You’re Not Just Posing — You’re Anchoring A New
-        State Of Being. <span class="font-bold">Ready To Embody The Energy You Want? Let’s Flow.</span>
+        By using intentional movement, you’re not just posing — you’re anchoring a new
+        state of being. <span class="font-bold">Ready to embody the energy you want? Let’s flow.</span>
       </.p>
 
       <%= case @mood do %>
         <% "angry" -> %>
           <.mood_specific_poses
-            title="Bliss: Surrender & Serenity"
-            power_pose="Victory Pose – Stand With Feet Grounded, Arms Raised Overhead In A 'V' Shape, Chin Slightly Lifted. This Posture Exudes Effortless Triumph And A Sense Of Ease."
-            yoga_pose="Child’s Pose (Balasana) – A Deeply Restorative Posture That Invites Surrender, Safety, And Relaxation. Knees Wide, Forehead To The Ground, And Arms Stretched Forward, It Fosters A Sense Of Peace."
-            alternative_pose="Reclined Butterfly (Supta Baddha Konasana) – Lying On Your Back With The Soles Of Your Feet Together, Knees Falling Open, This Gentle Heart-Opener Allows For Deep Relaxation And Release."
+            title="Bliss: Surrender & serenity"
+            power_pose="Victory pose – stand with feet grounded, arms raised overhead in a 'V' shape, chin slightly lifted. This posture exudes effortless triumph and a sense of ease."
+            yoga_pose="Child’s pose (Balasana) – A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
+            alternative_pose="Reclined butterfly (Supta Baddha Konasana) – Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
           />
         <% "afraid" -> %>
           <.mood_specific_poses
-            title="Power: Command & Strength"
-            power_pose="Superhero Pose – Stand Tall With Feet Hip-Width Apart, Hands On Hips, And Chest Open. This Stance Signals Confidence, Resilience, And Readiness To Take On The World."
-            yoga_pose="Warrior II (Virabhadrasana II) – A Powerful Stance That Channels Focus And Inner Strength. With Feet Grounded, Arms Extended, And Gaze Steady, You Embody Unwavering Determination."
-            alternative_pose="Goddess Pose (Utkata Konasana) – A Strong, Grounded Stance With Knees Bent And Arms Raised Like A Fierce Warrior Queen. This Pose Ignites Your Inner Power And Stability."
+            title="Power: Command & strength"
+            power_pose="Superhero pose – stand tall with feet hip-width apart, hands on hips, and chest open. This stance signals confidence, resilience, and readiness to take on the world."
+            yoga_pose="Warrior II (Virabhadrasana II) – A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
+            alternative_pose="Goddess pose (Utkata Konasana) – A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
           />
         <% "sad" -> %>
           <.mood_specific_poses
-            title="Joy: Expansion & Expression"
-            power_pose="Expansive Star Pose – Stand With Feet Wide Apart, Arms Fully Outstretched, And Chest Lifted. This Pose Signals Openness, Excitement, And An Embrace Of Life’s Possibilities."
-            yoga_pose="Backbend (Wheel Or Camel Pose) – Heart-Opening Postures That Create Space For Joy, Exhilaration, And Emotional Release. They Lift The Spirit And Energize The Body."
-            alternative_pose="Wild Thing (Camatkarasana) – A Playful, Dynamic Backbend That Feels Like A Celebration. One Hand And Foot Remain Grounded While The Other Arm And Leg Extend, Creating A Sensation Of Freedom And Joy."
+            title="Joy: Expansion & expression"
+            power_pose="Expansive star pose – stand with feet wide apart, arms fully outstretched, and chest lifted. This pose signals openness, excitement, and an embrace of life’s possibilities."
+            yoga_pose="Backbend (wheel or camel pose) – Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
+            alternative_pose="Wild thing (Camatkarasana) – A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
           />
       <% end %>
 
@@ -145,37 +145,37 @@ defmodule MoodboxWeb.RitualLive do
   defp crystal_frequencies_page(assigns) do
       ~H"""
       <div class="flex flex-col items-center gap-6 text-center">
-        <.subheading>Crystal Frequencies</.subheading>
+        <.subheading>Crystal frequencies</.subheading>
         <.h4>
-          Crystal Frequencies: Aligning Your Energy for Bliss, Power & Joy
+          Crystal frequencies: Aligning your energy for bliss, power & joy
         </.h4>
 
         <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Crystals are powerful tools that help balance our frequency, acting as energetic anchors for our emotions and intentions. By pairing them with water, affirmations, and mindful placement, we can amplify their effects and cultivate a deeper connection with our desired emotional state.
 
-        <span class="font-bold">The Power of Intention & Crystalline Structure: Lessons from Masaru Emoto</span>
+        <span class="font-bold">The power of intention & crystalline structure: Lessons from Masaru Emoto</span>
         Dr. Masaru Emoto was a Japanese researcher who explored the impact of words, emotions, and intentions on the molecular structure of water. His groundbreaking work demonstrated that water responds to human consciousness, forming beautifully intricate or chaotic crystalline patterns based on the energy it is exposed to.
 
-        <span class="font-bold">Water, Emotion & Intention</span>
+        <span class="font-bold">Water, emotion & intention</span>
         Emoto’s experiments involved exposing water to different words, sounds, and emotions before freezing it. Under a microscope, the frozen water droplets revealed:
-        • Harmonious, symmetrical crystals when infused with loving words, gratitude, and positive emotions.
-        • Disordered, fragmented structures when exposed to negativity, anger, or harsh language.
+        • Harmonious, symmetrical crystals when infused with loving words, gratitude, and positive emotions
+        • Disordered, fragmented structures when exposed to negativity, anger, or harsh language
         Because the human body is over 60% water, Emoto’s research suggests that our thoughts and emotions literally shape us at a molecular level. Just like water, we crystallize the energy we are immersed in.
 
-        <span class="font-bold">Crystals as Energy Amplifiers</span>
+        <span class="font-bold">Crystals as energy amplifiers</span>
         Natural crystals and gemstones are also structured in precise geometric formations, making them powerful conduits for intention and frequency alignment. Just as water takes on the vibrational imprint of words and thoughts, crystals absorb, store, and amplify energy—which is why they’ve been used for healing and manifestation for centuries.
 
-        <span class="font-bold">Bridging Water, Crystals & Intention</span>
+        <span class="font-bold">Bridging water, crystals & intention</span>
         By combining Emoto’s water techniques with crystal energy, you can create a potent frequency-shifting practice:
-        • Charge Your Water: Place a written affirmation (such as peace, confidence, or joy) under your water pitcher, or add a crystal nearby to infuse the water with its energy.
-        • Crystal Programming: Hold a crystal in your hands, focus on a specific intention, and mentally imprint it with your desired frequency.
-        • Sleep & Dream Work: Keep a crystal under your pillow with an affirmation card, allowing your subconscious to integrate positive shifts overnight.
+        • Charge your water: Place a written affirmation (such as peace, confidence, or joy) under your water pitcher, or add a crystal nearby to infuse the water with its energy
+        • Crystal programming: Hold a crystal in your hands, focus on a specific intention, and mentally imprint it with your desired frequency
+        • Sleep & dream work: Keep a crystal under your pillow with an affirmation card, allowing your subconscious to integrate positive shifts overnight
 
         Both water and crystals hold memory, acting as energetic mirrors that reflect and reinforce our inner state. When we consciously engage with them, we create a bridge between the physical and energetic realms, allowing us to align with the emotions and experiences we wish to cultivate.
 
-        <span class="font-bold">Cleansing & Charging Your Crystals</span>
-        • Moonlight: Place your crystals under the full moon to cleanse and recharge them with gentle, reflective energy.
-        • Sunlight: Let crystals like amazonite and carnelian soak in the morning sun to boost their vitality.
-        • Water Rinse: Run crystals under a stream of cool water, visualizing negativity washing away.
+        <span class="font-bold">Cleansing & charging your crystals</span>
+        • Moonlight: Place your crystals under the full moon to cleanse and recharge them with gentle, reflective energy
+        • Sunlight: Let crystals like amazonite and carnelian soak in the morning sun to boost their vitality
+        • Water rinse: Run crystals under a stream of cool water, visualizing negativity washing away
         </.p>
 
         <%= case @mood do %>
@@ -220,7 +220,7 @@ defmodule MoodboxWeb.RitualLive do
       <div class="flex flex-col items-center gap-6 text-center">
         <.subheading>Elemental Immersion</.subheading>
         <.h4>
-          ELEMENTAL IMMERSION: TRANSFORM YOUR MOOD WITH WATER, FIRE & RITUAL
+          Elemental Immersion: Transform Your Mood With Water, Fire & Ritual
         </.h4>
 
         <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Water has the power to cleanse more than just the body—it resets the mind and energy field.
@@ -340,7 +340,7 @@ defmodule MoodboxWeb.RitualLive do
       <div class="flex flex-col items-center gap-6 text-center">
         <.subheading>Alchemy of Scent</.subheading>
         <.h4>
-          Aromatherapy for Mood & Mind
+          Alchemy of Scent: Aromatherapy for Mood & Mind
         </.h4>
 
         <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Aromatherapy Isn’t Just About Pleasant Scents — It’s A Direct Path To The Brain’s Emotional Center.
@@ -401,7 +401,7 @@ defmodule MoodboxWeb.RitualLive do
       <div class="flex flex-col items-center gap-6 text-center">
         <.subheading>Tea Ceremony</.subheading>
         <.h4>
-          Steeped in Serenity
+          Tea Ceremony: Steeped in Serenity
         </.h4>
 
         <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Tea has been revered for centuries as a sacred, grounding ritual—a way to pause, reset, and nourish both body and mind. Whether you prefer herbal, green, or black tea, preparing it with intention can be a meditative experience that enhances the benefits of your chosen mood.</.p>
