@@ -44,14 +44,17 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
             </div>
 
             <div class="text-center mb-8">
-              <button phx-click={show_modal("learn-more-modal")} class="text-[#6b2a6d] hover:underline">
+              <button
+                phx-click={show_modal("learn-more-modal")}
+                class="text-[#6b2a6d] hover:underline"
+              >
                 Learn More
               </button>
             </div>
 
             <.button variant="filled" class="text-lg">
               <.link patch={@current_path <> "/further-boost"}>
-                 I”d like to cultivate:  POWER BLISS JOY
+                Tell me the secret to transform my mood
               </.link>
             </.button>
           <% else %>
@@ -126,7 +129,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
 
             Now that you’ve entered a relaxed, peaceful state, it’s time for a mood transformation. By pairing your elevated state with high frequency sensory “anchors”—sound, scent, sight, taste, or movement—you’ll create an effortless shortcut back to feeling amazing. In the future, whenever a low mood strikes, these anchors will instantly remind your body how to feel good again.
 
-            This is more than just a mood shift—it’s a reality shift ritual. 
+            This is more than just a mood shift—it’s a reality shift ritual.
           </p>
         </div>
       </.modal>
