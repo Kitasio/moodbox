@@ -35,16 +35,17 @@ defmodule MoodboxWeb.HomeLive do
           </button>
         </.link>
         <div class="mt-4 ml-2 text-xs sm:text-sm text-gray-700 flex items-center gap-2">
-          <input 
-            type="checkbox" 
-            id="terms-checkbox" 
+          <input
+            type="checkbox"
+            id="terms-checkbox"
             phx-click="toggle-terms"
             checked={@terms_accepted}
-            class="w-4 h-4 rounded border-gray-300 text-[#6b2a6d] focus:ring-[#6b2a6d]">
+            class="w-4 h-4 rounded border-gray-300 text-[#6b2a6d] focus:ring-[#6b2a6d] cursor-pointer"
+          />
           <label for="terms-checkbox">
             I agree to the
-            <button class="italic underline" phx-click={show_modal("terms-modal")}>
-              Terms and Conditions
+            <button class="italic underline cursor-pointer" phx-click={show_modal("terms-modal")}>
+              Terms
             </button>
           </label>
         </div>
