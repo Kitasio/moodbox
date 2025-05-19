@@ -43,20 +43,11 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               </.p>
             </div>
 
-            <div class="text-center mb-8">
-              <button
-                phx-click={show_modal("learn-more-modal")}
-                class="text-[#6b2a6d] hover:underline"
-              >
-                Learn More
-              </button>
-            </div>
-
-            <.button variant="filled" class="text-lg">
-              <.link patch={@current_path <> "/further-boost"}>
+            <.link class="mt-10 block" patch={@current_path <> "/explanation"}>
+              <.button variant="filled" class="text-lg">
                 Tell me the secret to transform my mood
-              </.link>
-            </.button>
+              </.button>
+            </.link>
           <% else %>
             <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#6b2a6d] mb-4">
               Want to dive deeper into calm?
@@ -117,22 +108,6 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
           <% end %>
         </div>
       </.centered_block>
-
-      <.modal id="learn-more-modal" on_cancel={hide_modal("learn-more-modal")}>
-        <div class="text-lg font-medium leading-relaxed">
-          <p class="whitespace-pre-line text-pretty">
-            Unlock the Secret to Instant Mood Shifting
-
-            What if the key to transforming a bad mood wasn’t about resisting it—but about alchemizing it? Every negative emotion holds the seed of its opposite: Anger fuels bliss. Fear awakens power. Sadness births joy. This is the hidden magic of emotional transformation.
-
-            Rooted in ancient wisdom—Taoism, alchemy, and the subconscious mind’s language of symbols—we can harness the natural interplay of opposites to shift our state. Emotion, memory, and the senses are deeply interconnected, and when we engage them intentionally, we create a powerful catalyst for change.
-
-            Now that you’ve entered a relaxed, peaceful state, it’s time for a mood transformation. By pairing your elevated state with high frequency sensory “anchors”—sound, scent, sight, taste, or movement—you’ll create an effortless shortcut back to feeling amazing. In the future, whenever a low mood strikes, these anchors will instantly remind your body how to feel good again.
-
-            This is more than just a mood shift—it’s a reality shift ritual.
-          </p>
-        </div>
-      </.modal>
 
       <.base_bg />
 

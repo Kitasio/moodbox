@@ -34,8 +34,12 @@ defmodule MoodboxWeb.Router do
     live "/moods/:mood/:intensity/:texture/:color", TemperatureLive
     live "/moods/:mood/:intensity/:texture/:color/:temperature", LocationLive
     live "/moods/:mood/:intensity/:texture/:color/:temperature/:location", DescriptionLive
-    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description", GetEmailLive
-    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome", OutcomeLive
+
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description",
+         GetEmailLive
+
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome",
+         OutcomeLive
 
     live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical",
          ClassicalPlaylistLive
@@ -46,13 +50,16 @@ defmodule MoodboxWeb.Router do
     live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score",
          RevisionOutcomeLive
 
-    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/further-boost",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/explanation",
+         MoodShiftExplanationLive
+
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/explanation/further-boost",
          FurtherBoostLive
 
-    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/further-boost/create-ritual",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/explanation/further-boost/create-ritual",
          CreateRitualLive
 
-    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/further-boost/create-ritual/:ritual",
+    live "/moods/:mood/:intensity/:texture/:color/:temperature/:location/:description/outcome/classical/revision/:score/explanation/further-boost/create-ritual/:ritual",
          RitualLive
 
     live "/root", RootLive
