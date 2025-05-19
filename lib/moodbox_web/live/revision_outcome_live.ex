@@ -135,6 +135,16 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
       </.modal>
 
       <.base_bg />
+
+      <img
+        class="absolute z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
+        src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
+      />
+
+      <img
+        class="absolute z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
+        src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
+      />
     </.container>
     """
   end
