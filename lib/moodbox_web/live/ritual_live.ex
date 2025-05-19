@@ -343,11 +343,11 @@ defmodule MoodboxWeb.RitualLive do
           Alchemy of Scent: Aromatherapy for Mood & Mind
         </.h4>
 
-        <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Aromatherapy Isn’t Just About Pleasant Scents — It’s A Direct Path To The Brain’s Emotional Center.
+        <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">Aromatherapy isn’t just about pleasant scents — it’s a direct path to the brain’s emotional center.
 
-          Because Essential Oil Molecules Cross The Blood-Brain Barrier, Their Effects On Mood, Memory, And Stress Levels Are Both Immediate And Profound. A Single Inhale Can Activate Relaxation, Spark Energy, Or Restore Balance In Seconds.
+          Because essential oil molecules cross the blood-brain barrier, their effects on mood, memory, and stress levels are both immediate and profound. A single inhale can activate relaxation, spark energy, or restore balance in seconds.
 
-          Whether Through Diffusion, Topical Application, Or Inhalation, Scent Is One Of The Fastest Ways To Shift Your State. Here’s How To Incorporate It Into Your Daily Rituals For Power, Bliss, And Joy.
+          Whether through diffusion, topical application, or inhalation, scent is one of the fastest ways to shift your state. Here’s how to incorporate it into your daily rituals for power, bliss, and joy.
         </.p>
 
         <%= case @mood do %>
