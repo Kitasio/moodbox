@@ -261,6 +261,12 @@ defmodule MoodboxWeb.RitualLive do
             candle="Soft pink or warm white for peace and self-love."
             scent="Lavender or chamomile essential oils for deep calm."
             extra_boost="Slow, deep breathing in Child’s Pose after your soak to extend the relaxation long after you step out."
+            img_list={[
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_1.webp?updatedAt=1747924353202",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_2-1.webp?updatedAt=1747926439393",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_3.webp?updatedAt=1747924353009",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_4.webp?updatedAt=1747924352848"
+            ]}
           />
         <% "afraid" -> %>
           <.mood_specific_immersion
@@ -270,6 +276,12 @@ defmodule MoodboxWeb.RitualLive do
             candle="Red or deep orange for courage and determination."
             scent="Eucalyptus or black pepper to awaken the senses and enhance focus."
             extra_boost="After soaking, stand tall in Warrior Pose and set an intention for unshakable confidence."
+            img_list={[
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_afraid_1.webp?updatedAt=1747928003839",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_2-1.webp?updatedAt=1747926439393",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_afraid_3.webp?updatedAt=1747928004019",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_4.webp?updatedAt=1747924352848"
+            ]}
           />
         <% "sad" -> %>
           <.mood_specific_immersion
@@ -279,6 +291,12 @@ defmodule MoodboxWeb.RitualLive do
             candle="Bright yellow or gold to enhance happiness and playfulness."
             scent="Citrus or peppermint essential oils for an uplifting boost."
             extra_boost="End your bath by dancing or stretching in Wild Thing Pose, letting your body express pure joy."
+            img_list={[
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_sad_1.webp?updatedAt=1747928003998",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_2-1.webp?updatedAt=1747926439393",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_sad_3.webp?updatedAt=1747928003871",
+              "https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_4.webp?updatedAt=1747924352848"
+            ]}
           />
       <% end %>
 
@@ -300,35 +318,18 @@ defmodule MoodboxWeb.RitualLive do
   attr :candle, :string, required: true
   attr :scent, :string, required: true
   attr :extra_boost, :string, required: true
+  attr :img_list, :list, required: true
 
   defp mood_specific_immersion(assigns) do
     ~H"""
     <div class="mt-8 max-w-2xl w-full">
       <.h3><%= @title %></.h3>
       <div class="my-6 flex flex-wrap justify-between gap-6">
-        <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 rounded-lg flex items-center justify-center text-gray-500">
-          <img
-            class="rounded-3xl shadow-md"
-            src="https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_1.webp?updatedAt=1747924353202"
-          />
-        </div>
-        <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 rounded-lg flex items-center justify-center text-gray-500">
-          <img
-            class="rounded-3xl shadow-md"
-            src="https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_2-1.webp?updatedAt=1747926439393"
-          />
-        </div>
-        <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 rounded-lg flex items-center justify-center text-gray-500">
-          <img
-            class="rounded-3xl shadow-md"
-            src="https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_3.webp?updatedAt=1747924353009"
-          />
-        </div>
-        <div class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 rounded-lg flex items-center justify-center text-gray-500">
-          <img
-            class="rounded-3xl shadow-md"
-            src="https://ik.imagekit.io/soulgenesis/Persephone/elemental_angry_4.webp?updatedAt=1747924352848"
-          />
+        <div
+          :for={img <- @img_list}
+          class="w-30 h-30 md:w-36 w-30 h-30 md:h-36 rounded-lg flex items-center justify-center text-gray-500"
+        >
+          <img class="rounded-3xl shadow-md" src={img} />
         </div>
       </div>
       <ul class="mt-4 list-disc space-y-2 text-left pl-5">

@@ -59,7 +59,7 @@ defmodule MoodboxWeb.CreateRitualLive do
               title="THE MAGIC SHOP"
               link_href="/magic-shop"
               current_path={@current_path}
-              img_url=""
+              img_url="https://ik.imagekit.io/soulgenesis/Persephone/The_magic_shop.webp?updatedAt=1747928003772"
             />
           </div>
 
