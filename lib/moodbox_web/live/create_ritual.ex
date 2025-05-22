@@ -56,8 +56,8 @@ defmodule MoodboxWeb.CreateRitualLive do
               img_url="https://ik.imagekit.io/soulgenesis/Moodinabox/ritual_tea.png?updatedAt=1745586281177"
             />
             <.ritual_card
-              title="INTENTION INFUSION"
-              link_href="/intention-infusion"
+              title="THE MAGIC SHOP"
+              link_href="/magic-shop"
               current_path={@current_path}
               img_url=""
             />
