@@ -65,8 +65,8 @@ defmodule MoodboxWeb.CreateRitualLive do
 
           <.p class="mt-10 max-w-3xl">
             Emotions, memories, and senses are deeply connected, making them a powerful
-            tool for transformation. By linking your elevated state to sensory cues — sound,
-            scent, sight, taste, or movement — you create an effortless shortcut back to feeling
+            tool for transformation. By linking your elevated state to sensory cues—sound,
+            scent, sight, taste, or movement—you create an effortless shortcut back to feeling
             amazing. These anchors instantly help you shift your mood whenever needed.
           </.p>
         </div>

@@ -55,7 +55,7 @@ defmodule MoodboxWeb.RitualLive do
       </.h4>
 
       <.p class="max-w-2xl text-left whitespace-pre-line">
-        Your body shapes your mind — and your mood. Just like a slouched posture can
+        Your body shapes your mind—and your mood. Just like a slouched posture can
         make you feel low-energy, an open, expansive stance can instantly boost
         confidence, clarity, and joy.
 
@@ -65,7 +65,7 @@ defmodule MoodboxWeb.RitualLive do
         postures help balance the nervous system, making it easier to shift into
         a state of power, bliss, or joy.
 
-        By using intentional movement, you’re not just posing — you’re anchoring a new
+        By using intentional movement, you’re not just posing—you’re anchoring a new
         state of being.
         <span class="font-bold">Ready to embody the energy you want? Let’s flow.</span>
       </.p>
@@ -244,7 +244,7 @@ defmodule MoodboxWeb.RitualLive do
         But water isn’t the only element that can enhance your mood.
 
         Fire, in the form of candlelight, adds another layer to your ritual.
-        Lighting a candle signals a transition — a moment to pause, set an intention, and step into a new energy.
+        Lighting a candle signals a transition—a moment to pause, set an intention, and step into a new energy.
         The soft flicker soothes the nervous system, while color and scent can deepen your desired state.
         <span class="font-bold">
           By combining water, fire, and intention, you create a multi-sensory mood shift that stays with you long after you step out.
@@ -382,7 +382,7 @@ defmodule MoodboxWeb.RitualLive do
       </.h4>
 
       <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">
-        Aromatherapy isn’t just about pleasant scents — it’s a direct path to the brain’s emotional center.
+        Aromatherapy isn’t just about pleasant scents—it’s a direct path to the brain’s emotional center.
 
         Because essential oil molecules cross the blood-brain barrier, their effects on mood, memory, and stress levels are both immediate and profound. A single inhale can activate relaxation, spark energy, or restore balance in seconds.
 
