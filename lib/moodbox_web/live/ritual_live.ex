@@ -79,6 +79,7 @@ defmodule MoodboxWeb.RitualLive do
             yoga_pose="Child’s pose (Balasana) – A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
             yoga_pose_img="https://ik.imagekit.io/soulgenesis/Moodinabox/child_pose.webp?updatedAt=1748260977416"
             alternative_pose="Reclined butterfly (Supta Baddha Konasana) – Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
+            alt_pose_img="https://moodinabox.fra1.cdn.digitaloceanspaces.com/Layer%2032.webp"
           />
         <% "afraid" -> %>
           <.mood_specific_poses
@@ -88,6 +89,7 @@ defmodule MoodboxWeb.RitualLive do
             yoga_pose="Warrior II (Virabhadrasana II) – A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
             yoga_pose_img=""
             alternative_pose="Goddess pose (Utkata Konasana) – A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
+            alt_pose_img=""
           />
         <% "sad" -> %>
           <.mood_specific_poses
@@ -97,6 +99,7 @@ defmodule MoodboxWeb.RitualLive do
             yoga_pose="Backbend (wheel or camel pose) – Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
             yoga_pose_img=""
             alternative_pose="Wild thing (Camatkarasana) – A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
+            alt_pose_img=""
           />
       <% end %>
 
@@ -113,6 +116,7 @@ defmodule MoodboxWeb.RitualLive do
   attr :yoga_pose, :string, required: true
   attr :yoga_pose_img, :string, required: true
   attr :alternative_pose, :string, required: true
+  attr :alt_pose_img, :string, required: true
 
   defp mood_specific_poses(assigns) do
     ~H"""
@@ -133,7 +137,7 @@ defmodule MoodboxWeb.RitualLive do
         <img src={@power_pose_img} alt="power pose picture" />
       </div>
 
-      <.p class="mt-32 font-semibold">
+      <.p class="font-semibold">
         Yoga Pose
       </.p>
       <details>
@@ -144,11 +148,11 @@ defmodule MoodboxWeb.RitualLive do
           <%= @yoga_pose %>
         </.p>
       </details>
-      <div class="my-4 w-full flex items-center justify-center">
+      <div class="my-20 w-full flex items-center justify-center">
         <img src={@yoga_pose_img} alt="yoga pose picture" />
       </div>
 
-      <.p class="mt-32 font-semibold">
+      <.p class="font-semibold">
         Alternative Yoga Pose
       </.p>
       <details>
@@ -159,6 +163,9 @@ defmodule MoodboxWeb.RitualLive do
           <%= @alternative_pose %>
         </.p>
       </details>
+      <div class="my-4 w-full flex items-center justify-center">
+        <img src={@alt_pose_img} alt="alternative pose picture" />
+      </div>
     </div>
     """
   end
