@@ -75,21 +75,27 @@ defmodule MoodboxWeb.RitualLive do
           <.mood_specific_poses
             title="Bliss: Surrender & serenity"
             power_pose="Victory pose – stand with feet grounded, arms raised overhead in a 'V' shape, chin slightly lifted. This posture exudes effortless triumph and a sense of ease."
+            power_pose_img="https://ik.imagekit.io/soulgenesis/Moodinabox/v_pose.webp?updatedAt=1748260977436"
             yoga_pose="Child’s pose (Balasana) – A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
+            yoga_pose_img="https://ik.imagekit.io/soulgenesis/Moodinabox/child_pose.webp?updatedAt=1748260977416"
             alternative_pose="Reclined butterfly (Supta Baddha Konasana) – Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
           />
         <% "afraid" -> %>
           <.mood_specific_poses
             title="Power: Command & strength"
             power_pose="Superhero pose – stand tall with feet hip-width apart, hands on hips, and chest open. This stance signals confidence, resilience, and readiness to take on the world."
+            power_pose_img=""
             yoga_pose="Warrior II (Virabhadrasana II) – A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
+            yoga_pose_img=""
             alternative_pose="Goddess pose (Utkata Konasana) – A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
           />
         <% "sad" -> %>
           <.mood_specific_poses
             title="Joy: Expansion & expression"
             power_pose="Expansive star pose – stand with feet wide apart, arms fully outstretched, and chest lifted. This pose signals openness, excitement, and an embrace of life’s possibilities."
+            power_pose_img=""
             yoga_pose="Backbend (wheel or camel pose) – Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
+            yoga_pose_img=""
             alternative_pose="Wild thing (Camatkarasana) – A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
           />
       <% end %>
@@ -103,28 +109,56 @@ defmodule MoodboxWeb.RitualLive do
 
   attr :title, :string, required: true
   attr :power_pose, :string, required: true
+  attr :power_pose_img, :string, required: true
   attr :yoga_pose, :string, required: true
+  attr :yoga_pose_img, :string, required: true
   attr :alternative_pose, :string, required: true
 
   defp mood_specific_poses(assigns) do
     ~H"""
     <div class="mt-8 max-w-2xl w-full text-left">
       <.h3 class="text-center"><%= @title %></.h3>
-      <.p class="mt-8">
-        <span class="font-semibold">Power Pose:</span> <%= @power_pose %>
+      <.p class="mt-8 font-semibold">
+        Power Pose
       </.p>
-      <div class="my-4 mx-auto w-3/4 h-64 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
-        Image Placeholder 1
+      <details>
+        <summary class="cursor-pointer text-gray-700">
+          Instructions
+        </summary>
+        <.p class="mt-2 p-4 text-left bg-white rounded-xl shadow-md">
+          <%= @power_pose %>
+        </.p>
+      </details>
+      <div class="my-4 mx-auto w-3/4 flex items-center justify-center">
+        <img src={@power_pose_img} alt="power pose picture" />
       </div>
-      <.p class="mt-4">
-        <span class="font-semibold">Yoga Pose:</span> <%= @yoga_pose %>
+
+      <.p class="mt-32 font-semibold">
+        Yoga Pose
       </.p>
-      <.p class="mt-4">
-        <span class="font-semibold">Alternative Yoga Pose:</span> <%= @alternative_pose %>
-      </.p>
-      <div class="my-4 w-full h-64 bg-gray-200 border border-gray-400 rounded-lg flex items-center justify-center text-gray-500">
-        Image Placeholder 2
+      <details>
+        <summary class="cursor-pointer text-gray-700">
+          Instructions
+        </summary>
+        <.p class="mt-2 p-4 text-left bg-white rounded-xl shadow-md">
+          <%= @yoga_pose %>
+        </.p>
+      </details>
+      <div class="my-4 w-full flex items-center justify-center">
+        <img src={@yoga_pose_img} alt="yoga pose picture" />
       </div>
+
+      <.p class="mt-32 font-semibold">
+        Alternative Yoga Pose
+      </.p>
+      <details>
+        <summary class="cursor-pointer text-gray-700">
+          Instructions
+        </summary>
+        <.p class="mt-2 p-4 text-left bg-white rounded-xl shadow-md">
+          <%= @alternative_pose %>
+        </.p>
+      </details>
     </div>
     """
   end
