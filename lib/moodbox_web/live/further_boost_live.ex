@@ -52,12 +52,12 @@ defmodule MoodboxWeb.FurtherBoostLive do
                     Hypnosis is a highly focused state where positive suggestions take root effortlessly. It unlocks a superlearning mode, making it easier to absorb new insights, rewire habits, and accelerate transformation.
                     In this state, change isn’t just possible—it’s rapid and lasting.
                   </.p>
-                <% 2 -> %>
+                <% 1 -> %>
                   <.p class="mt-8 text-left">
                     Experience the Power of Hypnotic Music & Binaural Beats
                     Immerse yourself in a mind-massaging journey of sound, where hypnotic music and binaural beats work in harmony to shift your emotional state. Each track is carefully designed with frequencies, tones, and rhythms that guide you from negativity to a vibrant, empowered mood—effortlessly rewiring your mind for positivity and clarity.
                   </.p>
-                <% 3 -> %>
+                <% 2 -> %>
                   <.p class="mt-8 text-left whitespace-pre-line">
                     The magic of anchoring.
 
@@ -89,24 +89,21 @@ defmodule MoodboxWeb.FurtherBoostLive do
     case mood do
       "sad" ->
         [
-          %{id: "Ht3tE_wHvpU"},
-          %{id: "eo-C1wDjbsQ"},
+          %{id: "v9plcR0fPk0"},
           %{id: "eprWxoRCOak"},
           %{id: "hdQDvDEM7_I"}
         ]
 
       "afraid" ->
         [
-          %{id: "tZZEvXwvvDE"},
-          %{id: "sK5QrPlQ5Yo"},
+          %{id: "zqRIbFZwxEA"},
           %{id: "Cu4Ec9iwa0M"},
           %{id: "OD7zB3xqgec"}
         ]
 
       "angry" ->
         [
-          %{id: "wk3at10Nk3E"},
-          %{id: "CWInIJm2XQM"},
+          %{id: "Gj2VXyoagsg"},
           %{id: "doOAKyDd0t8"},
           %{id: "4n-XvH6mcak"}
         ]
