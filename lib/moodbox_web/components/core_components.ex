@@ -771,7 +771,7 @@ defmodule MoodboxWeb.CoreComponents do
     ~H"""
     <img
       class={"fixed inset-0 h-full w-full object-cover z-0 #{@class}"}
-      src="https://ik.imagekit.io/soulgenesis/Moodinabox/bg-base.webp"
+      src="https://moodbox.fly.storage.tigris.dev/bg-base.webp"
     />
     """
   end

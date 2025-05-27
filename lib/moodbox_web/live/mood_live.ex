@@ -40,22 +40,22 @@ defmodule MoodboxWeb.MoodLive do
       %{
         name: "Angry",
         resource: "angry",
-        url: "https://ik.imagekit.io/soulgenesis/Moodinabox/angry.webp"
+        url: "https://moodbox.fly.storage.tigris.dev/angry.webp"
       },
       %{
         name: "Sad",
         resource: "sad",
-        url: "https://ik.imagekit.io/soulgenesis/Moodinabox/sad.webp"
+        url: "https://moodbox.fly.storage.tigris.dev/sad.webp"
       },
       %{
         name: "Afraid",
         resource: "afraid",
-        url: "https://ik.imagekit.io/soulgenesis/Moodinabox/afraid.webp"
+        url: "https://moodbox.fly.storage.tigris.dev/afraid.webp"
       },
       %{
         name: "I'm not sure",
         resource: "not-sure",
-        url: "https://ik.imagekit.io/soulgenesis/Moodinabox/not%20sure.webp"
+        url: "https://moodbox.fly.storage.tigris.dev/not%20sure.webp"
       }
     ]
   end

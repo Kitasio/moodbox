@@ -82,7 +82,7 @@ defmodule MoodboxWeb.HomeLive do
       <img
         phx-mounted={JS.transition({"ease-out duration-300", "opacity-0", "opacity-100"})}
         class="absolute inset-0 h-full w-full object-cover z-0 top-32 sm:top-14 md:top-20"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/main-page.webp"
+        src="https://moodbox.fly.storage.tigris.dev/main-page.webp"
       />
     </div>
     """

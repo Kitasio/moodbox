@@ -75,7 +75,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "ANGER: Pesky Little Burn",
       text:
         "Something is irritating you or causing frustration. This may be a familiar feeling that seems tied to external circumstances. Managing minor frustrations can lead to a more peaceful and productive daily life.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/anger1.webp?updatedAt=1733224679440",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/anger1.webp?updatedAt=1733224679440",
       link_text: "RELEASE ANGER"
     }
   end
@@ -86,7 +86,7 @@ defmodule MoodboxWeb.OutcomeLive do
       text:
         "Your anger is noticeable and might be impacting your interactions with others. Taking a break to cool down can be beneficial. Addressing this level of anger can improve your relationships and overall well-being.",
       bg_img:
-        "https://ik.imagekit.io/soulgenesis/Moodinabox/Anger%202%201.webp?updatedAt=1733224908914",
+        "https://moodbox.fly.storage.tigris.dev/Anger%202%201.webp?updatedAt=1733224908914",
       link_text: "RELEASE ANGER"
     }
   end
@@ -96,7 +96,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "ANGER: The Fire Within",
       text:
         "Your anger feels intense and powerful. This suggests an underlying frustration or unmet need. Your anger is meant to protect and serve you, but at times accumulates to bring you into a state of sensitivity and triggerability, pointing to a deeper underlying issue. Exploring and understanding your anger can lead to profound emotional healing and balance.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/anger3.webp?updatedAt=1733225015401",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/anger3.webp?updatedAt=1733225015401",
       link_text: "RELEASE ANGER"
     }
   end
@@ -106,7 +106,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "FEAR: A Restless Whisper",
       text:
         "You are experiencing a mild degree of fear that feels scattered or heavy. It’s uncomfortable but manageable. It’s time to feel better! Acknowledging and addressing mild fear can lead to a more relaxed and harmonious state of mind.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/fear1.webp?updatedAt=1733223473541",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/fear1.webp?updatedAt=1733223473541",
       link_text: "RELEASE FEAR"
     }
   end
@@ -116,7 +116,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "FEAR: Echoes of Unease",
       text:
         "Your fear feels moderately uncomfortable and bothersome. You feel it in your body. The good news is, it’s active and ready to move. Engaging with this level of fear can lead to significant personal growth and emotional stability.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/fear2.webp?updatedAt=1733224096715",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/fear2.webp?updatedAt=1733224096715",
       link_text: "RELEASE FEAR"
     }
   end
@@ -126,7 +126,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "FEAR: Fight, Flight, or Freeze",
       text:
         "Your fear feels strong and potentially overwhelming. It can be difficult to think clearly and function normally with intense fear present. Your nervous system could use a little help. Following the trail of your fear may lead you to deep healing. Understanding and addressing your fear can pave the way to inner peace and resilience.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/fear3.webp?updatedAt=1733224220497",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/fear3.webp?updatedAt=1733224220497",
       link_text: "RELEASE FEAR"
     }
   end
@@ -136,7 +136,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "SADNESS: A Fleeting Shadow",
       text:
         "Your sadness feels present, but it’s not overwhelming. This sadness might be a passing trigger or a sign of needing some extra self-care. Addressing mild sadness with self-care can enhance your emotional well-being and overall happiness.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/sad1.webp?updatedAt=1733225096813",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/sad1.webp?updatedAt=1733225096813",
       link_text: "RELEASE SADNESS"
     }
   end
@@ -146,7 +146,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "SADNESS: Lingering Loss",
       text:
         "Your sadness is a companion that colors your experience of life. Something has you down and it’s time for some relief. Engaging with moderate sadness can help restore emotional balance and bring a sense of relief.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/sad2.webp?updatedAt=1733225157589",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/sad2.webp?updatedAt=1733225157589",
       link_text: "RELEASE SADNESS"
     }
   end
@@ -156,7 +156,7 @@ defmodule MoodboxWeb.OutcomeLive do
       header: "SADNESS: The Weight of Sorrow",
       text:
         "Your sadness feels heavy, like a burden pressing on your chest or a fog clouding your thoughts. It may stem from loss, disappointment, or unmet expectations. Sadness is your heart's way of signaling that something meaningful has been impacted or lost. While it can be tempting to suppress or avoid sadness, leaning into it with compassion can reveal its underlying truths.",
-      bg_img: "https://ik.imagekit.io/soulgenesis/Moodinabox/sad3.webp?updatedAt=1733225225251",
+      bg_img: "https://moodbox.fly.storage.tigris.dev/sad3.webp?updatedAt=1733225225251",
       link_text: "RELEASE SADNESS"
     }
   end

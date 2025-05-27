@@ -75,9 +75,9 @@ defmodule MoodboxWeb.RitualLive do
           <.mood_specific_poses
             title="Bliss: Surrender & serenity"
             power_pose="Victory pose – stand with feet grounded, arms raised overhead in a 'V' shape, chin slightly lifted. This posture exudes effortless triumph and a sense of ease."
-            power_pose_img="https://ik.imagekit.io/soulgenesis/Moodinabox/v_pose.webp?updatedAt=1748260977436"
+            power_pose_img="https://moodbox.fly.storage.tigris.dev/v_pose.webp?updatedAt=1748260977436"
             yoga_pose="Child’s pose (Balasana) – A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
-            yoga_pose_img="https://ik.imagekit.io/soulgenesis/Moodinabox/child_pose.webp?updatedAt=1748260977416"
+            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/child_pose.webp?updatedAt=1748260977416"
             alternative_pose="Reclined butterfly (Supta Baddha Konasana) – Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
             alt_pose_img="https://moodinabox.fra1.cdn.digitaloceanspaces.com/Layer%2032.webp"
           />

@@ -29,31 +29,31 @@ defmodule MoodboxWeb.CreateRitualLive do
               title="POWER POSES & FLOW"
               link_href="/power-poses"
               current_path={@current_path}
-              img_url="https://ik.imagekit.io/soulgenesis/Moodinabox/ritual_monk.png?updatedAt=1745586775656"
+              img_url="https://moodbox.fly.storage.tigris.dev/ritual_monk.png?updatedAt=1745586775656"
             />
             <.ritual_card
               title="CRYSTAL FREQUENCIES"
               link_href="/crystal-frequencies"
               current_path={@current_path}
-              img_url="https://ik.imagekit.io/soulgenesis/Moodinabox/ritual_crystal.png?updatedAt=1745586728866"
+              img_url="https://moodbox.fly.storage.tigris.dev/ritual_crystal.png?updatedAt=1745586728866"
             />
             <.ritual_card
               title="ELEMENTAL IMMERSION"
               link_href="/elemental-immersion"
               current_path={@current_path}
-              img_url="https://ik.imagekit.io/soulgenesis/Moodinabox/ritual_candle.png?updatedAt=1745586704900"
+              img_url="https://moodbox.fly.storage.tigris.dev/ritual_candle.png?updatedAt=1745586704900"
             />
             <.ritual_card
               title="ALCHEMY OF SCENT"
               link_href="/alchemy-of-scent"
               current_path={@current_path}
-              img_url="https://ik.imagekit.io/soulgenesis/Moodinabox/ritual_diffuser.png?updatedAt=1745586760326"
+              img_url="https://moodbox.fly.storage.tigris.dev/ritual_diffuser.png?updatedAt=1745586760326"
             />
             <.ritual_card
               title="TEA CEREMONY"
               link_href="/tea-ceremony"
               current_path={@current_path}
-              img_url="https://ik.imagekit.io/soulgenesis/Moodinabox/ritual_tea.png?updatedAt=1745586281177"
+              img_url="https://moodbox.fly.storage.tigris.dev/ritual_tea.png?updatedAt=1745586281177"
             />
             <.ritual_card
               title="THE MAGIC SHOP"

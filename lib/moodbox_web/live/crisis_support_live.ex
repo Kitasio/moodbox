@@ -13,7 +13,7 @@ defmodule MoodboxWeb.CrisisSupportLive do
     ~H"""
     <.container class="relative min-h-screen bg-gradient-to-b from-white to-gray-100">
       <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://ik.imagekit.io/soulgenesis/Moodinabox/watercolor-bg.webp')] bg-cover bg-center opacity-50">
+        <div class="absolute inset-0 bg-[url('https://moodbox.fly.storage.tigris.dev/watercolor-bg.webp')] bg-cover bg-center opacity-50">
         </div>
       </div>
 
@@ -57,12 +57,12 @@ defmodule MoodboxWeb.CrisisSupportLive do
 
       <img
         class="absolute z-10 bottom-0 sm:right-10 right-4 w-32 lg:w-56 transform transition-transform"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/right-flower.webp"
+        src="https://moodbox.fly.storage.tigris.dev/right-flower.webp"
       />
 
       <img
         class="absolute z-10 bottom-0 left-4 sm:left-10 w-32 lg:w-56 transform transition-transform"
-        src="https://ik.imagekit.io/soulgenesis/Moodinabox/left-flower.webp"
+        src="https://moodbox.fly.storage.tigris.dev/left-flower.webp"
       />
     </.container>
     """
