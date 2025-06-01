@@ -34,7 +34,7 @@ defmodule MoodboxWeb.RevisionOutcomeLive do
               It’s time to design your desired mood with a customized ritual.
             </.p>
 
-            <div class="rounded-xl text-gray-900 border border-gray-300 py-8 px-6 mb-2 max-w-2xl mx-auto">
+            <div class="rounded-xl bg-white shadow-md text-gray-900 py-8 px-6 mb-2 max-w-2xl mx-auto">
               <.p class="text-center uppercase italic font-bold mb-6">
                 "RITUALS ILLUMINE OUR TRANSITIONS AND ARE THE PRACTICES THAT CREATE THE FIELD OF POSSIBILITY."
               </.p>
