@@ -87,7 +87,7 @@ defmodule MoodboxWeb.RitualLive do
             power_pose="Superhero pose – stand tall with feet hip-width apart, hands on hips, and chest open. This stance signals confidence, resilience, and readiness to take on the world."
             power_pose_img=""
             yoga_pose="Warrior II (Virabhadrasana II) – A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
-            yoga_pose_img=""
+            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_afraid_2.webp"
             alternative_pose="Goddess pose (Utkata Konasana) – A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
             alt_pose_img=""
           />
@@ -97,9 +97,9 @@ defmodule MoodboxWeb.RitualLive do
             power_pose="Expansive star pose – stand with feet wide apart, arms fully outstretched, and chest lifted. This pose signals openness, excitement, and an embrace of life’s possibilities."
             power_pose_img=""
             yoga_pose="Backbend (wheel or camel pose) – Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
-            yoga_pose_img=""
+            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_2.webp"
             alternative_pose="Wild thing (Camatkarasana) – A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
-            alt_pose_img=""
+            alt_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_3.webp"
           />
       <% end %>
 
