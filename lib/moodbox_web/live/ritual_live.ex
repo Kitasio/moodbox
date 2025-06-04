@@ -59,11 +59,7 @@ defmodule MoodboxWeb.RitualLive do
         make you feel low-energy, an open, expansive stance can instantly boost
         confidence, clarity, and joy.
 
-        Science backs this up! Research by Amy Cuddy shows that power poses (like
-        standing tall with hands on hips) can increase testosterone (confidence hormone)
-        and decrease cortisol (stress hormone) in just two minutes. Meanwhile, yoga
-        postures help balance the nervous system, making it easier to shift into
-        a state of power, bliss, or joy.
+        Science backs this up! Research by Amy Cuddy shows that power poses (like standing tall with hands on hips) can increase testosterone (confidence hormone) and decrease cortisol (stress hormone) in just two minutes. Meanwhile, yoga postures help balance the nervous system, making it easier to shift into a state of power, bliss, or joy.
 
         By using intentional movement, you’re not just posing—you’re anchoring a new
         state of being. <br />
