@@ -66,7 +66,7 @@ defmodule MoodboxWeb.CoreComponents do
               phx-window-keydown={JS.exec("data-cancel", to: "##{@id}")}
               phx-key="escape"
               phx-click-away={JS.exec("data-cancel", to: "##{@id}")}
-              class="shadow-zinc-700/10 ring-zinc-700/10 relative hidden rounded-2xl bg-white p-14 shadow-lg ring-1 transition"
+              class="shadow-zinc-700/10 ring-zinc-700/10 relative hidden rounded-2xl bg-white p-8 md:p-14 shadow-lg ring-1 transition"
             >
               <div class="absolute top-6 right-5">
                 <button
@@ -729,7 +729,7 @@ defmodule MoodboxWeb.CoreComponents do
 
   def p(assigns) do
     ~H"""
-    <p class={"text-pretty sm:text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide #{@class}"}>
+    <p class={"text-pretty text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide #{@class}"}>
       <%= render_slot(@inner_block) %>
     </p>
     """
