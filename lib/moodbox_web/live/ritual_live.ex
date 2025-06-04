@@ -81,11 +81,11 @@ defmodule MoodboxWeb.RitualLive do
           <.mood_specific_poses
             title="Power: Command & strength"
             power_pose="Superhero pose – stand tall with feet hip-width apart, hands on hips, and chest open. This stance signals confidence, resilience, and readiness to take on the world."
-            power_pose_img=""
+            power_pose_img="https://moodbox.fly.storage.tigris.dev/afraid_yoga_1.png"
             yoga_pose="Warrior II (Virabhadrasana II) – A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
-            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_afraid_2.webp"
+            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/afraid_yoga_2.png"
             alternative_pose="Goddess pose (Utkata Konasana) – A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
-            alt_pose_img=""
+            alt_pose_img="https://moodbox.fly.storage.tigris.dev/afraid_yoga_3.png"
           />
         <% "sad" -> %>
           <.mood_specific_poses
@@ -116,50 +116,41 @@ defmodule MoodboxWeb.RitualLive do
 
   defp mood_specific_poses(assigns) do
     ~H"""
-    <div class="max-w-2xl w-full text-left">
-      <.h3 class="text-center"><%= @title %></.h3>
-      <.p class="mt-8 font-semibold">
-        Power Pose
-      </.p>
-      <details>
-        <summary class="cursor-pointer text-gray-700">
-          Instructions
+    <div class="max-w-4xl w-full text-left">
+      <.h3 class="md:text-center"><%= @title %></.h3>
+      <details class="mt-8 font-semibold md:text-lg xl:text-2xl">
+        <summary class="cursor-pointer text-gray-800">
+          Power Pose: Instructions
         </summary>
-        <.p class="mt-2 p-4 text-left bg-white rounded-xl shadow-md">
+        <.p class="mt-2 p-4 font-normal text-left bg-white rounded-xl shadow-md">
           <%= @power_pose %>
         </.p>
       </details>
-      <div class="my-4 mx-auto w-3/4 flex items-center justify-center">
+      <div class="mx-auto flex items-center justify-center">
         <img src={@power_pose_img} alt="power pose picture" />
       </div>
 
-      <.p class="font-semibold">
-        Yoga Pose
-      </.p>
-      <details>
-        <summary class="cursor-pointer text-gray-700">
-          Instructions
+      <details class="mt-8 font-semibold md:text-lg xl:text-2xl">
+        <summary class="cursor-pointer text-gray-800">
+          Yoga Pose: Instructions
         </summary>
-        <.p class="mt-2 p-4 text-left bg-white rounded-xl shadow-md">
+        <.p class="mt-2 p-4 font-normal text-left bg-white rounded-xl shadow-md">
           <%= @yoga_pose %>
         </.p>
       </details>
-      <div class="my-20 w-full flex items-center justify-center">
+      <div class="mx-auto flex items-center justify-center">
         <img src={@yoga_pose_img} alt="yoga pose picture" />
       </div>
 
-      <.p class="font-semibold">
-        Alternative Yoga Pose
-      </.p>
-      <details>
-        <summary class="cursor-pointer text-gray-700">
-          Instructions
+      <details class="mt-8 font-semibold md:text-lg xl:text-2xl">
+        <summary class="cursor-pointer text-gray-800">
+          Alternative Yoga Pose: Instructions
         </summary>
-        <.p class="mt-2 p-4 text-left bg-white rounded-xl shadow-md">
+        <.p class="mt-2 p-4 font-normal text-left bg-white rounded-xl shadow-md">
           <%= @alternative_pose %>
         </.p>
       </details>
-      <div class="my-4 w-full flex items-center justify-center">
+      <div class="mx-auto flex items-center justify-center">
         <img src={@alt_pose_img} alt="alternative pose picture" />
       </div>
     </div>
@@ -195,6 +186,7 @@ defmodule MoodboxWeb.RitualLive do
 
   attr :mood, :string, required: true
   attr :back_path, :string, required: true
+  attr :crystal_img, :string, required: true
 
   defp crystal_frequencies_page(assigns) do
     ~H"""
@@ -217,7 +209,13 @@ defmodule MoodboxWeb.RitualLive do
         • Disordered, fragmented structures when exposed to negativity, anger, or harsh language
 
         Because the human body is over 60% water, Emoto’s research suggests that our thoughts and emotions literally shape us at a molecular level. Just like water, we crystallize the energy we are immersed in.
-        <br />
+        <div class="max-w-sm flex flex-col gap-3">
+          <img src="/images/fear_crystal.jpg" />
+          <a target="_blank" download href="/images/fear_crystal.jpg">
+            <.button>Download</.button>
+          </a>
+          <br />
+        </div>
         <span class="font-bold">Crystals as energy amplifiers</span>
         Natural crystals and gemstones are also structured in precise geometric formations, making them powerful conduits for intention and frequency alignment. Just as water takes on the vibrational imprint of words and thoughts, crystals absorb, store, and amplify energy—which is why they’ve been used for healing and manifestation for centuries.
         <br />
