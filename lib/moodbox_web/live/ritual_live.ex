@@ -165,6 +165,7 @@ defmodule MoodboxWeb.RitualLive do
   attr :water_ritual, :string, required: true
   attr :charging_ritual, :string, required: true
   attr :anchor_ritual, :string, required: true
+  attr :stone_img, :string, required: true
 
   defp mood_specific_crystals(assigns) do
     ~H"""
@@ -172,7 +173,7 @@ defmodule MoodboxWeb.RitualLive do
       <.h3 class="text-center"><%= @title %></.h3>
       <.p class="mt-4"><%= @description %></.p>
       <div class="my-16 mx-auto w-3/4 sm:w-1/2 h-64 rounded-lg flex items-center justify-center text-gray-500">
-        <img src="https://ik.imagekit.io/soulgenesis/Persephone/stone_anger_1.webp?updatedAt=1747913017086" />
+        <img src={@stone_img} />
       </div>
       <ul class="mt-4 list-disc space-y-2 pl-5">
         <li><span class="font-semibold">Crystal Water Ritual:</span> <%= @water_ritual %></li>
@@ -218,6 +219,8 @@ defmodule MoodboxWeb.RitualLive do
           </a>
           <br />
         </div>
+      </.p>
+      <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">
         <span class="font-bold">Crystals as energy amplifiers</span>
         Natural crystals and gemstones are also structured in precise geometric formations, making them powerful conduits for intention and frequency alignment. Just as water takes on the vibrational imprint of words and thoughts, crystals absorb, store, and amplify energy—which is why they’ve been used for healing and manifestation for centuries.
         <br />
@@ -243,6 +246,7 @@ defmodule MoodboxWeb.RitualLive do
             water_ritual="Place a rose quartz near your water pitcher or under your cup. You can also print an intention card with a word like serenity or love and set it underneath to infuse your water with a peaceful frequency."
             charging_ritual="Let your rose quartz bathe in the light of a full moon overnight, absorbing the calming lunar energy."
             anchor_ritual="Keep a small rose quartz crystal on your nightstand or under your pillow to promote restful sleep and heart-centered dreams."
+            stone_img="https://moodbox.fly.storage.tigris.dev/rose_quartz.webp"
           />
         <% "afraid" -> %>
           <.mood_specific_crystals
@@ -251,6 +255,7 @@ defmodule MoodboxWeb.RitualLive do
             water_ritual="Print an affirmation card with words like strength or clarity and place it under a pitcher of water to charge it with intention."
             charging_ritual="Amazonite thrives in morning sunlight, absorbing the energizing rays to boost motivation."
             anchor_ritual="Hold a small amazonite stone in your palm when making important decisions or speaking with conviction."
+            stone_img="https://moodbox.fly.storage.tigris.dev/Amazonite.webp"
           />
         <% "sad" -> %>
           <.mood_specific_crystals
@@ -259,6 +264,7 @@ defmodule MoodboxWeb.RitualLive do
             water_ritual="Drop clean smooth carnelian stones in your water or place it near your glass while setting the intention for vibrant joy."
             charging_ritual="Let your carnelian charge in direct sunlight, amplifying its lively, passionate energy."
             anchor_ritual="Keep a carnelian stone on your desk or in your pocket to remind you to embrace joy and spontaneity throughout the day."
+            stone_img="https://moodbox.fly.storage.tigris.dev/Carnelian.webp"
           />
       <% end %>
 
