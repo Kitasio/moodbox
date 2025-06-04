@@ -7,12 +7,14 @@ defmodule MoodboxWeb.RitualLive do
 
   def handle_params(%{"mood" => mood, "ritual" => ritual}, uri, socket) do
     back_path = uri |> String.split("/") |> Enum.drop(-1) |> Enum.join("/")
+    crystal_img = choose_crystal_img(mood)
 
     {:noreply,
      socket
      |> assign(:current_path, uri)
      |> assign(:back_path, back_path)
      |> assign(:mood, mood)
+     |> assign(:crystal_img, crystal_img)
      |> assign(:ritual, ritual)}
   end
 
@@ -25,6 +27,7 @@ defmodule MoodboxWeb.RitualLive do
           :if={@ritual == "crystal-frequencies"}
           back_path={@back_path}
           mood={@mood}
+          crystal_img={@crystal_img}
         />
         <.elemental_immersion_page
           :if={@ritual == "elemental-immersion"}
@@ -210,9 +213,8 @@ defmodule MoodboxWeb.RitualLive do
 
         Because the human body is over 60% water, Emoto’s research suggests that our thoughts and emotions literally shape us at a molecular level. Just like water, we crystallize the energy we are immersed in.
         <div class="max-w-sm flex flex-col gap-3">
-          <img src="/images/fear_crystal.jpg" />
-          <a target="_blank" download href="/images/fear_crystal.jpg">
-            <.button>Download</.button>
+          <a target="_blank" download href={@crystal_img}>
+            <.button variant="outlined">Download Crystal Image</.button>
           </a>
           <br />
         </div>
@@ -558,4 +560,8 @@ defmodule MoodboxWeb.RitualLive do
     </div>
     """
   end
+
+  defp choose_crystal_img("sad"), do: "/images/sadness_crystal.jpg"
+  defp choose_crystal_img("angry"), do: "/images/anger_crystal.jpg"
+  defp choose_crystal_img("afraid"), do: "/images/fear_crystal.jpg"
 end
