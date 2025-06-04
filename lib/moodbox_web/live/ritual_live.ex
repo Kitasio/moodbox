@@ -74,11 +74,11 @@ defmodule MoodboxWeb.RitualLive do
           <.mood_specific_poses
             title="Bliss: Surrender & serenity"
             power_pose="Victory pose – stand with feet grounded, arms raised overhead in a 'V' shape, chin slightly lifted. This posture exudes effortless triumph and a sense of ease."
-            power_pose_img="https://moodbox.fly.storage.tigris.dev/v_pose.webp?updatedAt=1748260977436"
+            power_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_angry_1.png"
             yoga_pose="Child’s pose (Balasana) – A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
-            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/child_pose.webp?updatedAt=1748260977416"
+            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_angry_2.png"
             alternative_pose="Reclined butterfly (Supta Baddha Konasana) – Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
-            alt_pose_img="https://moodinabox.fra1.cdn.digitaloceanspaces.com/Layer%2032.webp"
+            alt_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_angry_3.png"
           />
         <% "afraid" -> %>
           <.mood_specific_poses
@@ -94,11 +94,11 @@ defmodule MoodboxWeb.RitualLive do
           <.mood_specific_poses
             title="Joy: Expansion & expression"
             power_pose="Expansive star pose – stand with feet wide apart, arms fully outstretched, and chest lifted. This pose signals openness, excitement, and an embrace of life’s possibilities."
-            power_pose_img=""
+            power_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_1.png"
             yoga_pose="Backbend (wheel or camel pose) – Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
-            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_2.webp"
+            yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_2.png"
             alternative_pose="Wild thing (Camatkarasana) – A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
-            alt_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_3.webp"
+            alt_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_3.png"
           />
       <% end %>
 
