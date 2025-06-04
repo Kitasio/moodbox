@@ -62,7 +62,9 @@ defmodule MoodboxWeb.FurtherBoostLive do
                   The magic of anchoring.
 
                   One of the coolest tricks the subconscious mind performs is linking an emotional state with a sensory trigger—like a song—so you can access it anytime you need. Just as a familiar scent can transport you to a cherished memory, this track becomes your personal shortcut to confidence, joy, or bliss.
+
                   Each time you listen, your mind strengthens the connection, making it easier to shift into a high-vibe state instantly. Use it intentionally, and watch how quickly and effortlessly you can reclaim your power.
+
                   Instead of reacting to the past, you become anchored to your dreams, desires, and highest self. Welcome to the next level of emotional mastery.
                 </.p>
             <% end %>

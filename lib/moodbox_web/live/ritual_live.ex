@@ -66,7 +66,7 @@ defmodule MoodboxWeb.RitualLive do
         a state of power, bliss, or joy.
 
         By using intentional movement, you’re not just posing—you’re anchoring a new
-        state of being.
+        state of being. <br />
         <span class="font-bold">Ready to embody the energy you want? Let’s flow.</span>
       </.p>
 
@@ -120,7 +120,7 @@ defmodule MoodboxWeb.RitualLive do
 
   defp mood_specific_poses(assigns) do
     ~H"""
-    <div class="mt-8 max-w-2xl w-full text-left">
+    <div class="max-w-2xl w-full text-left">
       <.h3 class="text-center"><%= @title %></.h3>
       <.p class="mt-8 font-semibold">
         Power Pose
@@ -214,13 +214,17 @@ defmodule MoodboxWeb.RitualLive do
           The power of intention & crystalline structure: Lessons from Masaru Emoto
         </span>
         Dr. Masaru Emoto was a Japanese researcher who explored the impact of words, emotions, and intentions on the molecular structure of water. His groundbreaking work demonstrated that water responds to human consciousness, forming beautifully intricate or chaotic crystalline patterns based on the energy it is exposed to.
+        <br />
         <span class="font-bold">Water, emotion & intention</span>
         Emoto’s experiments involved exposing water to different words, sounds, and emotions before freezing it. Under a microscope, the frozen water droplets revealed:
         • Harmonious, symmetrical crystals when infused with loving words, gratitude, and positive emotions
         • Disordered, fragmented structures when exposed to negativity, anger, or harsh language
+
         Because the human body is over 60% water, Emoto’s research suggests that our thoughts and emotions literally shape us at a molecular level. Just like water, we crystallize the energy we are immersed in.
+        <br />
         <span class="font-bold">Crystals as energy amplifiers</span>
         Natural crystals and gemstones are also structured in precise geometric formations, making them powerful conduits for intention and frequency alignment. Just as water takes on the vibrational imprint of words and thoughts, crystals absorb, store, and amplify energy—which is why they’ve been used for healing and manifestation for centuries.
+        <br />
         <span class="font-bold">Bridging water, crystals & intention</span>
         By combining Emoto’s water techniques with crystal energy, you can create a potent frequency-shifting practice:
         • Charge your water: Place a written affirmation (such as peace, confidence, or joy) under your water pitcher, or add a crystal nearby to infuse the water with its energy
@@ -228,6 +232,7 @@ defmodule MoodboxWeb.RitualLive do
         • Sleep & dream work: Keep a crystal under your pillow with an affirmation card, allowing your subconscious to integrate positive shifts overnight
 
         Both water and crystals hold memory, acting as energetic mirrors that reflect and reinforce our inner state. When we consciously engage with them, we create a bridge between the physical and energetic realms, allowing us to align with the emotions and experiences we wish to cultivate.
+        <br />
         <span class="font-bold">Cleansing & charging your crystals</span>
         • Moonlight: Place your crystals under the full moon to cleanse and recharge them with gentle, reflective energy
         • Sunlight: Let crystals like amazonite and carnelian soak in the morning sun to boost their vitality
