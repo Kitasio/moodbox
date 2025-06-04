@@ -22,8 +22,8 @@ defmodule MoodboxWeb.ColorLive do
 
         <div class="mt-10 lg:mt-20 flex flex-wrap gap-4 md:gap-6 lg:gap-8 justify-center">
           <.link :for={color <- @colors} patch={@current_path <> "/#{color.resource}"}>
-            <.btn
-              class="transition hover:scale-105 w-16 h-16 md:w-20 md:h-20 lg:w-28 lg:h-28 rounded-full"
+            <div
+              class="transition hover:scale-105 w-20 h-20 lg:w-28 lg:h-28 rounded-full"
               style={"background-color: #{color.hex}"}
               aria-label={color.name}
             />
