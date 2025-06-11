@@ -63,7 +63,7 @@ defmodule MoodboxWeb.CreateRitualLive do
             />
           </div>
 
-          <.p class="mt-10 max-w-3xl">
+          <.p class="mt-10 max-w-3xl text-left sm:text-center">
             Emotions, memories, and senses are deeply connected, making them a powerful
             tool for transformation. By linking your elevated state to sensory cues—sound,
             scent, sight, taste, or movement—you create an effortless shortcut back to feeling
