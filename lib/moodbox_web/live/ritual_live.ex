@@ -73,31 +73,40 @@ defmodule MoodboxWeb.RitualLive do
         <% "angry" -> %>
           <.mood_specific_poses
             title="Bliss: Surrender & serenity"
-            power_pose="Victory pose – stand with feet grounded, arms raised overhead in a 'V' shape, chin slightly lifted. This posture exudes effortless triumph and a sense of ease."
+            power_pose_name="Victory Pose"
+            power_pose_description="Stand with feet grounded, arms raised overhead in a 'V' shape, chin slightly lifted. This posture exudes effortless triumph and a sense of ease."
             power_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_angry_1.png"
-            yoga_pose="Child’s pose (Balasana) – A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
+            yoga_pose_name="Child’s Pose (Balasana)"
+            yoga_pose_description="A deeply restorative posture that invites surrender, safety, and relaxation. Knees wide, forehead to the ground, and arms stretched forward, it fosters a sense of peace."
             yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_angry_2.png"
-            alternative_pose="Reclined butterfly (Supta Baddha Konasana) – Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
+            alternative_pose_name="Reclined Butterfly (Supta Baddha Konasana)"
+            alternative_pose_description="Lying on your back with the soles of your feet together, knees falling open, this gentle heart-opener allows for deep relaxation and release."
             alt_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_angry_3.png"
           />
         <% "afraid" -> %>
           <.mood_specific_poses
             title="Power: Command & strength"
-            power_pose="Superhero pose – stand tall with feet hip-width apart, hands on hips, and chest open. This stance signals confidence, resilience, and readiness to take on the world."
+            power_pose_name="Superhero Pose"
+            power_pose_description="Stand tall with feet hip-width apart, hands on hips, and chest open. This stance signals confidence, resilience, and readiness to take on the world."
             power_pose_img="https://moodbox.fly.storage.tigris.dev/afraid_yoga_1.png"
-            yoga_pose="Warrior II (Virabhadrasana II) – A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
+            yoga_pose_name="Warrior II (Virabhadrasana II)"
+            yoga_pose_description="A powerful stance that channels focus and inner strength. With feet grounded, arms extended, and gaze steady, you embody unwavering determination."
             yoga_pose_img="https://moodbox.fly.storage.tigris.dev/afraid_yoga_2.png"
-            alternative_pose="Goddess pose (Utkata Konasana) – A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
+            alternative_pose_name="Goddess Pose (Utkata Konasana)"
+            alternative_pose_description="A strong, grounded stance with knees bent and arms raised like a fierce warrior queen. This pose ignites your inner power and stability."
             alt_pose_img="https://moodbox.fly.storage.tigris.dev/afraid_yoga_3.png"
           />
         <% "sad" -> %>
           <.mood_specific_poses
             title="Joy: Expansion & expression"
-            power_pose="Expansive star pose – stand with feet wide apart, arms fully outstretched, and chest lifted. This pose signals openness, excitement, and an embrace of life’s possibilities."
+            power_pose_name="Expansive Star Pose"
+            power_pose_description="Stand with feet wide apart, arms fully outstretched, and chest lifted. This pose signals openness, excitement, and an embrace of life’s possibilities."
             power_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_1.png"
-            yoga_pose="Backbend (wheel or camel pose) – Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
+            yoga_pose_name="Backbend (Wheel or Camel Pose)"
+            yoga_pose_description="Heart-opening postures that create space for joy, exhilaration, and emotional release. They lift the spirit and energize the body."
             yoga_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_2.png"
-            alternative_pose="Wild thing (Camatkarasana) – A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
+            alternative_pose_name="Wild Thing (Camatkarasana)"
+            alternative_pose_description="A playful, dynamic backbend that feels like a celebration. One hand and foot remain grounded while the other arm and leg extend, creating a sensation of freedom and joy."
             alt_pose_img="https://moodbox.fly.storage.tigris.dev/yoga_sad_3.png"
           />
       <% end %>
@@ -110,47 +119,55 @@ defmodule MoodboxWeb.RitualLive do
   end
 
   attr :title, :string, required: true
-  attr :power_pose, :string, required: true
+  attr :power_pose_name, :string, required: true
+  attr :power_pose_description, :string, required: true
   attr :power_pose_img, :string, required: true
-  attr :yoga_pose, :string, required: true
+  attr :yoga_pose_name, :string, required: true
+  attr :yoga_pose_description, :string, required: true
   attr :yoga_pose_img, :string, required: true
-  attr :alternative_pose, :string, required: true
+  attr :alternative_pose_name, :string, required: true
+  attr :alternative_pose_description, :string, required: true
   attr :alt_pose_img, :string, required: true
 
   defp mood_specific_poses(assigns) do
     ~H"""
     <div class="max-w-4xl w-full text-left">
-      <.h3 class="md:text-center"><%= @title %></.h3>
-      <details class="mt-8 font-semibold md:text-lg xl:text-2xl">
+      <.h3 class="md:text-center uppercase"><%= @title %></.h3>
+      <.h3 class="md:text-center">Power Pose</.h3>
+      <p class="mt-8 font-semibold md:text-lg xl:text-2xl"><%= @power_pose_name %></p>
+      <details>
         <summary class="cursor-pointer text-gray-800">
-          Power Pose: Instructions
+          Instructions
         </summary>
         <.p class="mt-2 p-4 font-normal text-left bg-white rounded-xl shadow-md">
-          <%= @power_pose %>
+          <%= @power_pose_description %>
         </.p>
       </details>
       <div class="mx-auto flex items-center justify-center">
         <img src={@power_pose_img} alt="power pose picture" />
       </div>
 
-      <details class="mt-8 font-semibold md:text-lg xl:text-2xl">
+      <.h3 class="mt-8 md:text-center">Yoga Poses</.h3>
+      <p class="mt-8 font-semibold md:text-lg xl:text-2xl"><%= @yoga_pose_name %></p>
+      <details>
         <summary class="cursor-pointer text-gray-800">
-          Yoga Pose: Instructions
+          Instructions
         </summary>
         <.p class="mt-2 p-4 font-normal text-left bg-white rounded-xl shadow-md">
-          <%= @yoga_pose %>
+          <%= @yoga_pose_description %>
         </.p>
       </details>
       <div class="mx-auto flex items-center justify-center">
         <img src={@yoga_pose_img} alt="yoga pose picture" />
       </div>
 
-      <details class="mt-8 font-semibold md:text-lg xl:text-2xl">
+      <p class="mt-8 font-semibold md:text-lg xl:text-2xl"><%= @alternative_pose_name %></p>
+      <details>
         <summary class="cursor-pointer text-gray-800">
-          Alternative Yoga Pose: Instructions
+          Instructions
         </summary>
         <.p class="mt-2 p-4 font-normal text-left bg-white rounded-xl shadow-md">
-          <%= @alternative_pose %>
+          <%= @alternative_pose_description %>
         </.p>
       </details>
       <div class="mx-auto flex items-center justify-center">
