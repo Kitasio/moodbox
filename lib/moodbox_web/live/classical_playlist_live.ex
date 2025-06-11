@@ -64,13 +64,13 @@ defmodule MoodboxWeb.ClassicalPlaylistLive do
               </.link>
             <% end %>
 
-            <p class="text-sm text-gray-600 max-w-3xl text-center">
+            <.p class="mt-8 text-left">
               <%= if @video_index == 0 do %>
                 Releasing negative emotions through guided EFT (Emotional Freedom Technique) helps clear energetic blocks, reduce stress, and restore emotional balance. By tapping on key acupressure points while focusing on specific thoughts or feelings, EFT signals the brain to calm the nervous system and rewire emotional responses. This powerful practice allows you to let go of anger, fear, or sadness, creating space for inner peace, clarity, and a renewed sense of empowerment.
               <% else %>
                 Enhancing classical music with binaural beats creates a powerful synergy that deepens focus, relaxation, and emotional balance. Binaural beats gently guide the brain into optimal states—whether for creativity, deep rest, or heightened concentration—while classical compositions provide a harmonious backdrop that soothes the nervous system. This combination blends science and artistry to elevate mood, sharpen cognition, and promote an effortless flow state.
               <% end %>
-            </p>
+            </.p>
           </div>
         </div>
       </.centered_block>
