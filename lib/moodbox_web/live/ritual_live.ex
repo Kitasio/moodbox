@@ -305,11 +305,13 @@ defmodule MoodboxWeb.RitualLive do
 
       <.p class="max-w-2xl md:px-10 text-left whitespace-pre-line">
         Water has the power to cleanse more than just the body—it resets the mind and energy field.
+
         Ancient cultures have long used bathing, hot springs, and cold plunges to shift states of mind, detoxify the body, and awaken the spirit.
         But water isn’t the only element that can enhance your mood.
 
         Fire, in the form of candlelight, adds another layer to your ritual.
         Lighting a candle signals a transition—a moment to pause, set an intention, and step into a new energy.
+
         The soft flicker soothes the nervous system, while color and scent can deepen your desired state.
         <span class="font-bold">
           By combining water, fire, and intention, you create a multi-sensory mood shift that stays with you long after you step out.
