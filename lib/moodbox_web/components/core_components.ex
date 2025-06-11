@@ -740,8 +740,24 @@ defmodule MoodboxWeb.CoreComponents do
 
   def container(assigns) do
     ~H"""
-    <div class={"relative h-dvh w-full #{@class}"}>
+    <div id="container" class={"relative h-dvh w-full #{@class}"} phx-hook="ToggleFooter" phx-throttle>
       <%= render_slot(@inner_block) %>
+
+      <footer id="dynamic-footer" class="fixed z-50 opacity-0 bottom-[-100px] w-full">
+        <div class="flex justify-center sm:justify-center w-full">
+          <div class="flex justify-end sm:justify-center w-full sm:w-auto max-w-md gap-3 items-center text-center py-2 px-4 m-2 rounded-full sm:backdrop-blur-xs sm:bg-white/10">
+            <.link navigate="/">
+              <img
+                class="w-5 h-6 hover:scale-105 transition"
+                src="https://moodbox.fly.storage.tigris.dev/icon.webp"
+              />
+            </.link>
+            <p class="hidden sm:block text-[10px] text-gray-800">
+              ©️ <%= Date.utc_today().year %> April Norris | Mood in a Box ®️ | All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
     """
   end

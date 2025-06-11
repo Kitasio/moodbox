@@ -84,6 +84,20 @@ defmodule MoodboxWeb.HomeLive do
         class="absolute inset-0 h-full w-full object-cover z-0 top-32 sm:top-14 md:top-20"
         src="https://moodbox.fly.storage.tigris.dev/main-page.webp"
       />
+
+      <footer class="fixed z-50 bottom-0 w-full">
+        <div class="flex justify-center w-full">
+          <div class="flex justify-center w-full sm:w-auto max-w-md gap-3 items-center text-center py-2 px-4 m-2 rounded-full backdrop-blur-xs bg-white/10">
+            <img
+              class="w-5 h-6"
+              src="https://moodbox.fly.storage.tigris.dev/icon.webp"
+            />
+            <p class="text-[10px] text-gray-800">
+              ©️ <%= Date.utc_today().year %> April Norris | Mood in a Box ®️ | All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
     """
   end
