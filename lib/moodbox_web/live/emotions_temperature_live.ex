@@ -24,8 +24,10 @@ defmodule MoodboxWeb.EmotionsTemperatureLive do
             The states of our emotions can be compared to water, which can be frozen like ice, liquid and flowing or steamy like vapor.
           </p>
 
-          <p class="text-xl text-gray-600 mb-12">
-            Understanding what state your emotion is in allows you to heat it up or cool it off so it can flow through and be released as it's intended to. Emotions aren't meant to stay with us. They give us a message so that we can change course and find equilibrium.
+          <p class="text-xl whitespace-pre-line text-gray-600 mb-12">
+            Understanding what state your emotion is in allows you to heat it up or cool it off so it can flow through and be released as it's intended to.
+
+            Emotions aren't meant to stay with us. They give us a message so that we can change course and find equilibrium.
           </p>
 
           <div class="mb-12">
