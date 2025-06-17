@@ -7,7 +7,7 @@ defmodule MoodboxWeb.RitualLive do
 
   def handle_params(%{"mood" => mood, "ritual" => ritual}, uri, socket) do
     back_path = uri |> String.split("/") |> Enum.drop(-1) |> Enum.join("/")
-    crystal_img = choose_crystal_img(mood)
+    %{img: crystal_img, label: crystal_label, color: crystal_color} = crystal_config(mood)
 
     {:noreply,
      socket
@@ -15,6 +15,8 @@ defmodule MoodboxWeb.RitualLive do
      |> assign(:back_path, back_path)
      |> assign(:mood, mood)
      |> assign(:crystal_img, crystal_img)
+     |> assign(:crystal_label, crystal_label)
+     |> assign(:crystal_color, crystal_color)
      |> assign(:ritual, ritual)}
   end
 
@@ -28,6 +30,8 @@ defmodule MoodboxWeb.RitualLive do
           back_path={@back_path}
           mood={@mood}
           crystal_img={@crystal_img}
+          crystal_label={@crystal_label}
+          crystal_color={@crystal_color}
         />
         <.elemental_immersion_page
           :if={@ritual == "elemental-immersion"}
@@ -208,6 +212,8 @@ defmodule MoodboxWeb.RitualLive do
   attr :mood, :string, required: true
   attr :back_path, :string, required: true
   attr :crystal_img, :string, required: true
+  attr :crystal_label, :string, required: true
+  attr :crystal_color, :string, required: true
 
   defp crystal_frequencies_page(assigns) do
     ~H"""
@@ -233,6 +239,9 @@ defmodule MoodboxWeb.RitualLive do
         <div class="max-w-sm flex flex-col gap-3">
           <a target="_blank" download href={@crystal_img}>
             <.button variant="outlined">Download Crystal Image</.button>
+            <p class={"#{@crystal_color} mt-2 font-medium lg:text-xl uppercase"}>
+              <%= @crystal_label %>
+            </p>
           </a>
           <br />
         </div>
@@ -586,7 +595,27 @@ defmodule MoodboxWeb.RitualLive do
     """
   end
 
-  defp choose_crystal_img("sad"), do: "/images/sadness_crystal.jpg"
-  defp choose_crystal_img("angry"), do: "/images/anger_crystal.jpg"
-  defp choose_crystal_img("afraid"), do: "/images/fear_crystal.jpg"
+  defp crystal_config("sad") do
+    %{
+      img: "/images/crystals-sad.png",
+      label: "Delight",
+      color: "text-[#ff8c3e]"
+    }
+  end
+
+  defp crystal_config("angry") do
+    %{
+      img: "/images/crystals-anger.png",
+      label: "Gratitude",
+      color: "text-[#5c3178]"
+    }
+  end
+
+  defp crystal_config("afraid") do
+    %{
+      img: "/images/crystals-fear.png",
+      label: "Eternity",
+      color: "text-[#05615b]"
+    }
+  end
 end
