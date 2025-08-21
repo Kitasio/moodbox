@@ -9,20 +9,20 @@ defmodule MoodboxWeb.NumbLive do
     ~H"""
     <.container>
       <.centered_block>
-        <div class="flex flex-col justify-center items-center gap-7">
+        <div class="flex max-w-4xl flex-col justify-center items-center gap-7">
           <.subheading>
             Let’s identify your emotions.
           </.subheading>
           <.p>
             Watch the following videos to identify which one feels most like how you feel…
           </.p>
-          <.button
-            phx-click={show_modal("about-modal")}
-            class="transition hover:scale-105 font-semibold px-8 py-3"
-            variant="outlined"
-          >
-            More Info
-          </.button>
+
+          <p class="mb-4 text-left p-4 md:p-8 bg-white rounded-xl shadow-md">
+            These tracks were designed with sounds and frequencies to help you identify the feeling of anger, fear or sadness. Once provoked, heavy emotions like frustration, anxiety, overwhelm, disappointment, or grief can be released.
+            <br /><br />
+            Imagery and disharmonious sounds ranging from fires, rain, tea kettles, revving engines, traffic, bass, wind, subdued piano notes, sighs, thunder, sirens, fast heartbeats, ticking clocks, and frequencies below 20hz come together to deconstruct and honor dark emotions. Once we identify and feel an emotion, we can release it.
+          </p>
+
           <div class="flex flex-col md:flex-row gap-8 w-full">
             <div :for={video <- @videos} class="aspect-video w-full">
               <div class="w-full h-full">
@@ -48,16 +48,6 @@ defmodule MoodboxWeb.NumbLive do
           </div>
         </div>
       </.centered_block>
-
-      <.modal id="about-modal" on_cancel={hide_modal("about-modal")}>
-        <.header>About These Videos</.header>
-        <p class="mt-4">
-          These tracks were designed with sounds and frequencies to help you identify the feeling of anger, fear or sadness. Once provoked, heavy emotions like frustration, anxiety, overwhelm, disappointment, or grief can be released.
-        </p>
-        <p class="mt-4">
-          Imagery and disharmonious sounds ranging from fires, rain, tea kettles, revving engines, traffic, bass, wind, subdued piano notes, sighs, thunder, sirens, fast heartbeats, ticking clocks, and frequencies below 20hz come together to deconstruct and honor dark emotions. Once we identify and feel an emotion, we can release it.
-        </p>
-      </.modal>
 
       <.base_bg />
     </.container>
