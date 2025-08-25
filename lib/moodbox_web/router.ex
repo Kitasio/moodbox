@@ -21,6 +21,7 @@ defmodule MoodboxWeb.Router do
     pipe_through :browser
 
     live "/", HomeLive
+    live "/donate", DonateLive
     live "/moods", MoodLive
     live "/moods/not-sure", FeelingCheckLive
     live "/moods/numb", NumbLive
