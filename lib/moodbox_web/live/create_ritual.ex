@@ -69,6 +69,13 @@ defmodule MoodboxWeb.CreateRitualLive do
             scent, sight, taste, or movement—you create an effortless shortcut back to feeling
             amazing. These anchors instantly help you shift your mood whenever needed.
           </.p>
+
+          <div class="mt-5 flex gap-5">
+            <.link navigate={~p"/donate"}>
+              <.button variant="outlined">Donate</.button>
+            </.link>
+            <.button disabled="true">Magic Shop (comming soon)</.button>
+          </div>
         </div>
       </.centered_block>
       <.base_bg />

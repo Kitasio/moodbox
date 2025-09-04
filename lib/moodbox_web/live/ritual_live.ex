@@ -44,9 +44,111 @@ defmodule MoodboxWeb.RitualLive do
           mood={@mood}
         />
         <.tea_ceremony_page :if={@ritual == "tea-ceremony"} back_path={@back_path} mood={@mood} />
+        <.light_language :if={@ritual == "light-language"} mood={@mood} back_path={@back_path} />
       </.centered_block>
       <.base_bg />
     </.container>
+    """
+  end
+
+  attr :mood, :string, required: true
+  attr :back_path, :string, required: true
+
+  defp light_language(assigns) do
+    ~H"""
+    <div class="flex flex-col gap-6 text-center">
+      <.subheading>Language of Light: Exploring Positive States</.subheading>
+
+      <.p class="max-w-2xl text-left whitespace-pre-line">
+        At Mood in a Box, we honor each emotion’s texture—not just the challenging ones we often dissect, but the luminous, subtle positive states we seldom name.
+      </.p>
+
+      <div class="max-w-2xl text-left">
+        <p class="font-bold">Why this matters:</p>
+        <ul class="list-disc space-y-2 pl-5 mt-2">
+          <li>Naming a positive feeling with precision deepens your experience of it</li>
+          <li>It opens new possibilities for aligning internal state with external action</li>
+          <li>It rewires your mood map toward choice and presence</li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow mt-10 p-4 md:p-8">
+        <.h3>Let’s experiment:</.h3>
+
+        <ol class="max-w-2xl w-full list-decimal space-y-2 text-left pl-5 mt-4">
+          <li>
+            Choose a word like
+            <span class="font-semibold">radiant, peaceful, buoyant, enchanted, freedom,</span>
+            or <span class="font-semibold">grounded.</span>
+          </li>
+          <li>
+            Close your eyes and imagine stepping into that feeling—with imagery, sensory texture, metaphor, scene.
+          </li>
+          <li>
+            Notice the tone the word sets within: is it warm like sunlight, soft like velvet, expansive like sky?
+          </li>
+        </ol>
+
+        <.p class="max-w-2xl font-bold text-left mt-8">
+          Example: “Enchanted”
+        </.p>
+        <.p class="text-left mt-2">
+          Imagine a twilight forest illuminated by twinkling fireflies, moss soft under bare feet, and the air humming with whispered magic. Your heart feels curious, alive, receptive—pulled into spacious wonder. That’s enchanted: presence, awe, openness combined.
+        </.p>
+
+        <.p class="text-left mt-8">
+          <span class="font-bold">Now you try:</span>
+          choose a word below and feel it. What does your version of “radiant” or “peaceful” taste like, sound like, hold in your body? Let your mind wander into the sensory richness of that word.
+        </.p>
+      </div>
+
+      <div class="max-w-4xl w-full text-left">
+        <%= case @mood do %>
+          <% "sad" -> %>
+            <.mood_specific_language
+              welcome_message="Welcome to the Language of Joy. Joy is not just a feeling—it’s a frequency that elevates everything it touches. From playful sparks to radiant inner light, each word here captures a unique facet of joy’s spectrum. As you explore, notice which words make your heart lift or your smile emerge. Let joy become something you practice, not just experience spontaneously."
+              subheading="🌞 JOY — The Lighthearted Spark"
+              words={joy_words()}
+            />
+          <% "angry" -> %>
+            <.mood_specific_language
+              welcome_message="Welcome to the Language of Bliss. Bliss is the sacred stillness where time melts and presence expands. These words invite you into subtlety, softness, and serenity—into the spaces where the soul exhales. As you move through them, allow yourself to slow down, drop in, and feel the elegance of being deeply at ease."
+              subheading="🌸 BLISS — The Sacred Stillness"
+              words={bliss_words()}
+            />
+          <% "afraid" -> %>
+            <.mood_specific_language
+              welcome_message="Welcome to the Language of Power. True power is rooted, sovereign, and magnetic—not forceful, but aligned. These words are keys to activating the potent energy that already lives within you. Read slowly. Let the language awaken something ancient, clear, and fiercely alive. Power isn’t something we take—it’s something we remember."
+              subheading="🔥 POWER — The Embodied Force"
+              words={power_words()}
+            />
+        <% end %>
+      </div>
+      <.link patch={@back_path} class="my-10">
+        <.button variant="outlined">Back to rituals</.button>
+      </.link>
+    </div>
+    """
+  end
+
+  attr :welcome_message, :string, required: true
+  attr :subheading, :string, required: true
+  attr :words, :list, required: true
+
+  defp mood_specific_language(assigns) do
+    ~H"""
+    <div>
+      <.h3 class="mt-8"><%= @subheading %></.h3>
+      <.p class="whitespace-pre-line text-left mb-10"><%= @welcome_message %></.p>
+      <div :for={item <- @words} class="mt-6">
+        <p class="font-semibold md:text-2xl">
+          <%= item.number %> <span title={item.definition}><%= item.term %></span>
+        </p>
+        <p>
+          <%= item.description %>
+        </p>
+      </div>
+    </div>
     """
   end
 
@@ -593,6 +695,330 @@ defmodule MoodboxWeb.RitualLive do
       </.link>
     </div>
     """
+  end
+
+  defp joy_words do
+    [
+      %{
+        number: "1.",
+        term: "Delighted",
+        description:
+          "Laughter bubbles up like sparkling water. Your heart flutters with pleasant surprise, like catching sunlight through leaves.",
+        definition: "Feeling or showing great pleasure and joy."
+      },
+      %{
+        number: "2.",
+        term: "Playful",
+        description:
+          "Like a kitten pouncing or a child skipping barefoot. Energy is light, spontaneous, and unconcerned with rules.",
+        definition: "Full of fun and high spirits; lighthearted and spontaneous."
+      },
+      %{
+        number: "3.",
+        term: "Cheerful",
+        description:
+          "A melody hums in your mind. The air feels clear. Everything seems possible, and even small things make you smile.",
+        definition: "Noticeably happy and optimistic; visibly upbeat in mood."
+      },
+      %{
+        number: "4.",
+        term: "Glowing",
+        description:
+          "Inner warmth shines outward. Your presence feels magnetic, your eyes soft and kind. It's joy with a soft halo.",
+        definition: "Radiantly happy or beautiful; visibly bright with joy or health."
+      },
+      %{
+        number: "5.",
+        term: "Mirthful",
+        description:
+          "Unrestrained laughter with friends. The joy is full-bodied—your cheeks ache, your eyes water. You’re in it.",
+        definition: "Full of laughter and amusement; joyful and merry."
+      },
+      %{
+        number: "6.",
+        term: "Uplifted",
+        description:
+          "Imagine being lifted by a gust of good news. Lightness floods your chest, and your thoughts rise with it.",
+        definition: "Emotionally elevated; inspired or made happier."
+      },
+      %{
+        number: "7.",
+        term: "Effervescent",
+        description:
+          "Bubbly inside, like soda fizz. Joy rising in your chest like tiny fireworks, spark after spark.",
+        definition: "Vivacious and enthusiastic; bubbling over with high energy."
+      },
+      %{
+        number: "8.",
+        term: "Giddy",
+        description:
+          "Head spinning with delight, laughter sneaking out in bursts. You can’t contain the excitement, and you don’t want to.",
+        definition: "Lightheartedly silly; elated to the point of disorientation or laughter."
+      },
+      %{
+        number: "9.",
+        term: "Sunny",
+        description:
+          "Bright, warm, welcoming. Your presence feels like a smile. You light up spaces just by showing up.",
+        definition: "Cheerful and optimistic in disposition or outlook."
+      },
+      %{
+        number: "10.",
+        term: "Buoyant",
+        description:
+          "Weightless and lifted, like floating in warm water. The heaviness has left. Your spirit floats.",
+        definition: "Cheerfully resilient; able to stay afloat emotionally."
+      },
+      %{
+        number: "11.",
+        term: "Elated",
+        description:
+          "Big joy. A personal celebration in your soul. You’ve just gotten the yes, and everything feels right.",
+        definition: "Ecstatically happy or proud; in high spirits."
+      },
+      %{
+        number: "12.",
+        term: "Jubilant",
+        description:
+          "Like dancing in the street. Full-body joy. It wants movement, music, release.",
+        definition: "Feeling or expressing great joy and triumph."
+      },
+      %{
+        number: "13.",
+        term: "Exuberant",
+        description:
+          "Overflowing. Too much joy to hold in—so it pours out through words, actions, expression.",
+        definition: "Full of unrestrained enthusiasm or joy."
+      },
+      %{
+        number: "14.",
+        term: "Radiant",
+        description:
+          "Light pours from you. You shine with authenticity. Your joy becomes a beacon.",
+        definition: "Emitting joy, love, or confidence strongly and clearly."
+      },
+      %{
+        number: "15.",
+        term: "Tickled",
+        description:
+          "Something about this moment strikes a funny, unexpected delight. A tiny laugh dances just beneath the surface.",
+        definition: "Delighted or amused; pleased in a playful way."
+      }
+    ]
+  end
+
+  defp bliss_words do
+    [
+      %{
+        number: "1.",
+        term: "Serene",
+        description:
+          "Still water, a slow breath, nothing pulling at you. Your body releases its grip. All is well, exactly as it is.",
+        definition: "Calm, peaceful, and untroubled."
+      },
+      %{
+        number: "2.",
+        term: "Ecstatic",
+        description:
+          "Your cells sing. It’s not just pleasure—it’s transcendence. A rush that dissolves your edges and connects you to everything.",
+        definition: "Feeling overwhelming happiness or joyful excitement."
+      },
+      %{
+        number: "3.",
+        term: "Tranquil",
+        description:
+          "Gentle waves in a secluded cove. Thoughts slow, breath deepens. You're quietly euphoric.",
+        definition: "Free from disturbance or turmoil; calm and quiet."
+      },
+      %{
+        number: "4.",
+        term: "Luminous",
+        description:
+          "Soft white light everywhere. There's clarity, and a quiet knowing. You are fully here—untouched by stress.",
+        definition: "Radiating or reflecting light; clear and enlightening."
+      },
+      %{
+        number: "5.",
+        term: "Rapturous",
+        description:
+          "Overwhelmed in the best way. Music, beauty, nature—something bigger than you floods in and sweeps you away.",
+        definition: "Characterized by, feeling, or expressing great pleasure or enthusiasm."
+      },
+      %{
+        number: "6.",
+        term: "Content",
+        description:
+          "Satisfaction without striving. A warm blanket, a full belly, no need for more. You are enough. This moment is enough.",
+        definition: "In a state of peaceful happiness and satisfaction."
+      },
+      %{
+        number: "7.",
+        term: "Heavenly",
+        description:
+          "Soft clouds, divine stillness. It's more than comfort—it feels sacred, as if blessed by unseen hands.",
+        definition: "Delightful or blissful to a sublime or divine degree."
+      },
+      %{
+        number: "8.",
+        term: "Ethereal",
+        description:
+          "You feel almost not of this world. Light and beautiful, touched by something celestial.",
+        definition: "Extremely delicate and light; seemingly not of this world."
+      },
+      %{
+        number: "9.",
+        term: "Weightless",
+        description:
+          "All burdens released. Body and mind feel suspended in ease—timeless and serene.",
+        definition: "Free from heaviness or burden; light in sensation or emotional tone."
+      },
+      %{
+        number: "10.",
+        term: "Sanctified",
+        description: "A deep, holy calm. Your inner space feels consecrated. Bliss as reverence.",
+        definition: "Made sacred or set apart; often connoting inner peace or purity."
+      },
+      %{
+        number: "11.",
+        term: "Open",
+        description:
+          "Nothing guarded, nothing hiding. Your chest and mind wide like the sky—ready to receive.",
+        definition: "Receptive and unguarded; emotionally accessible."
+      },
+      %{
+        number: "12.",
+        term: "Whole",
+        description: "No missing pieces. No lack. Bliss as unity with yourself.",
+        definition: "Complete; free of fragmentation or lack."
+      },
+      %{
+        number: "13.",
+        term: "Melted",
+        description: "Tension evaporated. You feel soft, pliable, gently dissolved into the now.",
+        definition: "Relaxed and softened emotionally or physically."
+      },
+      %{
+        number: "14.",
+        term: "Gentle",
+        description:
+          "Tenderness without fragility. Soft tones, soft light, soft breath. The world touches you kindly.",
+        definition: "Mild in temperament or behavior; soft and soothing."
+      },
+      %{
+        number: "15.",
+        term: "Glowing (Bliss version)",
+        description:
+          "Not active, but radiant from stillness. Like embers of joy resting in your soul.",
+        definition: "Radiantly calm or happy; emitting a soft light or joy."
+      }
+    ]
+  end
+
+  defp power_words do
+    [
+      %{
+        number: "1.",
+        term: "Empowered",
+        description:
+          "Feet firm, heart steady, voice clear. You know your worth—and it radiates. You're not waiting for permission.",
+        definition: "Given the strength and confidence to take control or make decisions."
+      },
+      %{
+        number: "2.",
+        term: "Fierce",
+        description:
+          "Sharp focus, unwavering will. You protect what matters. Power as clarity, not aggression.",
+        definition: "Showing a heartfelt and powerful intensity."
+      },
+      %{
+        number: "3.",
+        term: "Magnetic",
+        description:
+          "People lean in. Your energy is compelling, confident. You attract what aligns.",
+        definition: "Having an attractive personal quality; drawing others in."
+      },
+      %{
+        number: "4.",
+        term: "Commanding",
+        description:
+          "Your presence fills a room. You lead without saying much—your energy speaks first.",
+        definition: "Having a strong presence or authority that elicits respect or attention."
+      },
+      %{
+        number: "5.",
+        term: "Resilient",
+        description:
+          "Like a diamond formed under pressure. You bend, but never break. Strength with grace.",
+        definition: "Able to recover quickly from adversity or setbacks."
+      },
+      %{
+        number: "6.",
+        term: "Sovereign",
+        description:
+          "You are the ruler of your realm. Calm. Grounded. Unshakably in charge of your inner world.",
+        definition: "Possessing supreme power or authority over one’s self or domain."
+      },
+      %{
+        number: "7.",
+        term: "Focused",
+        description:
+          "Laser clarity. All distractions dissolve. You know exactly what you’re doing—and why.",
+        definition: "Directing all attention and energy toward a specific goal or task."
+      },
+      %{
+        number: "8.",
+        term: "Determined",
+        description:
+          "Unshakable direction. Obstacles become steps. You move forward no matter what.",
+        definition: "Firm in purpose; resolved and unwavering."
+      },
+      %{
+        number: "9.",
+        term: "Aligned",
+        description:
+          "Your inner truth and outer actions are one. No friction, no hiding. Power through harmony.",
+        definition: "In harmony or agreement; internally congruent."
+      },
+      %{
+        number: "10.",
+        term: "Courageous",
+        description: "Fear met with forward motion. Your heart is racing, but you go anyway.",
+        definition: "Showing bravery in facing fear or difficulty."
+      },
+      %{
+        number: "11.",
+        term: "Anchored",
+        description: "Rooted deep. No storm can pull you up. You are centered, stable, sure.",
+        definition: "Firmly rooted; emotionally stable and grounded."
+      },
+      %{
+        number: "12.",
+        term: "Bold",
+        description:
+          "You speak the truth, take the leap, wear the red lipstick. Audacity with elegance.",
+        definition: "Showing willingness to take risks; confident and daring."
+      },
+      %{
+        number: "13.",
+        term: "Intentional",
+        description: "Nothing random here. Each move is a message. Your choices shape reality.",
+        definition: "Done with awareness and purpose."
+      },
+      %{
+        number: "14.",
+        term: "Electric",
+        description:
+          "Crackling energy, high voltage. Your presence charges the space around you.",
+        definition: "Exciting and full of energy; charged with intensity."
+      },
+      %{
+        number: "15.",
+        term: "Limitless",
+        description:
+          "No ceiling, no borders. You can see beyond the edge—and you’re walking toward it.",
+        definition: "Without bounds or restrictions; infinite potential."
+      }
+    ]
   end
 
   defp crystal_config("sad") do
