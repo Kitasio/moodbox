@@ -56,10 +56,10 @@ defmodule MoodboxWeb.CreateRitualLive do
               img_url="https://moodbox.fly.storage.tigris.dev/ritual_tea.png?updatedAt=1745586281177"
             />
             <.ritual_card
-              title="THE MAGIC SHOP"
-              link_href="/magic-shop"
+              title="LANGUAGE OF LIGHT"
+              link_href="/light-language"
               current_path={@current_path}
-              img_url="https://ik.imagekit.io/soulgenesis/Persephone/The_magic_shop.webp?updatedAt=1747928003772"
+              img_url="https://moodbox.fly.storage.tigris.dev/Lightlanguage.webp"
             />
           </div>
 
@@ -70,7 +70,7 @@ defmodule MoodboxWeb.CreateRitualLive do
             amazing. These anchors instantly help you shift your mood whenever needed.
           </.p>
 
-          <div class="mt-5 flex gap-5">
+          <div class="mt-5 flex flex-wrap gap-5">
             <.link navigate={~p"/donate"}>
               <.button variant="outlined">Donate</.button>
             </.link>
