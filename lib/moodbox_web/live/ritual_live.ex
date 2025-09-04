@@ -140,10 +140,19 @@ defmodule MoodboxWeb.RitualLive do
     <div>
       <.h3 class="mt-8"><%= @subheading %></.h3>
       <.p class="whitespace-pre-line text-left mb-10"><%= @welcome_message %></.p>
-      <div :for={item <- @words} class="mt-6">
-        <p class="font-semibold md:text-2xl">
-          <%= item.number %> <span title={item.definition}><%= item.term %></span>
-        </p>
+      <div :for={{item, index} <- Enum.with_index(@words)} class="mt-6 relative">
+        <.p
+          class="text-left cursor-pointer font-semibold md:text-2xl"
+          phx-click={JS.toggle(to: "#def-#{index}")}
+        >
+          <%= item.number %> <span><%= item.term %></span>
+        </.p>
+        <div
+          id={"def-#{index}"}
+          class="hidden shadow absolute bg-gray-700 text-white text-sm p-2 mt-1.5 rounded-lg z-10"
+        >
+          <%= item.definition %>
+        </div>
         <p>
           <%= item.description %>
         </p>

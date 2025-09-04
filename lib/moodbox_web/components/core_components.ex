@@ -726,10 +726,14 @@ defmodule MoodboxWeb.CoreComponents do
 
   slot :inner_block, required: true
   attr :class, :string, default: nil
+  attr :rest, :global, doc: "the arbitrary HTML attributes"
 
   def p(assigns) do
     ~H"""
-    <p class={"text-pretty text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide #{@class}"}>
+    <p
+      class={"text-pretty text-lg xl:text-xl max-w-4xl text-[#383838] text-center xl:tracking-wide #{@class}"}
+      {@rest}
+    >
       <%= render_slot(@inner_block) %>
     </p>
     """
